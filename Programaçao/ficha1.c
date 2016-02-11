@@ -134,7 +134,7 @@ return 0;
 
 */
 
-
+/*
 int main() {
 
 int n;
@@ -153,3 +153,41 @@ for(int i=0;i<n;i++) {
 
 return 0;
 }
+
+*/
+/* 3 , 5 ;
+ 3, 5 , 3 , 5 ; 
+ 4 , 5 , 4 ,5 ; 
+ 4 ,9 , 4 , 5  ;
+ 4, 9, 4 , 4 ; 
+ 9 + 4 = 13
+
+int main(){
+  int i, j, *a, *b;
+  
+  i=3; j=5;
+  a = &i ; b = &j;
+  i++;
+  j = i + *b;
+  b = a;
+  j = j + *b;
+  printf("%d\n",j);
+
+  return 0 ;
+}
+*/
+/*
+void init (int a) {
+  a = 0 ;
+}
+
+int main(){
+  int x;
+  
+
+  init (x);
+  printf("%d\n", x );
+  return 0;
+}
+*/
+
