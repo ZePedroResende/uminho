@@ -190,4 +190,41 @@ int main(){
   return 0;
 }
 */
+/*
+void swap (int *x , int *y){
+ int a , b;
+ a = *y;
+ b = *x;
+ *x = a;
+ *y = b;
+}
+
+int main()
+{
+  int x= 3,  y= 5 ;
+  swap (&x, &y);
+  printf("%d %d\n",x ,y );
+ 
+  return 0;
+}
+*/
+
+/*
+int mult (int n, int m) {
+  int r;
+  if (n>0)
+    r = m + mult (n-1, m);
+  else r = 0;
+
+  return r;
+}
+
+*/
+
+int main (){
+ int r, n , m; 
+
+  r = n * m
+return 0
+}
 
