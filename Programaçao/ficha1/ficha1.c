@@ -221,10 +221,65 @@ int mult (int n, int m) {
 
 */
 
+/*
 int main (){
- int r, n , m; 
+int g , n , m; 
+n = 2; 
+m = 3 ;
+g = m;
 
-  r = n * m
-return 0
+for (int j = 0 ; (j < n-1) ; j++){
+
+    g = g + m;
+     
+
+    
+
+  }
+
+printf("%d\n", g);
+
+return 0;
 }
+*/
+
+
+/* \\ nao esta bem wtf 
+void f (int n , int m){
+
+int g = m;
+ for (int j = 0 ; (j < n-1) ; j++){
+
+    g = g + m;
+     
+
+  }
+}
+
+int main (){
+int g , n , m, j, h; 
+n = 2; 
+m = 3 ;
+g = n/2;
+h = (n-1)/2;
+j = m * 2;
+
+
+    if  (n > 0 && m > 0)
+        if (n%2 == 0 )
+        (f g, j);
+        else 
+         g = m + ((n-1)/2 * (m*2));
+    else  g = 0; 
+
+printf("%d\n",g );
+
+return 0;
+}
+*/
+
+/* 
+1 vezes
+998 vezes
+*/
 
