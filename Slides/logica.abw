@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE abiword PUBLIC "-//ABISOURCE//DTD AWML 1.0 Strict//EN" "http://www.abisource.com/awml.dtd">
+<abiword template="false" xmlns:ct="http://www.abisource.com/changetracking.dtd" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:math="http://www.w3.org/1998/Math/MathML" xid-max="84" xmlns:dc="http://purl.org/dc/elements/1.1/" styles="unlocked" fileformat="1.0" xmlns:svg="http://www.w3.org/2000/svg" xmlns:awml="http://www.abisource.com/awml.dtd" xmlns="http://www.abisource.com/awml.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" version="0.99.2" xml:space="preserve" props="dom-dir:ltr; document-footnote-restart-section:0; document-endnote-type:numeric; document-endnote-place-enddoc:1; document-endnote-initial:1; lang:en-US; document-endnote-restart-section:0; document-footnote-restart-page:0; document-footnote-type:numeric; document-footnote-initial:1; document-endnote-place-endsection:0">
+<!-- ======================================================================== -->
+<!-- This file is an AbiWord document.                                        -->
+<!-- AbiWord is a free, Open Source word processor.                           -->
+<!-- More information about AbiWord is available at http://www.abisource.com/ -->
+<!-- You should not edit this file by hand.                                   -->
+<!-- ======================================================================== -->
+
+<metadata>
+<m key="abiword.date_last_changed">Wed Feb 17 01:20:17 2016
+</m>
+<m key="abiword.generator">AbiWord</m>
+<m key="dc.creator">neo</m>
+<m key="dc.date">Wed Feb 17 01:20:17 2016
+</m>
+<m key="dc.format">application/x-abiword</m>
+</metadata>
+<rdf>
+</rdf>
+<history version="1" edit-time="13524" last-saved="1455672017" uid="1dcdd90c-d4f5-11e5-93c7-ba721e2240af">
+<version id="1" started="1455672017" uid="9aac42dc-d514-11e5-93c7-ba721e2240af" auto="0" top-xid="84"/>
+</history>
+<styles>
+<s type="P" name="Normal" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; color:000000; margin-left:0pt; text-position:normal; widows:2; font-style:normal; text-indent:0in; font-variant:normal; font-weight:normal; margin-right:0pt; font-size:12pt; text-decoration:none; margin-bottom:0pt; line-height:1.0; bgcolor:transparent; text-align:left; font-stretch:normal"/>
+</styles>
+<pagesize pagetype="Letter" orientation="portrait" width="8.500000" height="11.000000" units="in" page-scale="1.000000"/>
+<section xid="4" props="page-margin-footer:0.5in; page-margin-header:0.5in">
+<p style="Normal" xid="5"><c props="font-family:Times New Roman; text-decoration:none; color:000000; font-size:12pt; text-position:normal; font-weight:bold; font-style:normal; lang:en-US">O que é ser fechado ?</c></p>
+<p style="Normal" xid="14" props="margin-top:0.0000in; margin-left:0.0000in; text-indent:0.0000in; dom-dir:ltr; margin-bottom:0.0000in; line-height:1.000000; text-align:left; margin-right:0.0000in"><c props="font-family:Times New Roman; font-size:12pt; lang:en-US; text-position:normal; font-weight:normal; font-style:normal; text-decoration:none">É quando aplicada uma funçao a um certo subconjunto os seus elementos pertencem ao mesmo conjunto ( operaçoes de O aplicada em I produzem elementos de I )</c></p>
+<p style="Normal" xid="12" props="font-family:Times New Roman; font-size:12pt; color:000000; lang:en-US; text-position:normal; font-weight:normal; font-style:normal; text-decoration:none"><c></c></p>
+<p style="Normal" xid="15" props="font-family:Times New Roman; font-size:12pt; color:000000; lang:en-US; text-position:normal; font-weight:normal; font-style:normal; text-decoration:none"><c></c></p>
+<p style="Normal" xid="16" props="font-family:Times New Roman; font-size:12pt; color:000000; lang:en-US; text-position:normal; font-weight:normal; font-style:normal; text-decoration:none"><c props="font-weight:bold">PARA SER CONJUNTO INDUTIVO  ENTAO :</c></p>
+<p style="Normal" xid="13"><c></c><c>Subconjunto I de X (e B um subconjunto nao vazio de X) ( no qual existem conjuntoos de operaçoes em X ( X^n --&gt; X ) entao : </c></p>
+<p style="Normal" xid="3"><c>1 - B </c><c props="font-family:Symbol">⊆</c><c props="font-family:Times New Roman">   I </c></p>
+<p style="Normal" xid="6"><c props="font-family:Times New Roman">2 - I é fechado para as operaçoes de O </c></p>
+<p style="Normal" xid="18"><c props="font-family:Times New Roman"></c></p>
+<p style="Normal" xid="19"><c props="font-family:Times New Roman">e  conjunto indutivo :</c></p>
+<p style="Normal" xid="20"><c props="font-family:Times New Roman">1 - sobre X </c></p>
+<p style="Normal" xid="21"><c props="font-family:Times New Roman">2 - de base B </c></p>
+<p style="Normal" xid="22"><c props="font-family:Times New Roman">3 - conjunto de operaçoes O</c></p>
+<p style="Normal" xid="23"><c props="font-family:Times New Roman"></c></p>
+<p style="Normal" xid="32"><c props="font-family:Times New Roman">Nota : os subconjuntos indutivos de um conjunto par uma dada base e um dado conjunto de operaçoes , nao sao unicos . </c></p>
+<p style="Normal" xid="31"><c props="font-family:Times New Roman"></c></p>
+<p style="Normal" xid="30"><c props="font-family:Times New Roman"></c></p>
+<p style="Normal" xid="41"><c props="font-family:Times New Roman"></c></p>
+<p style="Normal" xid="42"><c props="font-family:Times New Roman"></c></p>
+<p style="Normal" xid="43"><c props="font-family:Times New Roman"></c></p>
+<p style="Normal" xid="29"><c props="font-family:Times New Roman; font-weight:bold">Definiçao indutivamente  ou conjunto gerado </c></p>
+<p style="Normal" xid="33"><c props="font-family:Times New Roman">O mais pequeno conjunto indutivo , que é definido  como conjunto de operaçoes O de base B , sobre X . </c></p>
+<p style="Normal" xid="44"><c props="font-family:Times New Roman"></c></p>
+<p style="Normal" xid="45"><c props="font-family:Times New Roman"></c></p>
+<p style="Normal" xid="46"><c props="font-family:Times New Roman; text-decoration:underline">Sejam X  um conjunto, B um subconjo nao vazio de X e O um conjunto de operaçao em X . </c></p>
+<p style="Normal" xid="35"><c props="font-family:Times New Roman"></c></p>
+<p style="Normal" xid="36"><c props="font-family:Times New Roman">definiçao indutiva sobre o conjunto suporte X  -&gt; </c><c props="font-family:Times New Roman; font-size:12pt; color:000000; text-decoration:none; text-position:normal; font-weight:normal; font-style:normal; lang:en-US">Ao par (B,O) </c></p>
+<p style="Normal" xid="47"><c props="font-family:Times New Roman"></c></p>
+<p style="Normal" xid="38"><c props="font-family:Times New Roman; font-weight:bold">Alfabeto </c></p>
+<p style="Normal" xid="48"><c props="font-family:Times New Roman">Conjunto de letras (simbolos) </c></p>
+<p style="Normal" xid="49"><c props="font-family:Times New Roman"></c></p>
+<p style="Normal" xid="51"><c props="font-family:Times New Roman; font-weight:bold">Palavra ou string </c></p>
+<p style="Normal" xid="53"><c props="font-family:Times New Roman; font-weight:normal">Sequencia finita de letras de um alfabeto  . </c></p>
+<p style="Normal" xid="54"><c props="font-family:Times New Roman; font-weight:bold">A* </c><c props="font-family:Times New Roman; font-weight:normal"> = todas as palavras de um alfabeto </c></p>
+<p style="Normal" xid="55"><c props="font-family:Times New Roman; font-weight:bold"></c></p>
+<p style="Normal" xid="56"><c props="font-family:Times New Roman; font-weight:bold"></c><c props="font-family:Times New Roman; font-weight:bold"> Palavra vazia = sequencia vazia de letras ( </c><c props="font-family:Symbol; font-weight:bold">∈</c><c props="font-family:Times New Roman; font-weight:bold">)</c></p>
+<p style="Normal" xid="82"><c props="font-family:Times New Roman; font-weight:bold"></c><c props="font-family:Times New Roman; font-weight:bold">Comprimento de uma palavra</c><c props="font-family:Times New Roman; font-weight:normal"> = comprimento da respetiva sequencias de letras </c></p>
+<p style="Normal" xid="63"><c props="font-family:Times New Roman; font-weight:normal">Duas</c><c props="font-family:Times New Roman; font-weight:bold"> palavras sao iguais</c><c props="font-family:Times New Roman; font-weight:normal"> quando o comprimeto e o mesmo e coincide letra a letra </c></p>
+<p style="Normal" xid="68"><c props="font-family:Times New Roman; font-weight:bold">concatenaçao  ( uv)</c><c props="font-family:Times New Roman; font-weight:normal"> = concatenaçao  de u com v ( primeiro letras de u e depois v )  </c></p>
+<p style="Normal" xid="67"><c props="font-family:Times New Roman; font-weight:bold">Sequencia de formaçao </c></p>
+<p style="Normal" xid="70"><c props="font-family:Times New Roman; font-weight:bold"></c></p>
+<p style="Normal" xid="72"><c props="font-family:Times New Roman; font-weight:normal">Seja (B,o) uma definiçao indutiva sobre um conjunto suporte X de um conjunto I e seja e </c><c props="font-family:Symbol; font-weight:normal">∈</c><c props="font-family:Times New Roman; font-weight:normal">X . </c></p>
+<p style="Normal" xid="73"><c props="font-family:Times New Roman; font-weight:normal">Uma sequencia de formaçao de e é uma sequencia finita de elementos de X na qual :</c></p>
+<p style="Normal" xid="74"><c props="font-family:Times New Roman; font-weight:normal"></c></p>
+<p style="Normal" xid="75"><c props="font-family:Times New Roman; font-weight:normal">1 - o ultimo elemento é e </c></p>
+<p style="Normal" xid="76"><c props="font-family:Times New Roman; font-weight:normal">2 - cada elemento pertence a B ou é imagem de elementos anteriores na sequencia por uma operaçao de O . </c></p>
+<p style="Normal" xid="77"><c props="font-family:Times New Roman; font-weight:normal"></c></p>
+<p style="Normal" xid="79"><c props="font-family:Times New Roman; font-weight:normal">Na representaçao de uma sequencia de formaçao , habitualmente , usaremos virgulas a separar uma operaçao da sequencia. </c></p>
+<p style="Normal" xid="83"><c props="font-family:Times New Roman; font-weight:normal"></c></p>
+<p style="Normal" xid="84"><c props="font-family:Times New Roman; font-weight:normal"></c></p>
+<p style="Normal" xid="80"><c props="font-family:Times New Roman; font-weight:normal"></c></p>
+<p style="Normal" xid="81"><c props="font-family:Times New Roman; font-weight:bold"></c></p>
+<p style="Normal" xid="78"><c props="font-family:Times New Roman; font-weight:bold"></c></p>
+<p style="Normal" xid="71"><c props="font-family:Times New Roman; font-weight:bold"></c></p>
+<p style="Normal" xid="69"><c props="font-family:Times New Roman; font-weight:normal"></c></p>
+</section>
+</abiword>
