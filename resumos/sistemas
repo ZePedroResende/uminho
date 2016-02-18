@@ -1,0 +1,126 @@
+unicode Ex: UHF-8
+
+CPU : le um comando intrepreta-o e  executa-o
+
+Apontador de intrução (IP,instructor Pointer,pc , program counter)
+
+TIPOS BASICOS DE COMANDOS
+operaçao com dados, indo buscar os operador se necessario e guradando o resultado no fim 
+
+mover dados de/para registos, memoria ou IO
+
+decidir qual (o local) onde proximo comando a executar 
+
+
+MEMORIA PRIMARIA
+armazena temporariamente um programa e os dados por ele manipulados (durante a execuçao de um programa)
+operaçoes a executar : ler/executar
+
+
+ORGANIZAÇAO LOGICA
+celulas cada com 8bits 
+cada celula e identificada pelo seu endereço
+dimensao definida pelos n bits do endereço 2^n
+
+
+base 16 : 0..9,A..F
+base 10 : 0 ...  9 
+base 8 : 0 .. 7 
+base 2 :0..1
+
+
+base 2 -> base 10 
+10011 (base 2)
+1* 2^0 + 1 *2^1 + 0*2^2 + 0 *2^3 + 1 *2^4 = 1 + 2 + 16 = 19
+
+sendo 1001(1) o bit menos significativo 
+sendo (1)0011 o bit mais significativo 
+
+base 10 -> base 2 (procurar o mais numero para dividir )
+4/2 = 2   mod 0 <- bit menos significativo   
+2/2 = 1 (<-bit mais significatico)  mod 0 
+
+entao 4 = 100 em base 2 
+
+
+NUMERO MAXIMO DE UM CONJUNTO 
+(B^n) -1 
+
+B = Base 
+n = numero de bits 
+
+BASE DECIMAIS 
+ 
+base 2 -> base 10 
+101.11
+1* 2^-2 + 1* 2^-1 + 1 *2^0 +0 * 2^1 + 1 * 2^2  = 5,75
+
+base 10 -> base 2 
+11.15625
+dividir 11 e 0.15625
+
+11/2 = 5  mod 1
+5/2 = 2  mod 1 
+2/2 = 1  mod 0 
+1011
+
+0.15625 * 2 = (0) . 31250  entao  1011.0
+0.31250 * 2 = (0).6250 entao 1011.00
+0.6250 * 2 = (1).250 entao 1011.001
+0.250 * 2 = (0).5 entao 1011.0010
+0.5 * 2 = (1) entao 1011.00101
+
+
+ADIÇAO DE BINARIO
+
+01001 + 00110 = 01111
+1+0 = 1
+0+1 = 1 
+0+1 = 1
+1+0 = 1
+
+001010 +  011011 = 100101
+0+1 = 1
+1+1 = 0 (e vai 1 )
+0+0+1 = 1
+1+1 = 0 (e vai 1)
+0+1+1=0 (evai 1)
+0+0+1=1
+
+OCTAL BASE 8 : 0...7
+Base 2 -> Base 8 
+dividir o binario por 3 bits e calcular o numero correspondente
+
+Base 8 -> Base 2 
+calcular cada bit em binario e representa los na mesma ordem 
+ex: 6735  , 6(110), 7(111), 3(011), 5 (101)
+
+Base 10 -> Base 8 
+dividir o numero por 8  (como todos os outros)
+
+Base 8 -> Base 10 
+multiplicar o numero po 2 ^posiçao 
+
+HEXADECIMAL BASE 16 : 0..9,A,B,C,D,E,F
+
+Base 16 -> base 10
+
+OxABC 
+C=12
+B=11
+A=10
+
+12*16^0 + 11*16^1 + 10*16^2 =  2748
+
+Base 10 -> Base 16 
+2748/16 = 171 mod 12
+171/16 = 10 mod  11
+10 11 12
+
+Base 2 -> Base 16 
+dividir binario em quatro bits e calcular o numero correspondente  e depois corresponde ao valor HEXADECIMAL
+
+SINAL AMPLITUDE 
+O BIT MAIS SIGNIFICATIVO CORRESPONDE A UM SINAL
+0 = + 
+1 = - 
