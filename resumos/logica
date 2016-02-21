@@ -1,0 +1,48 @@
+* O que é ser fechado ?
+** É quando aplicada uma funçao a um certo subconjunto os seus elementos pertencem ao mesmo conjunto ( operaçoes de O aplicada em I produzem elementos de I )
+
+
+* PARA SER CONJUNTO INDUTIVO  ENTAO :
+** Subconjunto I de X (e B um subconjunto nao vazio de X) ( no qual existem conjuntoos de operaçoes em X ( X^n --> X ) entao : 
+*** 1 - B ⊆   I 
+*** 2 - I é fechado para as operaçoes de O 
+
+** e  conjunto indutivo :
+*** 1 - sobre X 
+*** 2 - de base B 
+*** 3 - conjunto de operaçoes O
+
+**** Nota : os subconjuntos indutivos de um conjunto par uma dada base e um dado conjunto de operaçoes , nao sao unicos . 
+
+
+
+
+
+* Definiçao indutivamente  ou conjunto gerado 
+** O mais pequeno conjunto indutivo , que é definido  como conjunto de operaçoes O de base B , sobre X . 
+
+
+* Sejam X  um conjunto, B um subconjo nao vazio de X e O um conjunto de operaçao em X . 
+
+** definiçao indutiva sobre o conjunto suporte X  -> Ao par (B,O) 
+
+** Alfabeto 
+*** Conjunto de letras (simbolos) 
+
+** Palavra ou string 
+*** Sequencia finita de letras de um alfabeto  . 
+**** A* = todas as palavras de um alfabeto 
+
+** Palavra vazia = sequencia vazia de letras 
+** Comprimento de uma palavra = comprimento da respetiva sequencias de letras 
+** Duas palavras sao iguais quando o comprimeto e o mesmo e coincide letra a letra 
+** concatenaçao  ( uv) = concatenaçao  de u com v ( primeiro letras de u e depois v )  
+
+** Sequencia de formaçao 
+*** Seja (B,o) uma definiçao indutiva sobre um conjunto suporte X de um conjunto I e seja e ∈X . 
+*** Uma sequencia de formaçao de e é uma sequencia finita de elementos de X na qual :
+
+**** 1 - o ultimo elemento é e 
+**** 2 - cada elemento pertence a B ou é imagem de elementos anteriores na sequencia por uma operaçao de O . 
+
+***** Na representaçao de uma sequencia de formaçao , habitualmente , usaremos virgulas a separar uma operaçao da sequencia. 
