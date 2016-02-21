@@ -94,3 +94,45 @@
 *** graf (f) = {(x1,...,xn,f1(x),.. fn(x)) pertencente R^n+m : x = (x1,...,xn) pertencente a D }
 
 **** Nota : ver caderno grafico para entender melhor 
+
+**** Parabolca eliptica : o que nao esta ao quadrado dica com eixo 
+
+** Grafica de funçoes de R²-> |R (f:D contido |R³ -> R) 
+*** Ver o caderno e exercicios 
+
+
+*  Conjunto de nivel m= 1 
+** Seja f D contido R^n -> |R uma funçao real e C pertencente |R
+
+** Conjunto de nivel 'c' como os pontos do dominio x pertencete a D tais que f(x) = C , isto é :
+*** Somatorio e = {(x1,x2,..,xn) pertencete D : f(x1,x2,..,xn) = C }
+
+** Curvas de nivel :  Se n=2 f: D contido em R² -> R , os conjuntos de nivel chamam-se curvas de nivel
+** Superficies de nivel : Se n = 3 f: D contido R³ -> R, os conjuntos de nivel chamam-se superficies de nivel
+
+* Superficies de Nivel 
+** f : D contido em R³ -> R 
+*** C pertence a R 
+*** Superficie de nivel c (simbolo de somatorio c) = {(x,y,z) pertencente a D : f(x,y,z) = C}
+
+* Limite de funçoes de varias variaveis 
+** Em R   f: D=R -> R
+** Sejam f: Dg pertencente a R^n, Xo ponto de acumulaçao de D, (Xo pertencente a D') e L pertencete a R^n 
+*** Lim f(x) = L para todo e > 0 , Existe um d> 0 , todos x pertence a Dg : 0<||x-xd||< d => ||f(x) -L|| < e
+
+
+** Propriedades 
+*** 1 Unicidade de  limites 
+**** Se limite f(x) = L1 e lim(x->0) f(x) = L2 , entao L1=L2
+*** 2
+**** Para f: D pertencente R^n -> R^n ; x |-> (f1(x),...,fn(x))
+**** lim x-> x0 f(x) = ( lim x->xo f1(x), .. , lim x-> x0 fn(x))
+*** 3 Atissimetrica de limites 
+**** Sejam f,g . D contido R^n -> R^m  Xo pertence em D²
+***** (1) lim (rf(x)) = r lim x-> x f(x) 
+***** (2) lim f(x) =l1 e lim x-> x0 g(x) = l2  => lim x-> xo (f(x)+g(x)) = Lim x-> xo f(x) + lim x-> xo g(x) = L1 + L2 
+***** (3) m= 1  Se lim x-> xo f(x) = L1 * Lim x-> xo g(x) = L2 entao lim x-> xo f(x)* g(x) = L1 * L2 e Limx -> xo f(x)/g(x) = L1/l2 quando g(x) /= 0  e L2 /= 0
+*** 4 enquadramento 
+**** Sejam f: D = R^n -> R, L pertencente a R e Xo ponto de acumulaçao de D (x pertencente D') se existir g : 
+***** Br (Xo) \ {x} pertencente D -> R tais que |f(x) - L| <= g(x) => lim x-> Xo f(x) = L  e Lim x-> Xo g(x) = 0
+ 
