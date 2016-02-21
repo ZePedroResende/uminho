@@ -1,0 +1,96 @@
+* Espaço Vetorial R^n
+*** Seja n pertencente a |N 
+
+*** Dado a pertencente a R e X=(x1,...,xn), y=(y1,..,yn)
+** produto escalar : a.X =(ax1,...,axn)
+** x+y =(x1+y1,x2+y2,...)
+** Espaço vetorial (R,+,.) 
+
+* Distancia entre dois vetores x,y pertencente |R^n
+** Em R = |x-y| ou |y-x|
+** em R² = ||x-y|| = sqrt ((x1-y1)^2 + (x2-y2)^2)
+
+* Norma entre dois vetores x,y pertencente |R^n
+** ||x|| = sqrt(x1^2 + x2^2 + ... + xn^2)
+
+* Produto interno entre dois vetores x,y pertencente |R^n
+** X.Y = (somatorio) x1-y1 = x1 y1 + .. + xn yn
+
+* Angulo entre X e Y
+** (x,y) = arcos (X.Y/ ||x|| . ||y|| )
+*** como e arcos pertence a [-1,1]
+*** X/= 0 e Y/= 0
+
+* Bola Vizinhança 
+*** Sejam X0 pertencente |R^n e r > 0 
+
+** bola de centro X0 e raio r > 0 ao conjunto 
+*** Br (Xo) ={X pertence |R^n : ||X-Xo|| < r }
+    
+*** em R^1 
+**** B2 (1) ={x pertence R : |x-1|<2}
+**** |x-1|<2 
+**** -2< x-1 < 2 
+**** -1 < x < 3
+
+
+*** em R² 
+**** B2 ((1,-1))
+**** {(x1,x2) pertence R² : || (x1,x2) - (1,-1)|| < 2 }
+**** {(x1,x2) pertence R² : sqrt((x1-1)^2 + (x2- (-1))^2 < 2}
+**** {(x1,x2) pertence R² : (x1-1)^2 + (x2-1)^2 < 4 } 
+
+
+*** em R³
+**** B2 ((0,0,1)) = {(x1,x2,x3) pertence R³ : ||(x1,x2,x3) - (0,0,1)|| < 2 
+**** {(x1,x2,x3)pertence R³ : x1² + x2² + (x3-1)² < 4 }
+
+
+* Noções topologicas (Definiçao)
+** A contido em R^n e Xo pertencente a R^n 
+
+** Ponto interior 
+*** Xo diz pononto interior de A se existir r>0 Br(Xo) pertencente a A
+**** Conjunto dos pontos interiores : A com um bola em cima 
+*** Aberto: Se A for igual ao conjunto de pontos interiores de A   
+
+** Ponto aderente
+*** Xo diz-se ponto aderente se para qualquer r> 0 B(X0) interceçao com A /= 0
+**** conjunto dos pontos interiores : A com um traço em cima 
+*** Fechado : se A = conjunto dos pontos interiores
+
+** Ponto fronteiro 
+*** Xo pertence conjunto Ponto aderente\ conjunto Ponto interior
+**** fronteiro de A = refresenta-se por fr(A) 
+
+** Ponto de acumulaçao
+*** Xo diz-se ponto de acumulaçao de A se para qualquer r>0 (B(Xo)\{Xo}) interçao A /= 0
+***** Se retirar o centro da bola, estamos entao a retirar os isolados
+**** conjunto dos pontos de acumulaçao (A'(derivada)) : ponto de acumulaçao de A 
+
+** Ponto Isolado 
+*** Xo diz-se ponto isolado de A se existir r>0 B(Xo) interceçao com A ={Xo}
+
+
+* Funçao Vetorial 
+** n, m  pertence |N
+*** chama-se funçao vetorial a uma funçao 
+*** f: D conti R^n -> R^n
+***              X -> f(x)
+*** onde D é o dominio de f e R^N é o espeço de chegada    
+
+*** X=(x1,...,xn) é o dominio de f , |R^n é o espaço de chegada 
+
+** Funçao componete
+*** A cada fi : D -> R x |-> fj(x)     (j=1,...,m)
+
+* Grafico de uma funçao 
+** Seja f: D pertencente R^n -> |R^n chama-se grafico de f ao subconjunto de R^n+m definido :
+*** (x1,x2,...,xn,f1(x1,..,xn),fn(x1,..,xn) pertencente R^n+m 
+***               | f1(x)    | |fn(x)     |
+***               |         f(x)          |
+
+*** Com X = (x1,...,xn) pertencente a D, isto é , 
+*** graf (f) = {(x1,...,xn,f1(x),.. fn(x)) pertencente R^n+m : x = (x1,...,xn) pertencente a D }
+
+**** Nota : ver caderno grafico para entender melhor 
