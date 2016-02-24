@@ -2,9 +2,19 @@
 
 int main(){
   int a, b ;
-
-  scanf(%d )
-  if a =! 0
+  b = 0 ;
+ 
+  scanf("%d",&a );
   
-    else printf("%d",b);
+  if (a !=0){
+
+  while (a != 0){
+    b += a;
+    scanf("%d",&a);
+  }
+  printf("%d\n",b);  
+  }
+  else  printf("%d",b);
+
+  return 0; 
 }
