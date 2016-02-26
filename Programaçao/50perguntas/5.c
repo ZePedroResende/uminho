@@ -44,11 +44,23 @@ int qDig (int n) {
 
     return r;
 }
-//
-int strlen1 (char s1[], char s2[]){
 
+
+//
+int mystrlen(char str[]) {
+	    int c =0;
+	    while ( str[c] != '\0'){
+	    c++;
+	}
+
+	    return c;
+	}
 
 }
+
+
+
+
 
 //
 int main() {
