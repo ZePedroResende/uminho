@@ -56,6 +56,9 @@ int mystrlen(char str[]) {
 	    return c;
 	}
 
+
+char *strcat (char s1[], char s2[]){
+
 }
 
 
@@ -65,7 +68,7 @@ int mystrlen(char str[]) {
 //
 int main() {
 int a;
-a = trailingZ(6);
+a = mystrlen ("hello");
 printf("%d\n",a);
   return 0;
 }
