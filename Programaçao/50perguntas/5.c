@@ -67,8 +67,7 @@ for (i = 0; s1[i] != 0; i++);
 //while (s1[i] != '\0')
 //	i++;
 
-for (j = 0; s2[j] != '\0'; i++, j++) {
-      s1[i] = s2[j];
+ for (j = 0; s2[j] != '\0'; s1[i] = s2[j],i++, j++) {
 }
 /*
 while(s2[j] != '\0')
@@ -85,11 +84,25 @@ return s1;
 
 
 }
+char *mystrcpy(char s1[], const char s2[]) {
+  int i = 0;
+  int j = 0;
 
+  for(j; s2[j] != '\0'; j++);
 
+  for(i , j; i<j ; s1[i]=s2[i] , i++ );
+
+  s1[j] = '\0';
+  return s1;
+}
+
+//int strcmp (char s1[], char s2[]){
+  
+//}
 
 //
 int main() {
+  int a ;
 
 char dest[50] = "dest ";
 
@@ -98,7 +111,7 @@ char src[50] = "lol";
 //strcpy(src,  "This is source");
 //strcpy(dest, "This is destination");
 
-*strcat1(dest,src);
-printf("%s\n",dest);
+a = strcmp(dest,src);
+printf("%d\n",a);
   return 0;
 }
