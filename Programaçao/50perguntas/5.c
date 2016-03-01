@@ -110,6 +110,71 @@ int strcmp1 (char s1[], char s2[]){
 }
 
 
+void strrev (char s[]){
+  int l= 0,  i = 0,v;
+  char a;
+
+  for (l; s[l] != '\0' ; l++);
+
+  v= l-1;
+
+  while (i<v){
+      a = s[i];
+      s[i]=s[v];
+      s[v]= a;
+      i++;
+      v--;
+  }
+  /*for(i,v; i<v; i++, v--){
+  a= s[i];
+s[i] = s[v];
+s[v]=a;
+}
+  */
+}
+
+
+int vogal1 (char x){
+  switch(x){
+  case 'a':
+  case 'A':
+  case 'e':
+  case 'E':
+  case 'i':
+  case 'I':
+  case 'o':
+  case 'O':
+  case 'u':
+  case 'U':
+    return 1 ;
+  default:
+    return 0;
+  }
+}
+
+
+void strnoV (char s[]){
+  int j= 0, i=0;
+
+  while (s[j] != '\0'){
+
+      while (vogal1 (s[j]) ){
+      j++;
+      }
+    s[i] = s[j];
+
+    if(s[i] != '\0'){
+        i++;
+        j++;
+    }
+  }
+ s[i] = '\0';
+
+}
+
+//void truncW (char s[]){ 
+//}
+
 int main() {
   int a ;
 
