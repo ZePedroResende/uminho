@@ -172,6 +172,32 @@ void strnoV (char s[]){
 
 }
 
+void truncw (char t[], int n)
+{
+	int i, j = 0, x;
+	for(i = 0; t[i] != '\0'; i++, j++)
+    {
+      for(x = n;(x > 0) && (t[i] != ' ') && (t[i] != '\0'); x--, i++, j++)
+        t[j] = t[i];
+      while((t[i] != '\0') && (t[i] != ' '))
+        i++;
+      t[j] = t[i];
+    }
+	t[j] = '\0';
+  }
+/*
+void truncw (char t[], int n){
+  int i, x , j=0 ;
+  for(x=n; (x>0) && (t[i] != ' ') && (t[i] != '\0'); x--, i++, j++){
+      t[j]=t[i];
+  }
+  while ((t[i] != '\0') && (t[i] != ' ')){
+      i++;
+  }
+    t[j] = t[i];
+
+    t[j]= '\0';
+}*/
 //void truncW (char s[]){ 
 //}
 
@@ -185,7 +211,7 @@ char src[50] = "lol";
 //strcpy(src,  "This is source");
 //strcpy(dest, "This is destination");
 
-a = strcmp1(dest,src);
-printf("%d\n",a);
+truncw(dest, 2);
+ printf("%s\n",dest);
   return 0;
 }
