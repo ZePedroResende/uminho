@@ -185,6 +185,57 @@ void truncw (char t[], int n)
     }
 	t[j] = '\0';
   }
+
+//esta mal esta 
+char charMaisfreq (char s[]){
+  int x, y=0, z=0,k=0,i;
+  char a;
+
+  for (x=0; s[x] != '\0'; x++);
+
+  if (x == 0)
+    return 0 ;
+
+  else{
+    for(y=0; s[y] != '\0'; y++){
+      for (z=0, i=0; s[z] != '\0'; z++){
+        if (s[y] == s[z])
+          i++;
+
+      }
+      if ((k< i) && (s[y] != ' ') ){
+        k= i;
+        a = s[y];
+      }
+          }
+    return a;
+  }
+}
+
+int iguaisConsecutivos (char s[]) {
+  int  y=0, z, a=0, x=0 ;
+  for(y=0; s[y] != '\0'; y++){
+    for (z=0 , x=y  ; s[x] == s[y];x++, z++);
+    if (a< (z) ){
+      a = (z) ;
+    }
+  }
+  return a;
+  
+}
+
+int difConsecutivos (char s[]){
+  int  y=0, z, a=0, x=0 ;
+  for(y=0; s[y] != '\0'; y++){
+    for (z=0 , x=(y++)  ; s[x] != s[y];x++, z++);
+    if (a< (z) ){
+      a = (z) ;
+    }
+  }
+  return a;
+
+}
+
 /*
 void truncw (char t[], int n){
   int i, x , j=0 ;
@@ -211,7 +262,7 @@ char src[50] = "lol";
 //strcpy(src,  "This is source");
 //strcpy(dest, "This is destination");
 
-truncw(dest, 2);
- printf("%s\n",dest);
+ a = difConsecutivos("Ollllaaaaaaa??");
+ printf("%d\n",a);
   return 0;
 }
