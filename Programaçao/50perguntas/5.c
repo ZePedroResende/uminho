@@ -224,16 +224,60 @@ int iguaisConsecutivos (char s[]) {
   
 }
 
+
+
+
+//esta mal
+// esta mal 
 int difConsecutivos (char s[]){
   int  y=0, z, a=0, x=0 ;
   for(y=0; s[y] != '\0'; y++){
-    for (z=0 , x=(y++)  ; s[x] != s[y];x++, z++);
+    for (z=0 , x=y+1  ; s[x] != s[y]; y++, z++);
     if (a< (z) ){
       a = (z) ;
     }
   }
-  return a;
+ 
 
+  }
+
+int maiorPrefixo (char s1 [], char s2 []) {
+
+  int a = 0;
+  int b = 0;
+  int c = 0;
+
+  while (s1[b] == s2[c]){
+    a++;
+    b++;
+    c++;
+  }
+  return a;
+}
+
+int maiorSufixo (char s1[], char s2[]){
+  int i= 0;
+  int o = 0;
+  int a = 0;
+
+  for(i=0; s1[i] != '\0'; i++);
+
+  for(o=0; s2[o] != '\0'; o++);
+
+  i--;
+  o--;
+
+  while (s1[i] == s2[o]){
+    a++;
+    i--;
+    o--;
+  }
+  
+  return a; 
+}
+
+int sufPref (char s1[], char s2[]){
+  
 }
 
 /*
@@ -262,7 +306,7 @@ char src[50] = "lol";
 //strcpy(src,  "This is source");
 //strcpy(dest, "This is destination");
 
- a = difConsecutivos("Ollllaaaaaaa??");
+ a = difConsecutivos("oola");
  printf("%d\n",a);
   return 0;
 }
