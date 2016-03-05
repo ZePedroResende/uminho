@@ -186,7 +186,7 @@ void truncw (char t[], int n)
 	t[j] = '\0';
   }
 
-//esta mal esta 
+//esta mal esta 9 em 10 
 char charMaisfreq (char s[]){
   int x, y=0, z=0,k=0,i;
   char a;
@@ -280,6 +280,81 @@ int sufPref (char s1[], char s2[]){
   
 }
 
+// 8 de 10 
+int contaPal (char s[]){
+  int a, c ;
+
+  for (a=0, c=1 ; s[a] != '\0'; a++){
+    if ((s[a] == ' ') && (s[a+1] != '\0' ) && (s[a+1] != ' ' ) )
+          c++;
+  }
+
+  if (a == 0)
+          return 0;
+ else return c; 
+
+}
+
+int vogal2 (char x){
+  switch(x){
+  case 'a':
+  case 'A':
+  case 'e':
+  case 'E':
+  case 'i':
+  case 'I':
+  case 'o':
+  case 'O':
+  case 'u':
+  case 'U':
+    return 1 ;
+  default:
+    return 0;
+  }
+}
+
+
+int contaVogais (char s[]){
+  int j, i=0;
+
+  for(j= 0; s[j] != '\0'; j++){
+    if ((vogal2( s[j]) == 1))
+      i++;
+      
+    }
+  return i;
+  
+}
+// 8 de 10 nao esta bem. nao sei porque 
+int contida (char a[], char b[]){
+  int y, c=0, z=0, t;
+
+  for(t=0; a[t] != '\0'; t++);
+  
+    for(y=0; a[y] != '\0' ; y++){
+      while ( b[c]!= '\0' && b[c] != a[y] && a[y] != ' '){
+        c++;
+      }
+      if (a[y] == ' ') z++;
+      else if (b[c] == a[y]) z++;
+    }
+    if (t==z)
+    return 1 ;
+    else return 0;
+}
+
+int palindorome (char s[]){
+  int t, l, i = 0,v;
+  
+
+  for (l=0; s[l] != '\0' ; l++);
+  char k[l];
+
+  t= l -1 ;
+
+  for 
+
+}
 /*
 void truncw (char t[], int n){
   int i, x , j=0 ;
@@ -305,8 +380,8 @@ char src[50] = "lol";
 
 //strcpy(src,  "This is source");
 //strcpy(dest, "This is destination");
-
- a = difConsecutivos("oola");
+ 
+ a = contida("braga" ,"bracarense");
  printf("%d\n",a);
   return 0;
 }
