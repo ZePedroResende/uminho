@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-// numero de 1 em binario de um certo numero
+//5 numero de 1 em binario de um certo numero
 int bitsUm (unsigned int n)
 {
 	int cont = 0;
@@ -16,7 +16,7 @@ int bitsUm (unsigned int n)
 }
 
 
-// numero de zeros em binario na representaçao final
+// 6numero de zeros em binario na representaçao final
 int trailingZ (unsigned int n) {
 
     int r ;
@@ -33,7 +33,7 @@ int trailingZ (unsigned int n) {
 
     return i;
 }
-//
+//7
 int qDig (int n) {
     int r = 0;
 
@@ -46,7 +46,7 @@ int qDig (int n) {
 }
 
 
-//
+//8
 int mystrlen(char str[]) {
 	    int c =0;
 	    while ( str[c] != '\0'){
@@ -57,7 +57,7 @@ int mystrlen(char str[]) {
 	}
 
 
-
+//9
 char *strcat1 (char s1[], char s2[]){
 int i = 0 , j = 0;
 
@@ -83,7 +83,7 @@ return s1;
 
 
 
-}
+}//10
 char *mystrcpy(char s1[], const char s2[]) {
   int i = 0;
   int j = 0;
@@ -95,7 +95,7 @@ char *mystrcpy(char s1[], const char s2[]) {
   s1[j] = '\0';
   return s1;
 }
-
+//11
 int strcmp1 (char s1[], char s2[]){
   int i = 0;
 
@@ -103,13 +103,13 @@ int strcmp1 (char s1[], char s2[]){
 
   return (s1[i] - s2[i]);
 }
-
+//12
  char *strtr (char s1[], char s2[]){
    int i = 0;
 
 }
 
-
+//13
 void strrev (char s[]){
    int l= 0,  i = 0,v;
   char a;
@@ -152,7 +152,7 @@ int vogal1 (char x){
   }
 }
 
-
+//14
 void strnoV (char s[]){
   int j= 0, i=0;
 
@@ -171,7 +171,7 @@ void strnoV (char s[]){
  s[i] = '\0';
 
 }
-
+//15
 void truncw (char t[], int n)
 {
 	int i, j = 0, x;
@@ -186,7 +186,7 @@ void truncw (char t[], int n)
 	t[j] = '\0';
   }
 
-//esta mal esta 9 em 10 
+//16esta mal esta 9 em 10 
 char charMaisfreq (char s[]){
   int x, y=0, z=0,k=0,i;
   char a;
@@ -211,7 +211,7 @@ char charMaisfreq (char s[]){
     return a;
   }
 }
-
+//17
 int iguaisConsecutivos (char s[]) {
   int  y=0, z, a=0, x=0 ;
   for(y=0; s[y] != '\0'; y++){
@@ -227,7 +227,7 @@ int iguaisConsecutivos (char s[]) {
 
 
 
-//esta mal 7 - 10 
+//18esta mal 7 - 10 
 int difConsecutivos (char s[]) {
   int i = 0, g=1,m=0;
   while (s[i]!='\0'){
@@ -243,7 +243,7 @@ int difConsecutivos (char s[]) {
   }
   return m;
 }
-
+//19
 int maiorPrefixo (char s1 [], char s2 []) {
 
   int a = 0;
@@ -257,7 +257,7 @@ int maiorPrefixo (char s1 [], char s2 []) {
   }
   return a;
 }
-
+//20
 int maiorSufixo (char s1[], char s2[]){
   int i= 0;
   int o = 0;
@@ -278,7 +278,7 @@ int maiorSufixo (char s1[], char s2[]){
   
   return a; 
 }
-//esta mal 
+//21esta mal 
 int sufPref (char s1[], char s2[]){
   int l = 0, i=0,v,t,a,b,c,k=0;
   char j;
@@ -299,7 +299,7 @@ int sufPref (char s1[], char s2[]){
   }
   return k;
 }
-// 8 de 10 
+//22 8 de 10 
 int contaPal (char s[]){
   int a, c ;
 
@@ -332,7 +332,7 @@ int vogal2 (char x){
   }
 }
 
-
+//23
 int contaVogais (char s[]){
   int j, i=0;
 
@@ -344,7 +344,7 @@ int contaVogais (char s[]){
   return i;
   
 }
-// 8 de 10 nao esta bem. nao sei porque 
+//24 8 de 10 nao esta bem. nao sei porque 
 int contida (char a[], char b[]){
   int y, c=0, z=0, t;
 
@@ -361,7 +361,7 @@ int contida (char a[], char b[]){
     return 1 ;
     else return 0;
 }
-
+//25
 int palindroma (char s[]){
   int t, l, i = 0,v;
   
@@ -379,7 +379,7 @@ int palindroma (char s[]){
  if (v == i ) return 1;
  else return 0;
 }
-
+//26
 int remRep (char t[]){
   int j= 0, i=0,l ;
 
@@ -400,7 +400,7 @@ int remRep (char t[]){
   for (l=0; t[l]!='\0';l++);
   return l;
 }
-
+//27
 int limpaEspacos (char t[]){
   int j= 0, i=0,l ;
 
@@ -422,7 +422,7 @@ int limpaEspacos (char t[]){
    return l;
   }
 //completamente mal
-// nem percebo a pergunta !!
+//28 nem percebo a pergunta !!
 void insere (int v[],int N, int x){
   int t ;
   char temp, a ;
@@ -440,7 +440,7 @@ void insere (int v[],int N, int x){
 
 
 
-
+//29
 void merge (int r [], int a[], int b[], int na, int nb){
   int i, j, k;
   i = 0; j = 0; k = 0;
@@ -494,7 +494,7 @@ int retiraNeg (int v[], int N){
   return i;
 }
 */
-
+//30 
 int crescente (int a[], int i, int j){
   
 }
@@ -502,7 +502,7 @@ int crescente (int a[], int i, int j){
 
 
 
-// so da 7-10 nao sei porque 
+// 31  so da 7-10 nao sei porque 
 int retiraNeg (int v[], int N){
   int j= 0, i=0 ,l=0;
 
