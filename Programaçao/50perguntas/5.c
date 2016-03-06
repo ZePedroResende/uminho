@@ -111,7 +111,7 @@ int strcmp1 (char s1[], char s2[]){
 
 
 void strrev (char s[]){
-  int l= 0,  i = 0,v;
+   int l= 0,  i = 0,v;
   char a;
 
   for (l; s[l] != '\0' ; l++);
@@ -227,19 +227,22 @@ int iguaisConsecutivos (char s[]) {
 
 
 
-//esta mal
-// esta mal 
-int difConsecutivos (char s[]){
-  int  y=0, z, a=0, x=0 ;
-  for(y=0; s[y] != '\0'; y++){
-    for (z=0 , x=y+1  ; s[x] != s[y]; y++, z++);
-    if (a< (z) ){
-      a = (z) ;
+//esta mal 7 - 10 
+int difConsecutivos (char s[]) {
+  int i = 0, g=1,m=0;
+  while (s[i]!='\0'){
+    if (s[i]!=s[i+1]) {
+      if (g>m)
+        m=g;++g;
     }
+    else {
+      if (g>m) m=g;
+      g=1;
+    }
+    ++i;
   }
- 
-
-  }
+  return m;
+}
 
 int maiorPrefixo (char s1 [], char s2 []) {
 
@@ -275,11 +278,27 @@ int maiorSufixo (char s1[], char s2[]){
   
   return a; 
 }
-
+//esta mal 
 int sufPref (char s1[], char s2[]){
-  
-}
+  int l = 0, i=0,v,t,a,b,c,k=0;
+  char j;
 
+  for(t=0; s2[t]!='\0'; t++);
+  t = t-1;
+
+  for(i=0 , v; i<v; i++, v--){
+    j= s2[i];
+    s2[i] = s2[v];
+    s2[v] = j;
+  }
+
+  for(a=0; s1[a] != '\0' ; a++){
+    for(a, b= t, c=0 ; s1[a]== s2[b] ; a++, b--, c++){
+      if(k<c) k =c;
+  }
+  }
+  return k;
+}
 // 8 de 10 
 int contaPal (char s[]){
   int a, c ;
@@ -343,45 +362,198 @@ int contida (char a[], char b[]){
     else return 0;
 }
 
-int palindorome (char s[]){
+int palindroma (char s[]){
   int t, l, i = 0,v;
   
 
   for (l=0; s[l] != '\0' ; l++);
-  char k[l];
-
+  v = l/2;
   t= l -1 ;
+  
+  while(i<t && s[i] == s[t]){
+ 
 
-  for 
+    i++;
+    t--;
+  }
+ if (v == i ) return 1;
+ else return 0;
+}
 
+int remRep (char t[]){
+  int j= 0, i=0,l ;
+
+  while (t[j] != '\0'){
+
+    while ( (t[j+1])  == (t[j]))  {
+      j++;
+    }
+    t[i] = t[j];
+
+    if(t[i] != '\0'){
+      i++;
+      j++;
+    }
+  }
+  t[i] = '\0';
+
+  for (l=0; t[l]!='\0';l++);
+  return l;
+}
+
+int limpaEspacos (char t[]){
+  int j= 0, i=0,l ;
+
+    while (t[j] != '\0'){
+
+      while ( (t[j]) == ' ' &&  (t[j+1]  == ' ')  ){
+        j++;
+      }
+      t[i] = t[j];
+
+      if(t[i] != '\0'){
+        i++;
+        j++;
+      }
+    }
+    t[i] = '\0';
+
+       for (l=0; t[l]!='\0';l++);
+   return l;
+  }
+//completamente mal
+// nem percebo a pergunta !!
+void insere (int v[],int N, int x){
+  int t ;
+  char temp, a ;
+  for(t=0; v[t] != '\0' ; t++);
+  temp = v[N];
+  v[N] = x;
+  while ((N+1)<(t+1)){
+      a = v[N+1];
+      v[N+1] = temp;
+      temp = a;
+      N++;
+    }
+      v[t+1] = '\0';
+      }
+
+
+
+
+void merge (int r [], int a[], int b[], int na, int nb){
+  int i, j, k;
+  i = 0; j = 0; k = 0;
+ 
+  while (i<na && j<nb ){
+    if (a [i] < b [j]){
+      r [k] = a [i];
+      i++;
+        
+    }
+    else {
+      r [ k ] = b [ j ];
+      j++;
+    
+    }
+    
+    k++;
+  }
+    
+  if (j>= nb){
+    while (i<(na)){
+      r[k] = a[i];
+      i++;
+      k++;
+    }
+  }
+  if (i>=na){
+    while (j<(nb)){
+      r[k] = b[j];
+      j++;
+      k++;
+    }
+  }
 }
 /*
-void truncw (char t[], int n){
-  int i, x , j=0 ;
-  for(x=n; (x>0) && (t[i] != ' ') && (t[i] != '\0'); x--, i++, j++){
-      t[j]=t[i];
-  }
-  while ((t[i] != '\0') && (t[i] != ' ')){
-      i++;
-  }
-    t[j] = t[i];
+int retiraNeg (int v[], int N){
+  int j= 0, i=0 ;
 
-    t[j]= '\0';
-}*/
-//void truncW (char s[]){ 
-//}
+  while (j<N){
+
+    while ( (v[j]) <0  ){
+      j++;
+    }
+    v[i] = v[j];
+
+    if(i < N ){
+      i++;
+      j++;
+    }
+  }
+  return i;
+}
+*/
+
+int crescente (int a[], int i, int j){
+  
+}
+
+
+
+
+// so da 7-10 nao sei porque 
+int retiraNeg (int v[], int N){
+  int j= 0, i=0 ,l=0;
+
+  while (j<(N)){
+
+    while ( (v[j]) <0  ){
+      j++;
+    }
+    v[i] = v[j];
+
+    if ( j >= N){
+      j++;
+    }
+    else{
+      i++;
+      j++;
+    }
+  }
+  
+  return i;
+}
+
+
+
+
+
+/*
+  1 charMaisfreq (9-10 )
+  2 difConsecutivos (7-10)
+  3 sufPref (totalmente mal 2-10)
+  4 contaPal (8-10)
+  5 contida (8-10)
+  6 insere(completamente mal a pergunta e toda esquecida)
+
+*/
+
+
+
 
 int main() {
-  int a ;
-
-char dest[50] = "dest ";
+  int a;
+  int v[1] = {9};
+  int c[9] = {0,-1,3,4,5,9,10,-2,-2};
+char dest[50] = "1,2,3";
 
 char src[50] = "lol";
 
 //strcpy(src,  "This is source");
 //strcpy(dest, "This is destination");
- 
- a = contida("braga" ,"bracarense");
- printf("%d\n",a);
+
+a = retiraNeg(c,9);
+ printf("%d\n",a/*,a[5],a[6],a[7]*/);
   return 0;
 }
