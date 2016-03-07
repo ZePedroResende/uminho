@@ -104,11 +104,20 @@ int strcmp1 (char s1[], char s2[]){
   return (s1[i] - s2[i]);
 }
 
- char *strtr (char s1[], char s2[]){
-   int i = 0;
-
+char *strstr_1 (char s1[], char s2[])
+{
+  int i = 0;
+  char *res = NULL;
+  int len = strlen (s2);
+  
+  while((s1[i] != '\0') && (res == NULL))
+  {
+    if((s1[i] == s2[0]) && (strncmp (&s1[i], s2, len) == 0))
+      res = &s1[i];
+    i++;
+  }
+  return res;
 }
-
 
 void strrev (char s[]){
    int l= 0,  i = 0,v;
@@ -187,29 +196,20 @@ void truncw (char t[], int n)
   }
 
 //esta mal esta 9 em 10 
-char charMaisfreq (char s[]){
-  int x, y=0, z=0,k=0,i;
-  char a;
+char charMaisfreq (char s[])
+{
+  int i;
+  int aux[256] = {0};
+  char res = 0;
+  
+  for(i = 0; s[i] != '\0'; i++)
+    aux[(int) s[i]] += 1;
 
-  for (x=0; s[x] != '\0'; x++);
-
-  if (x == 0)
-    return 0 ;
-
-  else{
-    for(y=0; s[y] != '\0'; y++){
-      for (z=0, i=0; s[z] != '\0'; z++){
-        if (s[y] == s[z])
-          i++;
-
-      }
-      if ((k< i) && (s[y] != ' ') ){
-        k= i;
-        a = s[y];
-      }
-          }
-    return a;
-  }
+  for(i = 0; i < 256; i++)
+    if(aux[i] > aux[(int) res])
+      res = i;
+  
+  return res;
 }
 
 int iguaisConsecutivos (char s[]) {
@@ -278,88 +278,94 @@ int maiorSufixo (char s1[], char s2[]){
   
   return a; 
 }
-//esta mal 
-int sufPref (char s1[], char s2[]){
-  int l = 0, i=0,v,t,a,b,c,k=0;
-  char j;
 
-  for(t=0; s2[t]!='\0'; t++);
-  t = t-1;
-
-  for(i=0 , v; i<v; i++, v--){
-    j= s2[i];
-    s2[i] = s2[v];
-    s2[v] = j;
-  }
-
-  for(a=0; s1[a] != '\0' ; a++){
-    for(a, b= t, c=0 ; s1[a]== s2[b] ; a++, b--, c++){
-      if(k<c) k =c;
-  }
-  }
-  return k;
-}
-// 8 de 10 
-int contaPal (char s[]){
-  int a, c ;
-
-  for (a=0, c=1 ; s[a] != '\0'; a++){
-    if ((s[a] == ' ') && (s[a+1] != '\0' ) && (s[a+1] != ' ' ) )
-          c++;
-  }
-
-  if (a == 0)
-          return 0;
- else return c; 
-
-}
-
-int vogal2 (char x){
-  switch(x){
-  case 'a':
-  case 'A':
-  case 'e':
-  case 'E':
-  case 'i':
-  case 'I':
-  case 'o':
-  case 'O':
-  case 'u':
-  case 'U':
-    return 1 ;
-  default:
-    return 0;
-  }
-}
-
-
-int contaVogais (char s[]){
-  int j, i=0;
-
-  for(j= 0; s[j] != '\0'; j++){
-    if ((vogal2( s[j]) == 1))
-      i++;
-      
+int sufPref (char s1[], char s2[])
+{
+  int size = strlen(s1);
+  int i = 0, j, aux1, res = 0, flag = 0;
+  
+  while((s1[i] != '\0') && (!flag))
+  {
+    res = 0;
+    if(s1[i] == s2[0])
+    {
+      aux1 = i;
+      j = 0;
+      while((s1[aux1] != '\0') && (s2[j] != '\0') && (s1[aux1] == s2[j]))
+      {
+        aux1++;
+        j++;
+        res++;
+      }
+      if(res == (size - i))
+        flag = 1;
     }
-  return i;
+    i++;
+  }
+  return res;
+}
+
+// 8 de 10 
+int contaPal (char s[])
+{
+  int res = 0, i = 0, flag;
+  
+  while(s[i] != '\0')
+  {
+    flag = 0;
+    while((s[i] != '\0') && (s[i] == ' '))
+      i++;
+    while((s[i] != '\0') && (s[i] != ' '))
+    {
+      i++;
+      flag = 1;
+    }
+    if(flag == 1)
+      res++;
+  }
+  return res;
+}
+
+int contaVogais (char s[])
+{
+  int i, res = 0;
+  for(i = 0; s[i] != '\0'; i++)
+  {
+    switch (s[i])
+    {
+      case 'a' :
+      case 'e' :
+      case 'i' :
+      case 'o' :
+      case 'u' :
+      case 'A' :
+      case 'E' :
+      case 'I' :
+      case 'O' :
+      case 'U' : res++;
+    }
+  }
+  return res;
+}
   
 }
 // 8 de 10 nao esta bem. nao sei porque 
-int contida (char a[], char b[]){
-  int y, c=0, z=0, t;
-
-  for(t=0; a[t] != '\0'; t++);
-  
-    for(y=0; a[y] != '\0' ; y++){
-      while ( b[c]!= '\0' && b[c] != a[y] && a[y] != ' '){
-        c++;
-      }
-      if (a[y] == ' ') z++;
-      else if (b[c] == a[y]) z++;
+int contida (char a[], char b[])
+{
+  int flag = 1, i = 0, j;
+  while((a[i] != '\0') && (flag == 1))
+  {
+    j = 0;
+    flag = 0;
+    while((!flag) && (b[j] != '\0'))
+    {
+      if(b[j] == a[i])
+        flag = 1;
+      j++;
     }
-    if (t==z)
-    return 1 ;
-    else return 0;
+    i++;
+  }
+  return flag; /* se lista vazia retorna Verdadeiro */
 }
 
 int palindroma (char s[]){
@@ -421,26 +427,34 @@ int limpaEspacos (char t[]){
        for (l=0; t[l]!='\0';l++);
    return l;
   }
-//completamente mal
-// nem percebo a pergunta !!
-void insere (int v[],int N, int x){
-  int t ;
-  char temp, a ;
-  for(t=0; v[t] != '\0' ; t++);
-  temp = v[N];
-  v[N] = x;
-  while ((N+1)<(t+1)){
-      a = v[N+1];
-      v[N+1] = temp;
-      temp = a;
-      N++;
+
+
+void insere (int v[], int N, int x)
+{
+  int i = 0;
+  if(N > 0)
+  {
+    if(v[0] <= v[N-1])
+    {
+      while((i < N) && (v[i] < x))
+        i++;
     }
-      v[t+1] = '\0';
-      }
+    else
+    {
+      while((i < N) && (v[i] > x))
+        i++;
+    }
+    while(N > i)
+    {
+      v[N] = v[N-1];
+      N--;
+    }
+  }
+  v[i] = x;
+}
 
 
-
-
+// da 0-10 deve tar certa !!!
 void merge (int r [], int a[], int b[], int na, int nb){
   int i, j, k;
   i = 0; j = 0; k = 0;
@@ -495,10 +509,17 @@ int retiraNeg (int v[], int N){
 }
 */
 
-int crescente (int a[], int i, int j){
-  
+int crescente (int a[], int i, int j)
+{
+  int res = 1;
+  while((res == 1) && (i < j))
+  {
+    if(a[i] > a[i++])
+      res = 0;
+    i++;
+  }
+  return res;
 }
-
 
 
 
@@ -530,13 +551,8 @@ int retiraNeg (int v[], int N){
 
 
 /*
-  1 charMaisfreq (9-10 )
-  2 difConsecutivos (7-10)
-  3 sufPref (totalmente mal 2-10)
-  4 contaPal (8-10)
-  5 contida (8-10)
-  6 insere(completamente mal a pergunta e toda esquecida)
-
+  2 difConsecutivos (7-10) ( pode ser da codeboard)
+  merge 
 */
 
 
