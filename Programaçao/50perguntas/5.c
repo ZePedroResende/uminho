@@ -511,6 +511,7 @@ int limpaEspacos (char t[]){
   }
 
 
+
 void insere (int v[], int N, int x)
 {
   int i = 0;
@@ -572,16 +573,22 @@ void merge (int r [], int a[], int b[], int na, int nb){
   }
 }
 
-int crescente (int a[], int i, int j)
-{
-  int res = 1;
-  while((res == 1) && (i < j))
-  {
-    if(a[i] > a[i++])
-      res = 0;
-    i++;
+int crescente (int a[], int i, int j) {
+
+  int m;
+
+  m = i;
+  while (m < j) {
+    if (a[m] <= a[m + 1]) {
+      m++;
+    } 
+
+    else {
+      return 0;
+    }
   }
-  return res;
+
+  return 1;
 }
 
 int retiraNeg (int v[], int N) { 
@@ -842,9 +849,17 @@ int cardinalMSet (int N, int v[N]) { //10 em 10
 
 
 /*
- contaPal versao da code board
   2 difConsecutivos (7-10) ( pode ser da codeboard)
   * charmaisferq (9-10) tem dois testes na codeboard
+
+menosFreq 6/10 
+maxCresc 6/10
+elimRep 6/10
+elimRepOrd 9/10
+comunsOrd 6/10
+comuns 4/10 
+
+
 
 */
 
