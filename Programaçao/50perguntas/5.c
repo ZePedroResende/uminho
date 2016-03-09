@@ -289,21 +289,17 @@ int iguaisConsecutivos (char s[]) {
 
 
 //esta mal 7 - 10 
-int difConsecutivos (char s[]) {
-  int i = 0, g=1,m=0;
-  while (s[i]!='\0'){
-    if (s[i]!=s[i+1]) {
-      if (g>m)
-        m=g;++g;
-    }
-    else {
-      if (g>m) m=g;
-      g=1;
-    }
-    ++i;
-  }
-  return m;
+difConsecutivos (char s[]) {
+int i=0,m=0,j=0,w=0,g=0;
+for (i=0; s[i];++i) {
+w=1;
+for (j=i-1;j>g && s[j]!=s[i] ;--j,++w);
+if (w>m) m=w;
+g=j;
 }
+return m;
+}
+
 
 int maiorPrefixo (char s1 [], char s2 []) {
 
@@ -489,53 +485,25 @@ int remRep (char t[]){
 
 
 
-int limpaEspacos (char t[]){
-  int j= 0, i=0,l ;
-
-    while (t[j] != '\0'){
-
-      while ( (t[j]) == ' ' &&  (t[j+1]  == ' ')  ){
-        j++;
-      }
-      t[i] = t[j];
-
-      if(t[i] != '\0'){
-        i++;
-        j++;
-      }
-    }
-    t[i] = '\0';
-
-       for (l=0; t[l]!='\0';l++);
-   return l;
-  }
-
-
-
-void insere (int v[], int N, int x)
-{
-  int i = 0;
-  if(N > 0)
-  {
-    if(v[0] <= v[N-1])
-    {
-      while((i < N) && (v[i] < x))
-        i++;
-    }
-    else
-    {
-      while((i < N) && (v[i] > x))
-        i++;
-    }
-    while(N > i)
-    {
-      v[N] = v[N-1];
-      N--;
-    }
-  }
-  v[i] = x;
+int limpaEspacos (char s []) {
+int i=0, j=0;
+while (s[i]!='\0') {
+if (s[i]!=' ' || s[i+1]!=' ') s[j++]=s[i];
+++i;
+}
+s[j]='\0';
+return j;
 }
 
+
+void insere (int v[], int N, int x){
+int i;
+
+for (i=N; (i>0) && (v[i-1] > x); i--)
+v[i] = v[i-1];
+
+v[i] = x;
+}
 
 
 void merge (int r [], int a[], int b[], int na, int nb){
@@ -691,16 +659,21 @@ int elimRepOrd (int v[], int n) {
 }
 
 
-
-int comunsOrd (int a[], int na, int b[], int nb) {
-	int i, j=0, c=0;
-	for(i=0;i<na;i++) {
-		for(;j<nb && a[i]>b[j]; j++);
-    if(a[i]==b[j]) c++;
-	}
-	return c;
+int comunsOrd (int a[], int na, int b[], int nb){
+int i=0,j=0,w=0;
+while (i<na && j<nb){
+if (a[i]==b[j]) {
+  ++w;
+  ++j;
+  ++i;
 }
 
+else if (a[i]>b[j]) ++j;
+
+else ++i;
+}
+return w;
+}
 
 
 int comuns (int a[] ,int na, int b[] ,int nb) {
@@ -850,12 +823,12 @@ int cardinalMSet (int N, int v[N]) { //10 em 10
 
 
 /*
-  2 difConsecutivos (7-10) ( pode ser da codeboard)
+ 
 
 menosFreq 6/10 
 maxCresc 6/10
 elimRep 6/10
-comunsOrd 6/10
+
 comuns 4/10 
 
 
