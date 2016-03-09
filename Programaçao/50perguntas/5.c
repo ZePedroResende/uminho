@@ -215,7 +215,7 @@ void truncw (char t[], int n)
 
 }
 
-//esta mal esta 9 em 10 
+//esta mal esta 10 em 10 (dois testes na codeboard) . as outras tem 9 e 8 
 char charMaisfreq (char s[])
 {
   int i;
@@ -231,6 +231,47 @@ char charMaisfreq (char s[])
   
   return res;
 }
+/*
+char charMaisfreq (char s[]) { //10 testes de 10
+	int i, j, c, m=0; char f='0';
+	for (i=0; s[i]!='\0'; i++) {
+		c=0;
+		for (j=0; s[j]!='\0'; j++) {
+			if (s[i]==s[j]) c++;
+		}
+		if (c>m) { m=c; f = s[i];}
+	}
+	return f;
+}
+*/
+
+/*
+ char charMaisfreq (char s[]){
+  int x, y=0, z=0,k=0,i;
+  char a;
+
+  for (x=0; s[x] != '\0'; x++);
+
+  if (x == 0)
+    return 0 ;
+
+  else{
+    for(y=0; s[y] != '\0'; y++){
+      for (z=0, i=0; s[z] != '\0'; z++){
+        if (s[y] == s[z])
+          i++;
+
+      }
+      if ((k< i) && (s[y] != ' ') ){
+        k= i;
+        a = s[y];
+      }
+          }
+    return a;
+  }
+}
+
+ */
 
 int iguaisConsecutivos (char s[]) {
   int  y=0, z, a=0, x=0 ;
@@ -325,7 +366,7 @@ int sufPref (char s1[], char s2[])
   return res;
 }
 
-// 8 de 10 
+
 int contaPal (char s[])
 {
   int res = 0, i = 0, flag;
@@ -368,7 +409,7 @@ int contaVogais (char s[])
   return res;
 }
   
-// 8 de 10 nao esta bem. nao sei porque 
+
 int contida (char a[], char b[])
 {
   int flag = 1, i = 0, j;
@@ -405,6 +446,24 @@ int palindroma (char s[]){
  else return 0;
 }
 
+
+
+int remRep (char texto []) {
+int i,j=0,r=0;
+for(i=0; texto[i] != '\0'; i++)
+ if(texto[i] != texto [i+1]{
+  r++; 
+  texto[j] = texto[i]; j++;
+}
+
+texto[j] ='\0';
+ return r;
+
+}
+
+
+/*
+
 int remRep (char t[]){
   int j= 0, i=0,l ;
 
@@ -425,6 +484,10 @@ int remRep (char t[]){
   for (l=0; t[l]!='\0';l++);
   return l;
 }
+*/
+
+
+
 
 int limpaEspacos (char t[]){
   int j= 0, i=0,l ;
@@ -473,7 +536,7 @@ void insere (int v[], int N, int x)
 }
 
 
-// da 0-10 deve tar certa !!!
+
 void merge (int r [], int a[], int b[], int na, int nb){
   int i, j, k;
   i = 0; j = 0; k = 0;
@@ -508,25 +571,6 @@ void merge (int r [], int a[], int b[], int na, int nb){
     }
   }
 }
-/*
-int retiraNeg (int v[], int N){
-  int j= 0, i=0 ;
-
-  while (j<N){
-
-    while ( (v[j]) <0  ){
-      j++;
-    }
-    v[i] = v[j];
-
-    if(i < N ){
-      i++;
-      j++;
-    }
-  }
-  return i;
-}
-*/
 
 int crescente (int a[], int i, int j)
 {
@@ -540,30 +584,17 @@ int crescente (int a[], int i, int j)
   return res;
 }
 
-
-
-// so da 7-10 nao sei porque 
-int retiraNeg (int v[], int N){
-  int j= 0, i=0 ,l=0;
-
-  while (j<(N)){
-
-    while ( (v[j]) <0  ){
-      j++;
-    }
-    v[i] = v[j];
-
-    if ( j >= N){
-      j++;
-    }
-    else{
-      i++;
-      j++;
-    }
-  }
-  
-  return i;
+int retiraNeg (int v[], int N) { 
+int i, e=0;
+for(i=0;i<N;i++)
+if (v[i]>=0) {
+v[e]=v[i];
+e++;
 }
+return e;
+}
+
+
 /*int menosFreq (int v[], int N){
   int i, j, a ,k=N,l;
   for(i=0; i<N ; i++){
@@ -811,8 +842,10 @@ int cardinalMSet (int N, int v[N]) { //10 em 10
 
 
 /*
+ contaPal versao da code board
   2 difConsecutivos (7-10) ( pode ser da codeboard)
-  merge 
+  * charmaisferq (9-10) tem dois testes na codeboard
+
 */
 
 
