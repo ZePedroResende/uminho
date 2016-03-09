@@ -592,11 +592,11 @@ int crescente (int a[], int i, int j) {
 }
 
 int retiraNeg (int v[], int N) { 
-int i, e=0;
-for(i=0;i<N;i++)
-if (v[i]>=0) {
-v[e]=v[i];
-e++;
+  int i, e=0;
+  for(i=0;i<N;i++)
+    if (v[i]>=0) {
+      v[e]=v[i];
+      e++;
 }
 return e;
 }
@@ -686,7 +686,8 @@ int elimRepOrd (int v[], int n) {
 	for(i=0;i<n;i++){
 		if(v[i]!=v[i+1]) {v[e]=v[i]; e++;}
 	}
-	return e;
+  if (n>0 && e== 0) return 1;
+  else return e;
 }
 
 
@@ -850,12 +851,10 @@ int cardinalMSet (int N, int v[N]) { //10 em 10
 
 /*
   2 difConsecutivos (7-10) ( pode ser da codeboard)
-  * charmaisferq (9-10) tem dois testes na codeboard
 
 menosFreq 6/10 
 maxCresc 6/10
 elimRep 6/10
-elimRepOrd 9/10
 comunsOrd 6/10
 comuns 4/10 
 
