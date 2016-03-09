@@ -193,7 +193,27 @@ void truncw (char t[], int n)
       t[j] = t[i];
     }
 	t[j] = '\0';
-  }
+
+  /*
+    int i,j=0, w=n;
+    for (i=0; t[i];++i){
+
+    if (t[i]==' ') {
+    n=w,t[j]=t[i];
+    ++j;
+    } // ou {n=w,t[j++]=t[i];}
+
+    else if (n!=0) {
+    t[j]=t[i];
+    --n;
+    ++j;
+    } // ou {t[j++]=t[i];--n;}
+    }
+    t[j]='\0';
+
+   */
+
+}
 
 //esta mal esta 9 em 10 
 char charMaisfreq (char s[])
@@ -348,7 +368,6 @@ int contaVogais (char s[])
   return res;
 }
   
-}
 // 8 de 10 nao esta bem. nao sei porque 
 int contida (char a[], char b[])
 {
@@ -545,9 +564,250 @@ int retiraNeg (int v[], int N){
   
   return i;
 }
+/*int menosFreq (int v[], int N){
+  int i, j, a ,k=N,l;
+  for(i=0; i<N ; i++){
+    j=i;
+    l=1;
+    while ( v[j] == v[i]){
+      j++;
+      l++;
+    }
+    if(k>l) {
+      a = v[i];
+      k = l; 
+    }
+    i=j;
+
+  }
+  return a;
+}
+*/
+
+
+int menosFreq (int v[], int N) { //10 em 10
+	int i, f=v[0], c=1, m;
+	for(m=1; m<N-1 && v[m]==v[m+1];m++);
+	i=m;
+	while(i<N-1) {
+		while (v[i]!=v[i+1]) i++;
+		while (v[i]==v[i+1]) { c++; i++; }
+		if(c<m) {
+			m=c;
+			f=v[i];
+		}
+		c=0;
+	}
+	return f;
+}
 
 
 
+int maisFreq (int v[], int N) { //10 em 10
+	int i, c=1, m=1; int f=v[0];
+	for(i=0; (i-1)<N;i++) {
+		if (v[i]!=v[i+1]) { if (c>m) { m=c; f=v[i]; c=1; } }
+		if (v[i]==v[i+1]) c++;
+	}
+	return f;
+}
+
+
+int maxCresc (int v[], int N) { //não está no codeboard
+	int i, c=1, m=1;
+	for (i=0;i-1<N; i++) {
+		if (v[i+1]<v[i]) {
+			if(c>m) {m=c; c=1;}
+		}
+		else c++;
+	}
+	return m;
+}
+
+
+
+int elimRep (int v[], int n) {
+	int i, j, k;
+	for (i=0;i<n;i++) {
+		for (j=i+1;j<n;j++) {
+			if (v[i]==v[j]) {
+				for(k=j+1;k<n;k++) {
+					v[k-1]=v[k];
+				}
+				n--;
+			}
+		}
+	}
+	return n;
+}
+
+
+
+int elimRepOrd (int v[], int n) {
+	int i, e=0;
+	for(i=0;i<n;i++){
+		if(v[i]!=v[i+1]) {v[e]=v[i]; e++;}
+	}
+	return e;
+}
+
+
+
+int comunsOrd (int a[], int na, int b[], int nb) {
+	int i, j=0, c=0;
+	for(i=0;i<na;i++) {
+		for(;j<nb && a[i]>b[j]; j++);
+    if(a[i]==b[j]) c++;
+	}
+	return c;
+}
+
+
+
+int comuns (int a[] ,int na, int b[] ,int nb) {
+	int aux[nb], i, j, k, c=0;
+	for(i=0;i<nb;i++) aux[i]=b[i];
+	for (i=0; i<na; i++) { 
+		for (j=0;j<nb && a[i]!=aux[j];j++);
+		if (a[i]==aux[j]) {
+			for(k=j+1;k<nb;k++) {
+				aux[k-1]=aux[k];
+			}
+			c++;
+			nb--;
+		}
+	}
+	return c;
+}
+
+
+
+
+
+int minInd (int v[], int n) { //10 em 10
+	int i, min=v[0], imin=0;
+	for(i=1;i<n;i++) {
+		if(v[i]<min) { min = v[i]; imin =i;}
+	}
+	return imin;
+}
+
+
+
+void somasAc (int v[], int Ac [], int N) { //10 em 10
+	int i, soma=0;
+	for(i=0;i<N;i++) {
+		soma+=v[i];
+		Ac[i]=soma;
+	}
+}
+
+
+
+int triSup (int N, int m[N][N]) { //10 em 10
+	int i, j;
+	for(i=0;i<N;i++) {
+		for(j=0;j<N;j++) {
+      printf("%d ", m[i][j]);
+		}
+		printf("\n");
+	}
+	for(i=0;i<N;i++) {
+		for(j=0;j<i;j++) {
+			if((m[i][j])!=0) {return 0; break;}
+		}
+	}
+	return 1;
+}
+
+
+
+
+void transposta (int N, float m[N][N]) { //10 em 10
+	int i, j; float aux[N][N];
+	for(i=0;i<N;i++) {
+		for(j=0;j<N;j++) {
+			aux[i][j]=m[i][j];
+		}
+	}
+	for(i=0;i<N;i++) {
+		for(j=0;j<N;j++) {
+			m[j][i]=aux[i][j];
+		}
+	}
+}
+
+
+void addTo (int N, int M, int a [N][M], int b[N][M]) { //10 em 10
+	int i, j;
+	for(i=0; i<N;i++) {
+		for(j=0;j<M;j++) 
+			a[i][j]+=b[i][j];
+	}
+}
+
+
+
+
+void sumDiag (int N, int m [N][N]) { //10 em 10
+	int i, j, soma;
+	for(i=0;i<N;i++) {
+		soma=0;
+		for(j=0;j<N;j++) {
+			if(i!=j) soma+=m[i][j];
+		}
+		m[i][i]=soma;
+	}
+}
+
+
+int questao45() {
+	char c='A';
+ 	while (c<='Z' || c<='z') {
+    printf ("%c - %d \n", c,c);
+    if (c=='Z') c='a';
+    else c++;
+	}
+	return 1;
+}
+
+
+int unionSet (int N, int v1[N], int v2[N], int r[N]) { //10 em 10
+	int i;
+	for(i=0; i<N;i++) r[i]=0;
+	for(i=0; i<N;i++)
+		if(v1[i]==1||v2[i]==1) r[i]=1;
+	return 1;
+}
+
+
+
+int intersectMSet (int N, int v1[N], int v2[N], int r[N]){ //10 em 10
+	int i;
+	for(i=0; i<N;i++) r[i]=0;
+	for(i=0; i<N;i++) {
+		if(v1[i]<v2[i]) r[i]=v1[i];
+		else r[i]=v2[i];
+	}
+	return 1;
+}
+
+int unionMSet (int N, int v1[N], int v2[N], int r[N]) { //10 em 10
+	int i;
+	for(i=0; i<N;i++) r[i]=0;
+	for(i=0; i<N;i++) {
+		if(v1[i]<v2[i]) r[i]=v2[i];
+		else r[i]=v1[i];
+	}
+	return 1;
+}
+
+int cardinalMSet (int N, int v[N]) { //10 em 10
+	int i, s=0;
+	for(i=0;i<N;i++)
+		s+=v[i];
+	return s;
+}
 
 
 /*
@@ -561,7 +821,8 @@ int retiraNeg (int v[], int N){
 int main() {
   int a;
   int v[1] = {9};
-  int c[9] = {0,-1,3,4,5,9,10,-2,-2};
+  int c[7] = {0,0,3,4,5,9,10};
+
 char dest[50] = "1,2,3";
 
 char src[50] = "lol";
@@ -569,7 +830,7 @@ char src[50] = "lol";
 //strcpy(src,  "This is source");
 //strcpy(dest, "This is destination");
 
-a = retiraNeg(c,9);
+a = menosFreq(c,70);
  printf("%d\n",a/*,a[5],a[6],a[7]*/);
   return 0;
 }
