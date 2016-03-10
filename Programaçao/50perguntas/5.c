@@ -591,20 +591,27 @@ return e;
 */
 
 
-int menosFreq (int v[], int N) { //10 em 10
-	int i, f=v[0], c=1, m;
-	for(m=1; m<N-1 && v[m]==v[m+1];m++);
-	i=m;
-	while(i<N-1) {
-		while (v[i]!=v[i+1]) i++;
-		while (v[i]==v[i+1]) { c++; i++; }
-		if(c<m) {
-			m=c;
-			f=v[i];
-		}
-		c=0;
-	}
-	return f;
+int menosFreq (int v[],int N) {
+    int a = N ; 
+  int i = 0 ;
+  int s = 1;
+  int ret = v[0];
+  while (i<a){
+    while (v[i] == v[i+1]) {
+      s++;
+      i++;
+    } if (s<N) {
+      N=s;
+      s=1;
+      ret = v[i];
+      i++;
+    } else {
+      i++;
+      s=1;
+    
+    } 
+  }
+  return ret ;
 }
 
 
