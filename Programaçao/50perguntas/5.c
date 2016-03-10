@@ -676,20 +676,13 @@ return w;
 }
 
 
-int comuns (int a[] ,int na, int b[] ,int nb) {
-	int aux[nb], i, j, k, c=0;
-	for(i=0;i<nb;i++) aux[i]=b[i];
-	for (i=0; i<na; i++) { 
-		for (j=0;j<nb && a[i]!=aux[j];j++);
-		if (a[i]==aux[j]) {
-			for(k=j+1;k<nb;k++) {
-				aux[k-1]=aux[k];
-			}
-			c++;
-			nb--;
-		}
-	}
-	return c;
+int comuns (int a[], int na, int b[], int nb){
+int i=0,w=0,j;
+for (i=0;i<na;++i) {
+for (j=0;j<nb && b[j]!=a[i];++j);
+if (j<nb) ++w;
+}
+return w;
 }
 
 
@@ -792,7 +785,13 @@ int unionSet (int N, int v1[N], int v2[N], int r[N]) { //10 em 10
 	return 1;
 }
 
-
+int intersectSet (int N, int v1[N], int v2[N], int r[N]) { //10 em 10
+  int i;
+  for(i=0; i<N;i++) r[i]=0;
+  for(i=0; i<N;i++)
+    if(v1[i]==1 && v2[i]==1) r[i]=1;
+  return 1;
+}
 
 int intersectMSet (int N, int v1[N], int v2[N], int r[N]){ //10 em 10
 	int i;
@@ -829,7 +828,6 @@ menosFreq 6/10
 maxCresc 6/10
 elimRep 6/10
 
-comuns 4/10 
 
 
 
