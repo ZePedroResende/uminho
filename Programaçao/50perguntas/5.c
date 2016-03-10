@@ -626,17 +626,37 @@ int maisFreq (int v[], int N) { //10 em 10
 }
 
 
-int maxCresc (int v[], int N) { //não está no codeboard
-	int i, c=1, m=1;
-	for (i=0;i-1<N; i++) {
-		if (v[i+1]<v[i]) {
-			if(c>m) {m=c; c=1;}
-		}
-		else c++;
-	}
-	return m;
+#include <stdio.h>
+
+
+int maxCresc(int v[],int N) {
+ int indice=0;
+ int contador=1;
+ int maior=0;
+
+
+while(indice<N)
+{
+  
+ while(v[indice]<=v[indice+1] )
+{
+  indice++;
+  contador++;
 }
 
+
+if(contador>maior)
+ {maior=contador;}
+else 
+  maior=maior;
+
+indice++;
+contador=1;
+}
+
+
+return maior;
+}
 
 
 int elimRep (int v[], int n) {
@@ -831,8 +851,7 @@ int cardinalMSet (int N, int v[N]) { //10 em 10
 /*
  
 
-menosFreq 6/10 
-maxCresc 6/10
+
 elimRep 6/10
 
 
