@@ -288,8 +288,7 @@ int iguaisConsecutivos (char s[]) {
 
 
 
-//esta mal 7 - 10 
-difConsecutivos (char s[]) {
+int difConsecutivos (char s[]) {
 int i=0,m=0,j=0,w=0,g=0;
 for (i=0; s[i];++i) {
 w=1;
@@ -447,7 +446,7 @@ int palindroma (char s[]){
 int remRep (char texto []) {
 int i,j=0,r=0;
 for(i=0; texto[i] != '\0'; i++)
- if(texto[i] != texto [i+1]{
+  if(texto[i] != texto [i+1]){
   r++; 
   texto[j] = texto[i]; j++;
 }
@@ -619,14 +618,18 @@ int menosFreq (int v[],int N) {
 int maisFreq (int v[], int N) { //10 em 10
 	int i, c=1, m=1; int f=v[0];
 	for(i=0; (i-1)<N;i++) {
-		if (v[i]!=v[i+1]) { if (c>m) { m=c; f=v[i]; c=1; } }
+		if (v[i]!=v[i+1]) { 
+      if (c>m) { m=c; 
+        f=v[i]; c=1; 
+      } 
+    }
 		if (v[i]==v[i+1]) c++;
 	}
 	return f;
 }
 
 
-#include <stdio.h>
+
 
 
 int maxCresc(int v[],int N) {
@@ -874,7 +877,8 @@ char src[50] = "lol";
 //strcpy(src,  "This is source");
 //strcpy(dest, "This is destination");
 
-a = menosFreq(c,70);
+ a = elimRep(c,7);
  printf("%d\n",a/*,a[5],a[6],a[7]*/);
   return 0;
 }
+
