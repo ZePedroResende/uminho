@@ -613,20 +613,17 @@ int menosFreq (int v[],int N) {
   return ret ;
 }
 
-
-
-int maisFreq (int v[], int N) { //10 em 10
-	int i, c=1, m=1; int f=v[0];
-	for(i=0; (i-1)<N;i++) {
-		if (v[i]!=v[i+1]) { 
-      if (c>m) { m=c; 
-        f=v[i]; c=1; 
-      } 
-    }
-		if (v[i]==v[i+1]) c++;
-	}
-	return f;
+int maisFreq (int v[], int N){
+  int i=0,j=1,t=0,c;
+  while (i<N-1) {
+    while (v[i]==v[i+1]) {++j;++i;}
+    if (j>t) {c=v[i];t=j;}
+    j=1;
+    ++i;
+  }
+  return c;
 }
+
 
 
 
@@ -661,28 +658,23 @@ contador=1;
 return maior;
 }
 
-
-int elimRep (int v[], int n) {
-	int i, j, k;
-	for (i=0;i<n;i++) {
-		for (j=i+1;j<n;j++) {
-			if (v[i]==v[j]) {
-				for(k=j+1;k<n;k++) {
-					v[k-1]=v[k];
-				}
-				n--;
-			}
-		}
-	}
-	return n;
-}
+int elimRep (int v[], int N) {
+  int i,j=0,w=0;
+  for (i=1,w=1; i<N;++i){
+    for (j=i-1;j>=0&&v[j]!=v[i];--j) ;
+    if (j<0) {v[w]=v[i];++w;}
+  }
+  return w;}
 
 
 
 int elimRepOrd (int v[], int n) {
 	int i, e=0;
 	for(i=0;i<n;i++){
-		if(v[i]!=v[i+1]) {v[e]=v[i]; e++;}
+		if(v[i]!=v[i+1]) {
+      v[e]=v[i];
+      e++;
+    }
 	}
   if (n>0 && e== 0) return 1;
   else return e;
