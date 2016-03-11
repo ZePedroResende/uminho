@@ -104,20 +104,24 @@ int strcmp1 (char s1[], char s2[]){
   return (s1[i] - s2[i]);
 }
 
-char *strstr_1 (char s1[], char s2[])
-{
-  int i = 0;
-  char *res = NULL;
-  int len = strlen (s2);
-  
-  while((s1[i] != '\0') && (res == NULL))
-  {
-    if((s1[i] == s2[0]) && (strncmp (&s1[i], s2, len) == 0))
-      res = &s1[i];
-    i++;
-  }
-  return res;
+char *mystrstr (char s1[], char s2[]) { //10 em 10
+	int i, j;
+	if(s1[0]=='\0' && s2[0]=='\0') return s1;
+	for (i=0; s1[i]!='\0'; i++) {
+		int s=0; j=i;
+		while (s1[j]==s2[s] && s1[j]!='\0') {
+			s++; j++;
+		}
+		if (s2[s]=='\0') {
+      return &s1[i]; 
+      break;
+		    
+		}
+	}
+	return NULL;
 }
+
+
 
 void strrev (char s[]){
    int l= 0,  i = 0,v;
