@@ -1,0 +1,25 @@
+        .file   "soma.c"
+.globl accum
+        .data
+        .align 4
+        .type   accum,@object
+        .size   accum,4
+accum:
+        .long   0
+        .text
+        .p2align 2,,3
+.globl soma
+        .type   soma,@function
+soma:
+        pushl   %ebp
+        movl    accum, %eax
+        movl    %esp, %ebp
+        addl    8(%ebp), %eax
+        movl    %eax, accum
+        leave
+        ret
+.Lfe1:
+        .size   soma,.Lfe1-soma
+        .section        .note.GNU-stack,"",@progbits
+        .ident  "GCC: (GNU) 3.2.3 20030502 (Red Hat Linux 3.2.3-24)"
+

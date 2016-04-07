@@ -1,0 +1,10 @@
+Dump of assembler code for function soma:
+0x00000000 <soma+0>:    push   %ebp
+0x00000001 <soma+1>:    mov    0x0,%eax
+0x00000006 <soma+6>:    mov    %esp,%ebp
+0x00000008 <soma+8>:    add    0x8(%ebp),%eax
+0x0000000b <soma+11>:   mov    %eax,0x0
+0x00000010 <soma+16>:   leave  
+0x00000011 <soma+17>:   ret    
+End of assembler dump.
+

@@ -1,0 +1,15 @@
+.data
+.allign
+.*****  
+todo o que começa po .data sao variaveis globais . 
+
+depois das variaveis globais vamos ter o codigo em si .
+
+accum: e uma etiqueta para o principio das variveis globais 
+soma  etiqueta para o principio do codigo 
+
+
+pode ser @function ou @ objeto . e defenido pelo .type 
+
+align 4 para ter um multiplo de 4 e assim buscar o inteiro de uma vez so
+
