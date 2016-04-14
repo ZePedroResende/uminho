@@ -111,3 +111,72 @@ typedef struct queue2{
   int *valores ; 
 }QUEUE2;
 
+
+
+
+
+/* listas ligadas */
+typedef struct slist {
+int valor;
+struct slist *prox;
+} Nodo, *LInt;
+
+/*a) ->*[10,5,15]*/
+
+/*i)Lint cons (LInt l, int x); // isere à cabeça
+  ii)Lint tail(LInt l) // apagar primeiro elemento
+  iii)Lint init(LInt l) // ultimo elemento
+  iv)Lint snoc(LInt l, int x); // insere no fim
+  v)Lint concat(LInt l1, LInt l2) // l1 ++ l2
+  */
+
+LInt cons(LInt l, int x){
+ LInt new;
+	new =(LInt) malloc(sizeof(Nodo));
+    new->valor = x;
+	new->prox = l;
+return new;
+}
+
+
+
+LInt tail(LInt l){
+ if(l==NULL) return NULL;
+ LInt aux = l->prox;
+ free(l);
+ return aux;
+}
+
+LInt init(LInt l){
+LInt aux;
+for(aux=l; (aux->prox)->prox != NULL ; aux = aux->prox);
+free(aux->prox);
+aux->prox=NULL;
+return l;
+}
+
+LInt snoc (LInt l, int x){
+	LInt aux = l , new;
+	new = (Lint) malloc(sizeof(Nodo));
+	new->valor = x;
+	new->prox = NULL;
+
+if(l==NULL) return NULL;
+
+while (aux->prox != NULL)
+	aux =aux->prox;
+
+aux->prox=new;
+return aux; 
+}
+
+LInt concat(LInt a, LInt b){
+LInt aux;
+if(a == NULL) aux = b;
+	for(aux=a ; aux->prox != NULL ; aux = aux-> prox);
+aux-> prox = b;
+/*  return a;*/
+return aux;
+}
+
+
