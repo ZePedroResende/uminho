@@ -70,16 +70,28 @@ void imprimeL (LInt l){
   }
 }
 
+////////////////////////////////////////////////////////
 LInt reverseL(LInt l){
-  int x =length(l);
-  int i=0;
-  while(i<x){
-    
-  }
+
+LInt atual, anterior, proxima;
+atual = l;
+anterior = NULL;
+
+while(atual != NULL){
+	proxima = atual->prox;
+	atual->prox = anterior;
+	anterior = atual;
+	atual = proxima;
 }
 
 
+l = anterior;
+return l;
 
+}
+
+
+////////////////////////////////////////////////////////
 int main(){
 
   LInt a = newLInt(40,NULL);
@@ -90,7 +102,7 @@ int main(){
 	LInt f = newLInt(10,e);
 	LInt g = newLInt(5,f);
 	LInt h = newLInt(20,g);
-
+  h = reverseL(h);
   imprimeL(h);
   return 0;
 }
