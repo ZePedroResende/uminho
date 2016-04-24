@@ -89,8 +89,36 @@ l = anterior;
 return l;
 
 }
+/* 1 2 NULL
+ *
+ * atual = 1
+ * anteior = NULL
+ *
+ * proxima = 2 
+ * atual->prox = NULL
+ * anteiror = 1
+ * atual = 2 
+ *
+ *
+ *
+ * proxima = NULL 
+ * atual->prox = 1
+ * anterior = 2 
+ * atual = NULL
+ */
+/*
+ LInt reverseL (LInt l){
+ Lint anterior = NULL;
+ LInt proximo;
 
-
+ while (l != NULL){
+ proximo = l->prox;
+ l->prox = anterior;
+ anterior = l
+ l = proximo
+ }
+ }
+ */
 ////////////////////////////////////////////////////////
 int main(){
 
