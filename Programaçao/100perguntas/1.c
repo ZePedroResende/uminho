@@ -120,6 +120,59 @@ return l;
  }
  */
 ////////////////////////////////////////////////////////
+void insertOrd (LInt *l, int x){
+    
+  LInt novo = newLInt(x,NULL);
+  LInt aux = *l;
+  
+  if (aux == NULL || aux->valor > x){
+    *l = novo;
+    novo->prox = aux;
+    return;
+  }
+  
+  while (aux->prox!=NULL && (aux->prox->valor)<x){
+    aux= aux->prox;
+  }
+  
+  novo->prox = aux->prox;
+  aux-> prox = novo;
+}
+/*
+void insertOrd (LInt *l, int x){
+LInt *e;
+
+e = l;
+
+while((*e != NULL) && (*e)->valor < x )
+e = &((*e)->prox);
+
+*e = newLInt (x,*e);
+
+}
+
+*/
+
+////////////////////////////////////////////////////////
+int removeOneOrd (LInt *l, int x){
+LInt* aux = l;
+
+while(*aux && (**aux).valor != x){
+    aux = &(*aux)->prox;
+}
+
+
+if (*aux == NULL) return 1;
+
+LInt novo = *aux;
+*aux = novo->prox;
+novo->prox = NULL;
+
+
+return 0;
+}
+
+////////////////////////////////////////////////////////
 int main(){
 
   LInt a = newLInt(40,NULL);
