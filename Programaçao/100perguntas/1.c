@@ -157,7 +157,7 @@ e = &((*e)->prox);
 int removeOneOrd (LInt *l, int x){
 LInt* aux = l;
 
-while(*aux && (**aux).valor != x){
+while(*aux != NULL && (*aux)->valor != x){
     aux = &(*aux)->prox;
 }
 
