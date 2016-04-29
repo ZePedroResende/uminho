@@ -115,13 +115,71 @@ if (*aux == NULL) return 1;
 
 LInt novo = *aux;
 *aux = novo->prox;
-novo->prox = NULL;
 
 return 0;
 }
+////////////////////////////////////////////////////////
+
+LInt merge(LInt *r, LInt a, LInt b){ 
+
+LInt *aux = &(*r);        
+
+while(a != NULL && b != NULL){
+        if(a->valor < b->valor){
+           *r = newLInt(a->valor,NULL) ;
+           a=a->prox;
+           r = &(*r)->prox;         
+        }   
+        else{
+         *r = newLInt(b->valor,NULL) ;
+           b=b->prox;
+           r = &(*r)->prox;         
+        }   
+    }   
+if (a !=NULL){
+*r = a;
+                   
+}
+
+else{
+*r = b;
+}
+return *aux;
+}
+/*
+LInt merge(LInt *r, LInt a, LInt b){ 
+
+LInt *aux = &(*r);        
+
+while(a != NULL || b != NULL){
+        if(b == NULL || (a->valor < b->valor)){
+           *r = newLInt(a->valor,NULL) ;
+           a=a->prox;
+           r = &(*r)->prox;         
+        }
+        
+        if(a == NULL || (a->valor > b->valor)){
+         *r = newLInt(b->valor,NULL);
+           b=b->prox;
+           r = &(*r)->prox;         
+        }   
+    }   
+
+return *aux;
+}
+
+*/
+//////////////////////////////////////////////////////
+void splitMS (LInt l, int x, LInt *mx, LInt *Mx){
+
+}
+
+
+///////////////////////////////////////////////////////
+
 
 ////////////////////////////////////////////////////////
-LInt clone(LInt l) {
+LInt cloneL(LInt l) {
   LInt res = NULL;
   LInt *aux = &res;
 
