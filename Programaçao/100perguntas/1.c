@@ -89,78 +89,27 @@ l = anterior;
 return l;
 
 }
-/* 1 2 NULL
- *
- * atual = 1
- * anteior = NULL
- *
- * proxima = 2 
- * atual->prox = NULL
- * anteiror = 1
- * atual = 2 
- *
- *
- *
- * proxima = NULL 
- * atual->prox = 1
- * anterior = 2 
- * atual = NULL
- */
-/*
- LInt reverseL (LInt l){
- Lint anterior = NULL;
- LInt proximo;
 
- while (l != NULL){
- proximo = l->prox;
- l->prox = anterior;
- anterior = l
- l = proximo
- }
- }
- */
 ////////////////////////////////////////////////////////
+
 void insertOrd (LInt *l, int x){
-    
-  LInt novo = newLInt(x,NULL);
-  LInt aux = *l;
-  
-  if (aux == NULL || aux->valor > x){
-    *l = novo;
-    novo->prox = aux;
-    return;
-  }
-  
-  while (aux->prox!=NULL && (aux->prox->valor)<x){
-    aux= aux->prox;
-  }
-  
-  novo->prox = aux->prox;
-  aux-> prox = novo;
-}
-/*
-void insertOrd (LInt *l, int x){
-LInt *e;
+LInt *aux;
 
-e = l;
+aux = l;
 
-while((*e != NULL) && (*e)->valor < x )
-e = &((*e)->prox);
+while((*aux != NULL) && (*aux)->valor < x )
+	aux = &(*aux)->prox;
 
-*e = newLInt (x,*e);
+*aux = newLInt (x,*aux);
 
 }
-
-*/
 
 ////////////////////////////////////////////////////////
 int removeOneOrd (LInt *l, int x){
 LInt* aux = l;
 
-while(*aux != NULL && (*aux)->valor != x){
-    aux = &(*aux)->prox;
-}
-
+while(*aux != NULL && (*aux)->valor < x)
+	aux = &(*aux)->prox;
 
 if (*aux == NULL) return 1;
 
@@ -168,9 +117,43 @@ LInt novo = *aux;
 *aux = novo->prox;
 novo->prox = NULL;
 
-
 return 0;
 }
+
+////////////////////////////////////////////////////////
+LInt clone(LInt l) {
+  LInt res = NULL;
+  LInt *aux = &res;
+
+
+  while (l != NULL) {
+    *aux = newLInt(l->valor, NULL);
+    l = l->prox;
+    aux = &((*aux)->prox);
+  }
+
+  return res;
+
+}
+
+
+
+/*LInt clone(LInt l){
+   if(l == NULL ) return NULL;
+
+    LInt aux = newLInt(l->valor,NULL);
+   LInt a =&(aux);
+   l = l->prox;
+
+   while(l != NULL){
+    aux->prox = newLInt(aux->valor,NULL);
+    l = l->prox;
+   }
+
+return a;
+}
+*/
+
 
 ////////////////////////////////////////////////////////
 int main(){
