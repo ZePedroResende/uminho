@@ -173,6 +173,23 @@ return *aux;
 void splitMS (LInt l, int x, LInt *mx, LInt *Mx){
   while(l !=NULL) {
     if (l->valor < x) {
+      *mx =newLInt(l->valor,NULL); // insere nó na lista dos menores
+      mx = &((*mx)->prox); // endereço onde continua lista dos menores
+    } else {
+      *Mx = (l->valor,NULL); // insere nó na lista dos maiores
+      Mx = &((*Mx)->prox); // endereço onde continua lista dos maiores
+    }
+    l = l->prox;
+  }
+}
+
+
+///////////////////////////////////////////////////////
+LInt parteAmeio (LInt *l){
+
+
+while(l !=NULL) {
+    if (l->valor < x) {
       *mx = l; // insere nó na lista dos menores
       mx = &((*mx)->prox); // endereço onde continua lista dos menores
     } else {
@@ -183,12 +200,33 @@ void splitMS (LInt l, int x, LInt *mx, LInt *Mx){
   }
   *mx = NULL; // finaliza lista dos menores
   *Mx = NULL; // finaliza lista dos maiores
+
 }
 
 
-///////////////////////////////////////////////////////
+/*LInt parteAmeio (LInt *l){
+LInt* a = l;
+int c=0;
+int i=0;
+LInt *y = NULL;
+LInt* res = y;
+while(*a != NULL){
+a = &(*a)->prox;
+c++;
+}
+c = c/2;
 
 
+while(i<c){
+*y = newLInt((*l)->valor,NULL);
+y = &(*y)->prox;
+l = &(*l)->prox;
+i++;
+}
+
+return *res;
+}
+*/
 ////////////////////////////////////////////////////////
 LInt cloneL(LInt l) {
   LInt res = NULL;
@@ -226,7 +264,7 @@ return a;
 
 ////////////////////////////////////////////////////////
 int main(){
-
+LInt i;
   LInt a = newLInt(40,NULL);
 	LInt b = newLInt(30,a);
 	LInt c = newLInt(20,b);
@@ -235,8 +273,8 @@ int main(){
 	LInt f = newLInt(10,e);
 	LInt g = newLInt(5,f);
 	LInt h = newLInt(20,g);
-  h = reverseL(h);
-  imprimeL(h);
+  i = parteAmeio(&h);
+  imprimeL(i);
   return 0;
 }
 
