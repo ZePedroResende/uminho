@@ -171,7 +171,18 @@ return *aux;
 */
 //////////////////////////////////////////////////////
 void splitMS (LInt l, int x, LInt *mx, LInt *Mx){
-
+  while(l !=NULL) {
+    if (l->valor < x) {
+      *mx = l; // insere nó na lista dos menores
+      mx = &((*mx)->prox); // endereço onde continua lista dos menores
+    } else {
+      *Mx = l; // insere nó na lista dos maiores
+      Mx = &((*Mx)->prox); // endereço onde continua lista dos maiores
+    }
+    l = l->prox;
+  }
+  *mx = NULL; // finaliza lista dos menores
+  *Mx = NULL; // finaliza lista dos maiores
 }
 
 
