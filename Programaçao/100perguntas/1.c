@@ -471,12 +471,11 @@ int drop (int n, LInt *l){
 LInt* head = l;
 LInt* aux ;
 
-   aux = &*l;
 
  while(a<n && *l != NULL){
+   aux = &*l;
    l= &(*l)->prox;
    free(*aux);
-   aux = &*l;
   a++;
   }
 
