@@ -52,7 +52,7 @@ if(l==NULL)return -1;
 
 
 /////////////////////////////////////////////////////
-//temos de libertar apontador a apontador 
+//temos de libertar apontador a apontador
 void freeL (LInt l){
   LInt aux = l;
   while(l!=NULL){
@@ -96,7 +96,7 @@ void insertOrd (LInt *l, int x){
 
 while(*l != NULL && (*l)->valor < x){
     l = &(*l)->prox;
-} 
+}
 
 *l=newLInt(x,*l);
 }
@@ -121,25 +121,25 @@ return 0;
 }
 ////////////////////////////////////////////////////////
 
-LInt merge(LInt *r, LInt a, LInt b){ 
+LInt merge(LInt *r, LInt a, LInt b){
 
-LInt *aux = &(*r);        
+LInt *aux = &(*r);
 
 while(a != NULL && b != NULL){
         if(a->valor < b->valor){
            *r = newLInt(a->valor,NULL) ;
            a=a->prox;
-           r = &(*r)->prox;         
-        }   
+           r = &(*r)->prox;
+        }
         else{
          *r = newLInt(b->valor,NULL) ;
            b=b->prox;
-           r = &(*r)->prox;         
-        }   
-    }   
+           r = &(*r)->prox;
+        }
+    }
 if (a !=NULL){
 *r = a;
-                   
+
 }
 
 else{
@@ -148,23 +148,23 @@ else{
 return *aux;
 }
 /*
-LInt merge(LInt *r, LInt a, LInt b){ 
+LInt merge(LInt *r, LInt a, LInt b){
 
-LInt *aux = &(*r);        
+LInt *aux = &(*r);
 
 while(a != NULL || b != NULL){
         if(b == NULL || (a->valor < b->valor)){
            *r = newLInt(a->valor,NULL) ;
            a=a->prox;
-           r = &(*r)->prox;         
+           r = &(*r)->prox;
         }
-        
+
         if(a == NULL || (a->valor > b->valor)){
          *r = newLInt(b->valor,NULL);
            b=b->prox;
-           r = &(*r)->prox;         
-        }   
-    }   
+           r = &(*r)->prox;
+        }
+    }
 
 return *aux;
 }
@@ -197,13 +197,13 @@ LInt *aux = &res;
   l = &(*l)->prox;
   }
 
-l = &(*head); // volta a por o l a aopontar para a cabeça 
+l = &(*head); // volta a por o l a aopontar para a cabeça
 c = c/2;
 
   while(i<c){
   *aux = newLInt((*l)->valor, NULL);
   aux = &((*aux)->prox);
-  l = &(*l)->prox;  
+  l = &(*l)->prox;
   i++;
   }
 
@@ -239,10 +239,10 @@ LInt *aux2 = &res2;
       aux = &((*aux)->prox);
   }
   else{
-   *aux2 = newLInt((*l)->valor,NULL); 
+   *aux2 = newLInt((*l)->valor,NULL);
     aux2 = &((*aux2)->prox);
   }
-  l = &(*l)->p*rox;  
+  l = &(*l)->p*rox;
   i++;
   }
 
@@ -282,10 +282,10 @@ LInt *aux;
 
   while((*l) != NULL){
     b  = (*l)->valor;
-    aux = &(*l)->prox; 
-   
+    aux = &(*l)->prox;
+
        while(*aux != NULL ){
-          
+
           if ((*aux)->valor == b){
           remov = *aux;
           *aux = remov->prox;
@@ -293,7 +293,7 @@ LInt *aux;
           }
 
           else aux = &(*aux)->prox;
-       }   
+       }
 
     l = &(*l)->prox;
  }
@@ -309,12 +309,12 @@ LInt rem;
 LInt* aux = l;
 
 
-while( *l != NULL){ // calcula o maior 
-if ((*l)->valor > a) a = (*l)->valor ; 
+while( *l != NULL){ // calcula o maior
+if ((*l)->valor > a) a = (*l)->valor ;
 l = &(*l)->prox;
 }
 
-l = head; // poem o l a apontar para a cabeça outra vez 
+l = head; // poem o l a apontar para a cabeça outra vez
 
 while(*aux != NULL && flag != 1){
     if((*aux)->valor == a ){
@@ -344,10 +344,10 @@ void init (LInt *l){
 
 /*void init (LInt *l){
 if(*l == NULL) return;
-    
+
   while((*l)->prox != NULL)
     l = &(*l)->prox;
-  
+
   free(*l);
   *l = NULL;
 }
@@ -375,7 +375,7 @@ void init (LInt *l){
 void appendL (LInt *l, int x){
   while((*l) != NULL)
     l = &(*l)->prox;
-  
+
   *l = newLInt(x,NULL);
 }
 
@@ -398,7 +398,7 @@ LInt cloneL(LInt l) {
     l = l->prox;
     aux = &((*aux)->prox);
   }
-  
+
   return res;
 
 }
@@ -432,10 +432,59 @@ return a;
 
 ////////////////////////////////////////////////////////
 int maximo (LInt l){
-  
+  int a=0;
+  LInt *aux;
+  aux = &l;
+
+  while(*aux != NULL){
+    if((*aux)->valor > a) a = (*aux)->valor;
+    aux = &(*aux)->prox;
+  }
+
+  return a;
 }
 
-////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+//** confirmar esta porque nao tenho a certeza quanto ao free se ta bem ou nao **//
+///////////////////////////////////////////////////////////////////////////////////
+  int take (int n, LInt *l){
+ int a =0;
+
+ while((*l) != NULL){
+    if (a < n) {
+        l = &(*l)->prox;
+    a++;
+
+    }
+    else {
+   LInt aux = (*l)->prox;
+    (*l) = NULL;
+    freeL(aux);
+    }
+ }
+ return a;
+ }
+
+ ///////////////////////////////////////////////////////////////////////////////
+int drop (int n, LInt *l){
+ int a =0;
+LInt* head = l;
+LInt* aux ;
+
+   aux = &*l;
+
+ while(a<n && *l != NULL){
+   l= &(*l)->prox;
+   free(*aux);
+   aux = &*l;
+  a++;
+  }
+
+*head = *l;
+
+ return a;
+}
+///////////////////////////////////////////////////////////////////////////////
 int main(){
 
 int i;
@@ -448,7 +497,7 @@ int i;
 	LInt g = newLInt(5,f);
 	LInt h = newLInt(20,g);
   LInt p = NULL;
-  i = removeDups(&h);
+  i = drop(3,&h);
   printf("%d\n", i );
   printf("||||||||||||||||||||||||||\n");
   imprimeL(h);
