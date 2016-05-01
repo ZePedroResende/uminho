@@ -113,8 +113,8 @@ while(*aux != NULL && (*aux)->valor < x)
 
 if (*aux == NULL) return 1;
 
-LInt novo = *aux;
-*aux = novo->prox;
+LInt remove = *aux;
+*aux = remove->prox;
 
 return 0;
 }
@@ -176,7 +176,7 @@ void splitMS (LInt l, int x, LInt *mx, LInt *Mx){
       *mx =newLInt(l->valor,NULL); // insere nó na lista dos menores
       mx = &((*mx)->prox); // endereço onde continua lista dos menores
     } else {
-      *Mx = (l->valor,NULL); // insere nó na lista dos maiores
+      *Mx = newLInt(l->valor,NULL); // insere nó na lista dos maiores
       Mx = &((*Mx)->prox); // endereço onde continua lista dos maiores
     }
     l = l->prox;
@@ -186,47 +186,71 @@ void splitMS (LInt l, int x, LInt *mx, LInt *Mx){
 
 ///////////////////////////////////////////////////////
 LInt parteAmeio (LInt *l){
+int i=0, c=0;
+LInt* head = l;
+LInt res = NULL;
+LInt *aux = &res;
 
-
-while(l !=NULL) {
-    if (l->valor < x) {
-      *mx = l; // insere nó na lista dos menores
-      mx = &((*mx)->prox); // endereço onde continua lista dos menores
-    } else {
-      *Mx = l; // insere nó na lista dos maiores
-      Mx = &((*Mx)->prox); // endereço onde continua lista dos maiores
-    }
-    l = l->prox;
+  while(*l != NULL){  //calcula length
+  c++;
+  l = &(*l)->prox;
   }
-  *mx = NULL; // finaliza lista dos menores
-  *Mx = NULL; // finaliza lista dos maiores
 
-}
-
-
-/*LInt parteAmeio (LInt *l){
-LInt* a = l;
-int c=0;
-int i=0;
-LInt *y = NULL;
-LInt* res = y;
-while(*a != NULL){
-a = &(*a)->prox;
-c++;
-}
+l = &(*head); // volta a por o l a aopontar para a cabeça 
 c = c/2;
 
+  while(i<c){
+  *aux = newLInt((*l)->valor, NULL);
+  aux = &((*aux)->prox);
+  l = &(*l)->prox;  
+  i++;
+  }
 
-while(i<c){
-*y = newLInt((*l)->valor,NULL);
-y = &(*y)->prox;
-l = &(*l)->prox;
-i++;
+*head = *l;
+return res;
 }
 
-return *res;
+
+/*
+
+LInt parteAmeio (LInt *l){
+int i=0, c=0;
+
+LInt* head = l;
+
+LInt res = NULL;
+LInt *aux = &res;
+
+LInt res2 = NULL;
+LInt *aux2 = &res2;
+
+  while(*l != NULL){  //calcula length
+  c++;
+  l = &(*l)->prox;
+  }
+
+  l = &(*head);
+  c = c/2;
+
+  while (*l != NULL){
+  if(i<c){
+    *aux = newLInt((*l)->valor, NULL);
+      aux = &((*aux)->prox);
+  }
+  else{
+   *aux2 = newLInt((*l)->valor,NULL); 
+    aux2 = &((*aux2)->prox);
+  }
+  l = &(*l)->p*rox;  
+  i++;
+  }
+
+*head = res2;
+return res;
 }
+
 */
+
 ////////////////////////////////////////////////////////
 LInt cloneL(LInt l) {
   LInt res = NULL;
@@ -238,7 +262,7 @@ LInt cloneL(LInt l) {
     l = l->prox;
     aux = &((*aux)->prox);
   }
-
+  
   return res;
 
 }
@@ -270,10 +294,12 @@ LInt i;
 	LInt c = newLInt(20,b);
 	LInt d = newLInt(10,c);
 	LInt e = newLInt(80,d);
-	LInt f = newLInt(10,e);
+	LInt f = newLInt(90,e);
 	LInt g = newLInt(5,f);
 	LInt h = newLInt(20,g);
   i = parteAmeio(&h);
+  imprimeL(h);
+  printf("ola\n");
   imprimeL(i);
   return 0;
 }
