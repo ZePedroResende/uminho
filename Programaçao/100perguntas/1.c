@@ -379,7 +379,15 @@ void appendL (LInt *l, int x){
   *l = newLInt(x,NULL);
 }
 
-
+////////////////////////////////////////////////////////
+void concatL (LInt *a, LInt b){
+  while(*l != NULL){
+    if((*l)->prox == NULL){
+     *l = newLInt((*l)->valor, b); 
+    }
+    else l = &(*l)->prox;
+  }
+}
 
 ////////////////////////////////////////////////////////
 LInt cloneL(LInt l) {
