@@ -380,13 +380,11 @@ void appendL (LInt *l, int x){
 }
 
 ////////////////////////////////////////////////////////
-void concatL (LInt *a, LInt b){
-  while(*l != NULL){
-    if((*l)->prox == NULL){
-     *l = newLInt((*l)->valor, b); 
-    }
-    else l = &(*l)->prox;
-  }
+void concatL (LInt *l, LInt b){
+  while(*l != NULL)
+    l = &(*l)->prox;
+
+*l = b;
 }
 
 ////////////////////////////////////////////////////////
@@ -405,8 +403,6 @@ LInt cloneL(LInt l) {
 
 }
 
-
-
 /*LInt clone(LInt l){
    if(l == NULL ) return NULL;
 
@@ -422,7 +418,22 @@ LInt cloneL(LInt l) {
 return a;
 }
 */
+////////////////////////////////////////////////////////
+LInt cloneRev (LInt l){
+LInt a = NULL;
 
+while(l != NULL){
+  a = newLInt(l->valor,a);
+ l = l->prox;
+}
+
+return a;
+}
+
+////////////////////////////////////////////////////////
+int maximo (LInt l){
+  
+}
 
 ////////////////////////////////////////////////////////
 int main(){
@@ -439,7 +450,7 @@ int i;
   LInt p = NULL;
   i = removeDups(&h);
   printf("%d\n", i );
-  printf("ola\n");
+  printf("||||||||||||||||||||||||||\n");
   imprimeL(h);
   return 0;
 }
