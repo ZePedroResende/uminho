@@ -93,16 +93,16 @@ return l;
 ////////////////////////////////////////////////////////
 
 void insertOrd (LInt *l, int x){
-LInt *aux;
 
-aux = l;
+while(*l != NULL && (*l)->valor < x){
+    l = &(*l)->prox;
+} 
 
-while((*aux != NULL) && (*aux)->valor < x )
-	aux = &(*aux)->prox;
-
-*aux = newLInt (x,*aux);
-
+*l=newLInt(x,*l);
 }
+
+
+
 
 ////////////////////////////////////////////////////////
 int removeOneOrd (LInt *l, int x){
@@ -115,6 +115,7 @@ if (*aux == NULL) return 1;
 
 LInt remove = *aux;
 *aux = remove->prox;
+
 
 return 0;
 }
@@ -250,6 +251,135 @@ return res;
 }
 
 */
+////////////////////////////////////////////////////////
+int removeAll (LInt *l, int x){
+int a =0;
+LInt* aux = l;
+LInt remov;
+
+while(*aux != NULL ){
+    if ((*aux)->valor == x){
+    remov = *aux;
+    *aux = remov->prox;
+    a++;
+    }
+
+    else{
+     aux = &(*aux)->prox;
+    }
+}
+
+return a;
+}
+
+
+////////////////////////////////////////////////////////
+int removeDups (LInt *l){
+int a = 0;
+int b = 0;
+LInt remov;
+LInt *aux;
+
+  while((*l) != NULL){
+    b  = (*l)->valor;
+    aux = &(*l)->prox; 
+   
+       while(*aux != NULL ){
+          
+          if ((*aux)->valor == b){
+          remov = *aux;
+          *aux = remov->prox;
+          a++;
+          }
+
+          else aux = &(*aux)->prox;
+       }   
+
+    l = &(*l)->prox;
+ }
+
+return a;
+}
+////////////////////////////////////////////////////////
+int removeMaiorL (LInt *l){
+LInt* head = l; // tem de ser assim ou vai dar merda , believe me.... ( ou poem    LInt *head = l; head =l; e a mesma coisa)
+int a = 0;
+int flag = 0;
+LInt rem;
+LInt* aux = l;
+
+
+while( *l != NULL){ // calcula o maior 
+if ((*l)->valor > a) a = (*l)->valor ; 
+l = &(*l)->prox;
+}
+
+l = head; // poem o l a apontar para a cabeça outra vez 
+
+while(*aux != NULL && flag != 1){
+    if((*aux)->valor == a ){
+      rem = *aux;
+      *aux = rem->prox;
+      flag = 1;
+    }
+    else aux = &(*aux)->prox;  // tem de ter o else se nao no caso de ser NULL NULL da porcaria
+}
+
+return a;
+
+}
+
+/////////////////////////////////////////////////////////
+
+void init (LInt *l){
+  while((*l) != NULL){
+    if((*l)->prox == NULL) {
+      free(*l);
+      *l= NULL;
+    }
+    else l = &(*l)->prox;
+  }
+}
+
+
+/*void init (LInt *l){
+if(*l == NULL) return;
+    
+  while((*l)->prox != NULL)
+    l = &(*l)->prox;
+  
+  free(*l);
+  *l = NULL;
+}
+*/
+
+
+/*
+void init (LInt *l){
+  LInt ll = *l;
+  LInt ante = ll;
+  LInt head = ll;
+  ll = ll->prox;
+  while (ll->prox){
+    ante = ll;
+    ll = ll->prox;
+  }
+
+  ante->prox = NULL;
+  free(ll);
+  *l = head;
+
+}
+*/
+/////////////////////////////////////////////////////////
+void appendL (LInt *l, int x){
+  while((*l) != NULL)
+    l = &(*l)->prox;
+  
+  *l = newLInt(x,NULL);
+}
+
+
 
 ////////////////////////////////////////////////////////
 LInt cloneL(LInt l) {
@@ -288,19 +418,20 @@ return a;
 
 ////////////////////////////////////////////////////////
 int main(){
-LInt i;
+
+int i;
   LInt a = newLInt(40,NULL);
 	LInt b = newLInt(30,a);
 	LInt c = newLInt(20,b);
 	LInt d = newLInt(10,c);
-	LInt e = newLInt(80,d);
-	LInt f = newLInt(90,e);
+	LInt e = newLInt(10,d);
+	LInt f = newLInt(80,e);
 	LInt g = newLInt(5,f);
 	LInt h = newLInt(20,g);
-  i = parteAmeio(&h);
-  imprimeL(h);
+  LInt p = NULL;
+  i = removeDups(&h);
+  printf("%d\n", i );
   printf("ola\n");
-  imprimeL(i);
+  imprimeL(h);
   return 0;
 }
-
