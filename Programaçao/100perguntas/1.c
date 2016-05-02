@@ -484,25 +484,163 @@ LInt* aux ;
  return a;
 }
 ///////////////////////////////////////////////////////////////////////////////
- LInt Nforward (LInt l, int N){
-
+LInt NForward (LInt l, int N){
+ int a =0;
+ 
+LInt* aux = &l;
+ 
+ 
+ while(*aux != NULL && a<N){
+     aux = &(*aux)->prox;
+     a++;
  }
+ 
+ 
+ 
+ 
+    return *aux;
+}
+///////////////////////////////////////////////////////////////////////////////
+int listToArray (LInt l, int v[], int N){
+  int a=0;
+ LInt* aux = &l;
+ /*LInt *aux; 
+ aux = &l;
+*/
+  while(*aux != NULL && a<N){
+    v[a] = (*aux)->valor;
+    aux = &(*aux)->prox;
+    a++;
+  }
+
+
+return a;
+}
+//////////////////////////////////////////////////////////////////////////////
+LInt arrayToList (int v[], int N){
+LInt res = NULL;
+N--;
+while (N >=0){
+  res = newLInt(v[N],res);
+  N--;
+}
+return res;
+}
+///////////////////////////////////////////////////////////////////////////////
+LInt somasAcL (LInt l){
+int a=0;
+LInt res = NULL;
+LInt *aux = &res;
+
+while(l != NULL){
+  a += l->valor;
+  l = l->prox;
+  *aux = newLInt(a,NULL);
+  aux = &(*aux)->prox;
+}
+
+return res;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+void remreps (LInt l){
+int b = 0;
+LInt remov;
+LInt* res = &l;
+LInt *aux;
+
+  while((*res) != NULL){
+    b  = (*res)->valor;
+    aux = &(*res)->prox;
+
+       while(*aux != NULL ){
+
+          if ((*aux)->valor == b){
+            remov = *aux;
+           *aux = remov->prox;
+          free(remov);
+          }
+
+          else aux = &(*aux)->prox;
+       }
+
+    res = &(*res)->prox;
+ }
+}
+//////////////////////////////////////////////////////////////////////////////
+LInt rotateL (LInt l){
+LInt* aux = &l;
+LInt primeiro = NULL;
+
+if(*aux != NULL ){
+  primeiro = l ;
+  l = l->prox;
+  primeiro->prox = NULL;
+}
+
+while( *aux != NULL){
+aux = &(*aux)->prox;
+}
+
+*aux = primeiro;
+return l ;
+}
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+// tem um erro em que o primeiro elemento nao e avalidao                     //
+/////////////////////////////////////////////////////////////////////////////7/
+LInt parte (LInt l){
+int i=0, c=0;
+LInt* head = &l;
+LInt* transforma = &l;
+LInt res = NULL;
+LInt *aux = &res;
+LInt rem;
+
+
+  while(*transforma != NULL){
+    if ((i%2) == 0){
+    *aux = newLInt((*transforma)->valor, NULL);
+    aux = &((*aux)->prox);
+        rem = *transforma;
+    *transforma = rem->prox;
+    i++;
+    }
+
+    else{
+transforma = &(*transforma)->prox;
+    i++;
+    }
+  }
+
+*head = l;
+return res;
+}
+
+
 
 ///////////////////////////////////////////////////////////////////////////////
 int main(){
 
 int i;
-  LInt a = newLInt(40,NULL);
-	LInt b = newLInt(30,a);
-	LInt c = newLInt(20,b);
-	LInt d = newLInt(10,c);
-	LInt e = newLInt(10,d);
-	LInt f = newLInt(80,e);
-	LInt g = newLInt(5,f);
-	LInt h = newLInt(20,g);
+  LInt a = newLInt(7,NULL);
+	LInt b = newLInt(6,a);
+	LInt c = newLInt(5,b);
+	LInt d = newLInt(4,c);
+	LInt e = newLInt(3,d);
+	LInt f = newLInt(2,e);
+	LInt g = newLInt(1,f);
+	LInt h = newLInt(8,g);
   LInt p = NULL;
-  i = drop(3,&h);
+int v[3]; 
+v[0] = 2;
+v[1] = 3;
+v[2] = 4;
+v[3] = 5;
+LInt q;
+  q = parte(h);
   printf("%d\n", i );
+   imprimeL(q);
   printf("||||||||||||||||||||||||||\n");
   imprimeL(h);
   return 0;
