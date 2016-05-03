@@ -15,6 +15,24 @@ LInt newLInt(int n, LInt l){
   return new;
 }
 
+
+
+
+typedef struct nodo{
+int valor;
+struct nodo *esq, *dir;
+}*ABin;
+
+
+
+ABin newABin(int n, ABin e, ABin d){
+  ABin new; 
+  new = (ABin) malloc(sizeof(ABin));
+  new->valor = n;
+  new->esq = e;
+  new->dir = d;
+}
+
 /*
 LInt newLInt(int n, LInt l){
   LInt new;
@@ -585,6 +603,7 @@ aux = &(*aux)->prox;
 *aux = primeiro;
 return l ;
 }
+
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 // tem um erro em que o primeiro elemento nao e avalidao                     //
@@ -616,9 +635,181 @@ transforma = &(*transforma)->prox;
 *head = l;
 return res;
 }
+///////////////////////////////////////////////////////////////////////////////
+int altura(ABin l){
+int a = 0;
+
+if(l != NULL){
+if ( altura((l)->esq) > altura((l)->dir))
+a = 1 + altura((l)->esq);
+else a = 1 + altura((l)->dir);
+}
+
+return a;
+}
+
+/*
+int altura(ABin l){
+int a = 0;
+
+if (l == NULL)
+return;
+
+
+if ( altura((l)->esq) > altura((l)->dir))
+a = 1 + altura((l)->esq);
+else a = 1 + altura((l)->dir);
+
+return a;
+}
+*/
+///////////////////////////////////////////////////////////////////////////////
+ABin cloneAB (ABin a){
+ABin new;
+
+if(a == NULL) return NULL;
+
+new = newABin(a->valor, cloneAB(a->esq), cloneAB(a->dir));
+
+return new;
+
+}
+
+////////////////////////////////////////////////////////////////////////////////
+void mirror(ABin *a){
+if(*a == NULL) return;
+ mirror(&(*a)->esq);
+ mirror(&(*a)->dir);
+ ABin temp = ((*a)->dir);
+ (*a)->dir = (*a)->esq;
+ (*a)->esq = temp;
+}
+///////////////////////////////////////////////////////////////////////////////
+void inorder (ABin a, LInt *){
+if(a == NULL) return;
+
+
+inorder(a->esq,l);
+*l= newLInt(a->valor,*l);
+inorder(a->dir,l);
 
 
 
+}
+
+//////////////////////////////////////////////////////////////////////////////
+void preorder (ABin a, LInt *){
+if(a == NULL) return;
+
+
+*l= newLInt(a->valor,*l);
+  preorder(a->esq,l);
+preorder(a->dir,l);
+
+
+}
+//////////////////////////////////////////////////////////////////////////////
+void posorder (ABin a, LInt *){
+if(a == NULL) return;
+
+
+  posorder(a->esq,l);
+  posorder(a->dir,l);
+  *l= newLInt(a->valor,*l);
+}
+
+///////////////////////////////////////////////////////////////////////////////
+int depth (ABin a, int x){
+  int l = 1;
+
+  if(a == NULL) return -1;
+
+
+  if(a->valor > x){
+     l = 1+depth(a->esq);
+  }
+  
+  if(a->valor < x){
+   l = 1+ depth(a->dir);
+  }
+
+  return l;
+}
+///////////////////////////////////////////////////////////////////////////////
+int freeAB (ABin a){
+int a = 0;
+
+if(a == NULL) retrun a;
+
+
+a = 1+ freeAB(a->dir) + freeAB(a->esq);
+free(a);
+return a;
+}
+///////////////////////////////////////////////////////////////////////////////
+int pruneAB (ABin *a, int l){
+  if(l=0){
+    return freeAB(*a);
+  }
+
+  return pruneAB(&(*a)->dir, l-1) + pruneAB(&(*a)->esq, l-1);
+}
+
+//////////////////////////////////////////////////////////////////////////////
+int iguaisAB (ABin a, ABin b){
+ if ((a ==NULL && b != NULL) || (a != NULL && b!= NULL)) return 1;
+
+
+ if(a->valor != b->valor) return 1;
+
+
+if (iguaisAB(a->esq, b->esq) >0 || iguaisAB(a->dir, b->dir) > 0) return 1;
+else return 0;
+}
+//////////////////////////////////////////////////////////////////////////////
+LInt nivelL (ABin a, int n){
+if(n=0){
+  return newLInt(a->valor,NULL) ;
+}
+
+return newLInt (nivelL(a->esq,l-1),nivelL(a->dir,l-1));
+}
+
+/////////////////////////////////VER ESTA 39//////////////////////////////////////////////
+/*nao sei esta . que preenche o vector v com os
+elementos de a que se encontram no n ́ıvel n.
+Considere que a ra ́ız da  ́
+arvore se encontra no n ́ıvel 1.
+A fun ̧c ̃
+ao dever ́
+a retornar o n ́
+umero de posi ̧c ̃oes preenchidas do array.*/
+/*
+int nivelV (ABin a, int n, int v[]){
+if(n=0){
+  return  ;
+}
+
+return 
+}
+*/
+
+/////////////////////////////////////////////////////////////////////////////
+
+/*
+
+int dumpAbin (ABin a, int v[], int N){
+int i;
+
+if(a == NULL || i == N) return i;
+
+v[i]  = a->valor;
+i++;
+if(node->left != NULL && i<N)
+  i = dumpAbin(a->esq, v[], N)
+}
+
+*/
 ///////////////////////////////////////////////////////////////////////////////
 int main(){
 
