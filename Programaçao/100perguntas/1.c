@@ -685,7 +685,7 @@ if(*a == NULL) return;
  (*a)->esq = temp;
 }
 ///////////////////////////////////////////////////////////////////////////////
-void inorder (ABin a, LInt *){
+void inorder (ABin a, LInt *l){
 if(a == NULL) return;
 
 
@@ -698,7 +698,7 @@ inorder(a->dir,l);
 }
 
 //////////////////////////////////////////////////////////////////////////////
-void preorder (ABin a, LInt *){
+void preorder (ABin a, LInt *l){
 if(a == NULL) return;
 
 
@@ -709,7 +709,7 @@ preorder(a->dir,l);
 
 }
 //////////////////////////////////////////////////////////////////////////////
-void posorder (ABin a, LInt *){
+void posorder (ABin a, LInt *l){
 if(a == NULL) return;
 
 
@@ -726,25 +726,25 @@ int depth (ABin a, int x){
 
 
   if(a->valor > x){
-     l = 1+depth(a->esq);
+    l = 1+depth(a->esq,x);
   }
   
   if(a->valor < x){
-   l = 1+ depth(a->dir);
+    l = 1+ depth(a->dir,x);
   }
 
   return l;
 }
 ///////////////////////////////////////////////////////////////////////////////
 int freeAB (ABin a){
-int a = 0;
+int x = 0;
 
-if(a == NULL) retrun a;
+if(a == NULL) return x;
 
 
-a = 1+ freeAB(a->dir) + freeAB(a->esq);
+x = 1+ freeAB(a->dir) + freeAB(a->esq);
 free(a);
-return a;
+return x;
 }
 ///////////////////////////////////////////////////////////////////////////////
 int pruneAB (ABin *a, int l){
@@ -772,7 +772,7 @@ if(n=0){
   return newLInt(a->valor,NULL) ;
 }
 
-return newLInt (nivelL(a->esq,l-1),nivelL(a->dir,l-1));
+return concatL (*(nivelL(a->dir,n-1)), nivel(a->esq, n-1));
 }
 
 /////////////////////////////////VER ESTA 39//////////////////////////////////////////////
@@ -810,6 +810,20 @@ if(node->left != NULL && i<N)
 }
 
 */
+/////////////////////////////////////////////////////////////////////////
+ABin somasAcA (ABin a){
+  if(a == NULL) return;
+
+  a->valor = a->valor + somasAcA(a->dir) + somasAcA(a->esq);
+  a->dir = somasAcA(a->dir);
+  a->esq = somasAca(a->esq);
+
+  return a;
+}
+//////////////////////////////////////////////////////////////////////////
+ 
+
+
 ///////////////////////////////////////////////////////////////////////////////
 int main(){
 
