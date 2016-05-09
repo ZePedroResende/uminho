@@ -198,9 +198,10 @@ void splitMS (LInt l, int x, LInt *mx, LInt *Mx){
 }
 ///////////////////////////////////////////////////////
 LInt parteAmeio (LInt *l){
-
+LInt aux = *l;
 LInt* head = l;
 LInt* res = l;
+
 
 while(*l != NULL ){
   l = &(*l)->prox;
@@ -210,172 +211,14 @@ while(*l != NULL ){
     res = &(*res)->prox;
   } 
 }
-
-
-
-*l =  (*res)->prox;
- (*res)->prox = NULL;
  
+*head = (*res);
+*res = NULL;
  
- return *head;
-}
-
-/*LInt parteAmeio (LInt *l){
-
-LInt* head = l;
-LInt* res = l;
-
-while(*l != NULL ){
-  l = &(*l)->prox;
-
-  if(*l != NULL){
-    l = &(*l)->prox;
-    res = &(*res)->prox;
-  } 
+return aux;
 }
 
 
-LInt aux = (*res);
-*l = aux->prox;
-aux->prox = NULL;
-
-return  *head;
-}
-
-*/
-
-
-/*
-LInt parteAmeio (LInt *l){
-int i=0, c=0;
-LInt* head = l;
-LInt res = NULL;
-LInt *aux = &res;
-
-  while(*l != NULL){  //calcula length
-  c++;
-  l = &(*l)->prox;
-  }
-
-l = &(*head); // volta a por o l a aopontar para a cabeça
-
-if(c==1){
-    res = *l;
-    *head = (*l)->prox;
-}
-
-else{
-c = c/2;
-
-  while(i<c){
-  *aux = newLInt((*l)->valor, NULL);
-  aux = &((*aux)->prox);
-  l = &(*l)->prox;
-  i++;
-  }
-}
-
-
-*head = *l;
-return res;
-}
-
-*/
-
-
-
-
-
-
-
-/*
-LInt parteAmeio (LInt *l){
-
-LInt* head = l;
-
-LInt* res = l;
-
-while(*l != NULL ){
-  l = &(*l)->prox;
-
-  if(*l != NULL){
-    l = &(*l)->prox;
-    res = &(*res)->prox;
-  } 
-}
-
-LInt aux = (*res)->prox;
-*l = aux;
-(*res)->prox = NULL;
-
-return  *head;
-}
-*/
-
-/*
-LInt parteAmeio (LInt *l){
-int i=0, c=0;
-LInt* head = l;
-LInt res = NULL;
-LInt *aux = &res;
-
-  while(*l != NULL){  //calcula length
-  c++;
-  l = &(*l)->prox;
-  }
-
-l = &(*head); // volta a por o l a aopontar para a cabeça
-c = c/2;
-
-  while(i<c){
-  *aux = newLInt((*l)->valor, NULL);
-  aux = &((*aux)->prox);
-  l = &(*l)->prox;
-  i++;
-  }
-
-*head = *l;
-return res;
-}
-/*
-
-LInt parteAmeio (LInt *l){
-int i=0, c=0;
-
-LInt* head = l;
-
-LInt res = NULL;
-LInt *aux = &res;
-
-LInt res2 = NULL;
-LInt *aux2 = &res2;
-
-  while(*l != NULL){  //calcula length
-  c++;
-  l = &(*l)->prox;
-  }
-
-  l = &(*head);
-  c = c/2;
-
-  while (*l != NULL){
-  if(i<c){
-    *aux = newLInt((*l)->valor, NULL);
-      aux = &((*aux)->prox);
-  }
-  else{
-   *aux2 = newLInt((*l)->valor,NULL);
-    aux2 = &((*aux2)->prox);
-  }
-  l = &(*l)->p*rox;
-  i++;
-  }
-
-*head = res2;
-return res;
-}
-
-*/
 ////////////////////////////////////////////////////////
 int removeAll (LInt *l, int x){
 int a =0;
@@ -982,20 +825,20 @@ int v[3];
 
 
  
-  ABin i = newABin(10,NULL,NULL);
-  ABin j = newABin(30,NULL,NULL);
-  ABin k = newABin(20, i, j);
-  ABin l = newABin(5, NULL, k);
-  mirror(&l);
+//  ABin i = newABin(10,NULL,NULL);
+//  ABin j = newABin(30,NULL,NULL);
+//  ABin k = newABin(20, i, j);
+ // ABin l = newABin(5, NULL, k);
+//)  mirror(&l);
  // z = somasAcA(l);
 
 
   //z = nivelL(l,2);
- imprimeAB(l);
- // p = parteAmeio(&g);
+ //imprimeAB(l);
+  p = parteAmeio(&h);
   //printf("%d\n", i );
-  // imprimeL(g);
+   imprimeL(h);
   printf("||||||||||||||||||||||||||\n");
- // imprimeL(p);
+  imprimeL(p);
   return 0;
 }
