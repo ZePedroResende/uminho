@@ -119,9 +119,6 @@ while(*l != NULL && (*l)->valor < x){
 *l=newLInt(x,*l);
 }
 
-
-
-
 ////////////////////////////////////////////////////////
 int removeOneOrd (LInt *l, int x){
 LInt* aux = l;
@@ -133,7 +130,6 @@ if (*aux == NULL) return 1;
 
 LInt remove = *aux;
 *aux = remove->prox;
-
 
 return 0;
 }
@@ -186,7 +182,6 @@ while(a != NULL || b != NULL){
 
 return *aux;
 }
-
 */
 //////////////////////////////////////////////////////
 void splitMS (LInt l, int x, LInt *mx, LInt *Mx){
@@ -201,9 +196,123 @@ void splitMS (LInt l, int x, LInt *mx, LInt *Mx){
     l = l->prox;
   }
 }
-
-
 ///////////////////////////////////////////////////////
+LInt parteAmeio (LInt *l){
+
+LInt* head = l;
+LInt* res = l;
+
+while(*l != NULL ){
+  l = &(*l)->prox;
+
+  if(*l != NULL){
+    l = &(*l)->prox;
+    res = &(*res)->prox;
+  } 
+}
+
+
+
+*l =  (*res)->prox;
+ (*res)->prox = NULL;
+ 
+ 
+ return *head;
+}
+
+/*LInt parteAmeio (LInt *l){
+
+LInt* head = l;
+LInt* res = l;
+
+while(*l != NULL ){
+  l = &(*l)->prox;
+
+  if(*l != NULL){
+    l = &(*l)->prox;
+    res = &(*res)->prox;
+  } 
+}
+
+
+LInt aux = (*res);
+*l = aux->prox;
+aux->prox = NULL;
+
+return  *head;
+}
+
+*/
+
+
+/*
+LInt parteAmeio (LInt *l){
+int i=0, c=0;
+LInt* head = l;
+LInt res = NULL;
+LInt *aux = &res;
+
+  while(*l != NULL){  //calcula length
+  c++;
+  l = &(*l)->prox;
+  }
+
+l = &(*head); // volta a por o l a aopontar para a cabeça
+
+if(c==1){
+    res = *l;
+    *head = (*l)->prox;
+}
+
+else{
+c = c/2;
+
+  while(i<c){
+  *aux = newLInt((*l)->valor, NULL);
+  aux = &((*aux)->prox);
+  l = &(*l)->prox;
+  i++;
+  }
+}
+
+
+*head = *l;
+return res;
+}
+
+*/
+
+
+
+
+
+
+
+/*
+LInt parteAmeio (LInt *l){
+
+LInt* head = l;
+
+LInt* res = l;
+
+while(*l != NULL ){
+  l = &(*l)->prox;
+
+  if(*l != NULL){
+    l = &(*l)->prox;
+    res = &(*res)->prox;
+  } 
+}
+
+LInt aux = (*res)->prox;
+*l = aux;
+(*res)->prox = NULL;
+
+return  *head;
+}
+*/
+
+/*
 LInt parteAmeio (LInt *l){
 int i=0, c=0;
 LInt* head = l;
@@ -228,8 +337,6 @@ c = c/2;
 *head = *l;
 return res;
 }
-
-
 /*
 
 LInt parteAmeio (LInt *l){
@@ -688,12 +795,11 @@ if(*a == NULL) return;
 void inorder (ABin a, LInt *l){
 if(a == NULL) return;
 
-
-inorder(a->esq,l);
-*l= newLInt(a->valor,*l);
 inorder(a->dir,l);
+*l= newLInt(a->valor,*l);
+inorder(a->esq,l);
 
-
+/*tem de estar ao contrario porque tem de inserir a cabeça !!*/
 
 }
 
@@ -701,10 +807,11 @@ inorder(a->dir,l);
 void preorder (ABin a, LInt *l){
 if(a == NULL) return;
 
-
-*l= newLInt(a->valor,*l);
-  preorder(a->esq,l);
 preorder(a->dir,l);
+preorder(a->esq,l);
+*l= newLInt(a->valor,*l);
+
+
 
 
 }
@@ -713,9 +820,10 @@ void posorder (ABin a, LInt *l){
 if(a == NULL) return;
 
 
-  posorder(a->esq,l);
-  posorder(a->dir,l);
+
   *l= newLInt(a->valor,*l);
+    posorder(a->dir,l);
+      posorder(a->esq,l);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -768,11 +876,17 @@ else return 0;
 }
 //////////////////////////////////////////////////////////////////////////////
 LInt nivelL (ABin a, int n){
+LInt l=NULL;
+LInt p = NULL; 
 if(n=0){
-  return newLInt(a->valor,NULL) ;
+   
+      l =  newLInt(a->valor,l) ;
+return l;
 }
-
-return concatL (*(nivelL(a->dir,n-1)), nivel(a->esq, n-1));
+l = (nivelL(a->dir,n-1));
+p = nivelL(a->esq, n-1);
+    concatL (&l, p);
+return l;
 }
 
 /////////////////////////////////VER ESTA 39//////////////////////////////////////////////
@@ -784,15 +898,24 @@ A fun ̧c ̃
 ao dever ́
 a retornar o n ́
 umero de posi ̧c ̃oes preenchidas do array.*/
-/*
+
+
 int nivelV (ABin a, int n, int v[]){
-if(n=0){
-  return  ;
+int i =0;
+    if(a!=NULL ) {
+        i = nivelV(a->esq,n-1,v);
+        i += nivelV(a->dir,n-1,v+i);
+        
+        if(n==0){
+            v[i] = a->valor;
+            i++;
+        }
+    }
+    
+return i;
 }
 
-return 
-}
-*/
+
 
 /////////////////////////////////////////////////////////////////////////////
 
@@ -814,20 +937,33 @@ if(node->left != NULL && i<N)
 ABin somasAcA (ABin a){
   if(a == NULL) return;
 
-  a->valor = a->valor + somasAcA(a->dir) + somasAcA(a->esq);
   a->dir = somasAcA(a->dir);
-  a->esq = somasAca(a->esq);
+  a->esq = somasAcA(a->esq);
+  a->valor = a->valor + (a->dir)->valor + (a->esq)->valor;
+
 
   return a;
 }
-//////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
  
+///////////////////////////////////////////////////////////////////////////////
+void imprimeAB (ABin a){
+  if (a==NULL)
+    printf("NULL\n");
+    //return;
+  else{
+   printf("%p %d head\n", a, a->valor);
+  imprimeAB(a->esq);
 
 
+
+  imprimeAB(a->dir);
+}
+}
 ///////////////////////////////////////////////////////////////////////////////
 int main(){
 
-int i;
+int x;
   LInt a = newLInt(7,NULL);
 	LInt b = newLInt(6,a);
 	LInt c = newLInt(5,b);
@@ -836,17 +972,30 @@ int i;
 	LInt f = newLInt(2,e);
 	LInt g = newLInt(1,f);
 	LInt h = newLInt(8,g);
-  LInt p = NULL;
+  LInt p;
 int v[3]; 
-v[0] = 2;
-v[1] = 3;
-v[2] = 4;
-v[3] = 5;
-LInt q;
-  q = parte(h);
-  printf("%d\n", i );
-   imprimeL(q);
+//v[0] = 2;
+//v[1] = 3;
+//v[2] = 4;
+//v[3] = 5;
+//LInt q;
+
+
+ 
+  ABin i = newABin(10,NULL,NULL);
+  ABin j = newABin(30,NULL,NULL);
+  ABin k = newABin(20, i, j);
+  ABin l = newABin(5, NULL, k);
+  mirror(&l);
+ // z = somasAcA(l);
+
+
+  //z = nivelL(l,2);
+ imprimeAB(l);
+ // p = parteAmeio(&g);
+  //printf("%d\n", i );
+  // imprimeL(g);
   printf("||||||||||||||||||||||||||\n");
-  imprimeL(h);
+ // imprimeL(p);
   return 0;
 }
