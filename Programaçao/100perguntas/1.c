@@ -56,18 +56,15 @@ LInt newLInt(int n, LInt l){
 
 //////////////////////////////////////////////////////////////
 int length (LInt l) {
-  int a=1;
-  LInt aux = l;
-if(l==NULL)return -1;
- while(aux->prox != NULL ){
+  int a=0;
+  LInt* aux = &l;
+
+ while(*aux != NULL ){
    a++;
-   aux = aux-> prox;
+   aux = &(*aux)-> prox;
  }
   return a;
 }
-
-
-
 
 /////////////////////////////////////////////////////
 //temos de libertar apontador a apontador
@@ -135,7 +132,7 @@ return 0;
 }
 ////////////////////////////////////////////////////////
 
-LInt merge(LInt *r, LInt a, LInt b){
+void merge(LInt *r, LInt a, LInt b){
 
 LInt *aux = &(*r);
 
@@ -159,7 +156,6 @@ if (a !=NULL){
 else{
 *r = b;
 }
-return *aux;
 }
 /*
 LInt merge(LInt *r, LInt a, LInt b){
@@ -202,6 +198,7 @@ LInt aux = *l;
 LInt* head = l;
 LInt* res = l;
 
+if( (*l)->prox == NULL) return NULL;
 
 while(*l != NULL ){
   l = &(*l)->prox;
@@ -463,18 +460,13 @@ LInt* aux = &l;
      a++;
  }
  
- 
- 
- 
-    return *aux;
+  return *aux;
 }
 ///////////////////////////////////////////////////////////////////////////////
 int listToArray (LInt l, int v[], int N){
   int a=0;
  LInt* aux = &l;
- /*LInt *aux; 
- aux = &l;
-*/
+
   while(*aux != NULL && a<N){
     v[a] = (*aux)->valor;
     aux = &(*aux)->prox;
@@ -554,37 +546,36 @@ aux = &(*aux)->prox;
 return l ;
 }
 
-///////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////
-// tem um erro em que o primeiro elemento nao e avalidao                     //
 /////////////////////////////////////////////////////////////////////////////7/
+
 LInt parte (LInt l){
-int i=0, c=0;
-LInt* head = &l;
-LInt* transforma = &l;
-LInt res = NULL;
-LInt *aux = &res;
-LInt rem;
 
+  LInt *n, *e, r;
 
-  while(*transforma != NULL){
-    if ((i%2) == 0){
-    *aux = newLInt((*transforma)->valor, NULL);
-    aux = &((*aux)->prox);
-        rem = *transforma;
-    *transforma = rem->prox;
-    i++;
+  n = &r;
+  e = &l;
+
+  int i = 0;
+
+  while (*e != NULL){
+    if (i%2 != 0){
+      *n = *e;
+      n = &((*n)->prox);
+      *e = (*e)->prox;
     }
-
     else{
-transforma = &(*transforma)->prox;
-    i++;
+      e = &((*e)->prox);
     }
+          i++;
   }
 
-*head = l;
-return res;
+  *n = NULL;
+
+  return r;
 }
+
+
+
 ///////////////////////////////////////////////////////////////////////////////
 int altura(ABin l){
 int a = 0;
@@ -835,9 +826,9 @@ int v[3];
 
   //z = nivelL(l,2);
  //imprimeAB(l);
-  p = parteAmeio(&h);
+  p = parteAmeio(&a);
   //printf("%d\n", i );
-   imprimeL(h);
+   imprimeL(a);
   printf("||||||||||||||||||||||||||\n");
   imprimeL(p);
   return 0;
