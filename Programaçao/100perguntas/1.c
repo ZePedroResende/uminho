@@ -589,21 +589,6 @@ else a = 1 + altura((l)->dir);
 return a;
 }
 
-/*
-int altura(ABin l){
-int a = 0;
-
-if (l == NULL)
-return;
-
-
-if ( altura((l)->esq) > altura((l)->dir))
-a = 1 + altura((l)->esq);
-else a = 1 + altura((l)->dir);
-
-return a;
-}
-*/
 ///////////////////////////////////////////////////////////////////////////////
 ABin cloneAB (ABin a){
 ABin new;
@@ -626,56 +611,64 @@ if(*a == NULL) return;
  (*a)->esq = temp;
 }
 ///////////////////////////////////////////////////////////////////////////////
+void inorderAux (ABin a, LInt *l){
+  if(a != NULL) {
+
+    inorderAux(a->dir,l);
+
+    *l= newLInt(a->valor,*l);
+
+    inorderAux(a->esq,l);
+  }
+  /*tem de estar ao contrario porque tem de inserir a cabeça pelo newLInt !!*/
+}
+
 void inorder (ABin a, LInt *l){
-if(a == NULL) return;
-
-inorder(a->dir,l);
-*l= newLInt(a->valor,*l);
-inorder(a->esq,l);
-
-/*tem de estar ao contrario porque tem de inserir a cabeça !!*/
-
+  *l = NULL;
+  inorderAux(a,l);
 }
 
-//////////////////////////////////////////////////////////////////////////////
-void preorder (ABin a, LInt *l){
-if(a == NULL) return;
-
-preorder(a->dir,l);
-preorder(a->esq,l);
+///////////////////////////////////////////////////////////////////////////// 
+void preorderAux (ABin a, LInt *l){
+if(a != NULL){
+preorderAux(a->dir,l);
+preorderAux(a->esq,l);
 *l= newLInt(a->valor,*l);
+}
+}
 
-
-
-
+void preorder(ABin a, LInt *l){
+  *l = NULL;
+  preorderAux(a,l);
 }
 //////////////////////////////////////////////////////////////////////////////
-void posorder (ABin a, LInt *l){
-if(a == NULL) return;
-
-
-
-  *l= newLInt(a->valor,*l);
-    posorder(a->dir,l);
-      posorder(a->esq,l);
+void posorderAux (ABin a, LInt *l){
+  if(a != NULL) {
+    *l= newLInt(a->valor,*l);
+    posorderAux(a->dir,l);
+    posorderAux(a->esq,l);
+  }
+  /*tem de estar ao contrario porque tem de inserir a cabeça !!*/
 }
 
+void posorder(ABin a, LInt *l){
+  *l = NULL;
+  posorderAux(a,l);
+}
 ///////////////////////////////////////////////////////////////////////////////
 int depth (ABin a, int x){
-  int l = 1;
-
-  if(a == NULL) return -1;
-
-
-  if(a->valor > x){
-    l = 1+depth(a->esq,x);
-  }
-  
-  if(a->valor < x){
-    l = 1+ depth(a->dir,x);
-  }
-
-  return l;
+  int r = 1;
+  if (a == NULL) r = -1;
+  else if (a->valor != x){
+          if(depth(a->dir, x) != -1 && depth(a->esq, x) != -1){
+               if  (depth(a->dir, x) > depth(a->esq, x))  r += depth(a->esq, x);
+               else r +=  depth(a->dir, x);
+          }
+          else if (depth(a->esq, x) != -1) r +=  depth(a->esq, x);
+               else if (depth(a->dir, x) != -1) r += depth(a->dir, x);
+                    else r = -1;
+        }
+  return r;
 }
 ///////////////////////////////////////////////////////////////////////////////
 int freeAB (ABin a){
@@ -690,96 +683,344 @@ return x;
 }
 ///////////////////////////////////////////////////////////////////////////////
 int pruneAB (ABin *a, int l){
-  if(l=0){
-    return freeAB(*a);
-  }
 
-  return pruneAB(&(*a)->dir, l-1) + pruneAB(&(*a)->esq, l-1);
+  int counter;
+  ABin *tmp;
+
+  if (*a == NULL) counter = 0;
+
+  else{
+
+    if (l == 0){
+      tmp = a;
+      counter = 1 + pruneAB((&(*a)->dir), 0);
+      counter += pruneAB((&(*a)->esq), 0);
+
+      free(*tmp);
+      *tmp = NULL;    
+    }
+
+    else{
+      counter = pruneAB((&(*a)->dir), l - 1);
+      counter += pruneAB(&((*a)->esq), l - 1);
+    }
+  }
+  return counter;
 }
 
 //////////////////////////////////////////////////////////////////////////////
 int iguaisAB (ABin a, ABin b){
- if ((a ==NULL && b != NULL) || (a != NULL && b!= NULL)) return 1;
-
-
- if(a->valor != b->valor) return 1;
-
-
-if (iguaisAB(a->esq, b->esq) >0 || iguaisAB(a->dir, b->dir) > 0) return 1;
-else return 0;
+ if (a ==NULL && b== NULL) return 1;
+else if (a != NULL && b != NULL && a->valor == b->valor && iguaisAB(a->dir, b->dir) && iguaisAB(a->esq, b->esq)) return 1; 
+  
+return 0;
 }
 //////////////////////////////////////////////////////////////////////////////
 LInt nivelL (ABin a, int n){
-LInt l=NULL;
-LInt p = NULL; 
-if(n=0){
-   
-      l =  newLInt(a->valor,l) ;
-return l;
+    LInt l = NULL;
+    LInt p= NULL;
+  if (a == NULL) l = NULL;
+  else{
+    if (n == 1)
+       l = newLInt(a->valor,NULL);
+    
+    else{
+      p = nivelL(a->dir, n - 1);
+      l = nivelL(a->esq, n - 1);
+    }
+  }
+  //concatL(&l,p); // usar a concatL das LInt 
+  LInt* e = &l;
+  while(*e != NULL)
+      e = &(*e)->prox;
+  *e = p;
+ 
+  return l;
 }
-l = (nivelL(a->dir,n-1));
-p = nivelL(a->esq, n-1);
-    concatL (&l, p);
-return l;
-}
-
 /////////////////////////////////VER ESTA 39//////////////////////////////////////////////
-/*nao sei esta . que preenche o vector v com os
-elementos de a que se encontram no n ́ıvel n.
-Considere que a ra ́ız da  ́
-arvore se encontra no n ́ıvel 1.
-A fun ̧c ̃
-ao dever ́
-a retornar o n ́
-umero de posi ̧c ̃oes preenchidas do array.*/
-
-
 int nivelV (ABin a, int n, int v[]){
 int i =0;
     if(a!=NULL ) {
-        i = nivelV(a->esq,n-1,v);
-        i += nivelV(a->dir,n-1,v+i);
-        
-        if(n==0){
+        if(n==1){
             v[i] = a->valor;
             i++;
         }
+        else{
+        i = nivelV(a->esq,n-1,v);
+        i += nivelV(a->dir,n-1,v+i);
+        }
+    
     }
     
 return i;
 }
-
-
-
 /////////////////////////////////////////////////////////////////////////////
 
-/*
-
 int dumpAbin (ABin a, int v[], int N){
-int i;
-
-if(a == NULL || i == N) return i;
-
-v[i]  = a->valor;
-i++;
-if(node->left != NULL && i<N)
-  i = dumpAbin(a->esq, v[], N)
+    int i = 0;
+  if (a != NULL){
+    if (i < N) i =dumpAbin(a->esq, v, N);
+    if (i < N){
+        v[i] = a->valor; 
+        i++;
+    }
+    if (i < N) i += dumpAbin(a->dir, v+i, N-i);
+    }
+   return i;
 }
 
-*/
 /////////////////////////////////////////////////////////////////////////
+int valorABin (ABin a){
+
+  int r;
+
+  if (a == NULL) r = 0;
+
+  else r = a->valor;
+
+  return r;
+}
+
 ABin somasAcA (ABin a){
-  if(a == NULL) return;
 
-  a->dir = somasAcA(a->dir);
-  a->esq = somasAcA(a->esq);
-  a->valor = a->valor + (a->dir)->valor + (a->esq)->valor;
+  ABin r;
 
+  if (a == NULL) r = NULL;
 
-  return a;
+  else{
+    r = (ABin) malloc(sizeof(struct nodo));
+    r->dir = somasAcA(a->dir);
+    r->esq = somasAcA(a->esq);
+    r->valor = a->valor + valorABin(r->dir) + valorABin(r->esq);
+  }
+
+  return r;
 }
 ///////////////////////////////////////////////////////////////////////////////
- 
+int contaFolhas (ABin a){
+
+	int r;
+
+	if (a == NULL) r = 0;
+
+	else{
+
+		if (a->dir == NULL && a->esq == NULL) r = 1;
+
+		else r = contaFolhas(a->dir) + contaFolhas(a->esq);
+
+	}
+
+	return r;
+}
+///////////////////////////////////////////////////////////////////////////////
+ABin cloneMirror (ABin a){
+
+	ABin r;
+
+	if (a == NULL) r = NULL;
+
+	else{
+		r = (ABin) malloc(sizeof(struct nodo));
+		r->valor = a->valor;
+		r->esq = cloneMirror(a->dir);
+		r->dir = cloneMirror(a->esq);
+	}
+
+	return r;
+}
+///////////////////////////////////////////////////////////////////////////////
+int addOrd (ABin *a, int x){
+
+	ABin n;
+
+	int r = 0;
+
+	if (*a == NULL){
+		*a = (ABin) malloc(sizeof(struct nodo));
+		(*a)->valor = x;
+		(*a)->dir = NULL;
+		(*a)->esq = NULL; 
+	}
+
+	else{
+		if ((*a)->valor == x) r = 1;
+		else{
+			if (x > (*a)->valor){
+				if (addOrd(&((*a)->dir), x)) r = 1;
+			}
+			else{
+				if (addOrd(&((*a)->esq), x)) r = 1;
+			}
+		}
+	}
+
+	return r;
+}
+///////////////////////////////////////////////////////////////////////////////
+int lookupAB (ABin a, int x) {
+  while( a != NULL){
+    if(a->valor == x)return 1;
+    if(a->valor < x) a = a->dir;
+    else  a = a->esq;
+  }
+  return 0;
+}
+///////////////////////////////////////////////////////////////////////////////
+int depthOrd (ABin a, int x){
+
+  int r = 1;
+
+  if (a == NULL) r = -1;
+
+  else if (a->valor != x){
+    if (depthOrd(a->esq, x) != -1) r +=  depthOrd(a->esq, x);
+        
+    else if (depthOrd(a->dir, x) != -1) r += depthOrd(a->dir, x);
+
+    else r = -1;
+  }
+  
+  return r;
+}
+///////////////////////////////////////////////////////////////////////////////
+int maiorAB (ABin a) {
+  int r = -1;
+  while( a != NULL){
+    if(a->valor > r)   r = a->valor; 
+    a = a->dir;
+  }
+  return r;
+}
+///////////////////////////////////////////////////////////////////////////////
+void removeMaiorA (ABin *a) {
+    
+  while((*a)->dir!= NULL)
+    a = &(*a)->dir;
+    
+  *a = (*a)->esq;
+}
+///////////////////////////////////////////////////////////////////////////////
+int quantosMaiores (ABin a, int x) {
+  int r = 0;
+  if(a == NULL) return 0;
+  if(a->valor > x)   r++; 
+  r += quantosMaiores(a->esq,x);
+  r += quantosMaiores(a->dir,x);
+
+  return r;
+
+}
+///////////////////////////////////////////////////////////////////////////////
+/*void listToBTree (LInt l, ABin *a) {
+  if(l->prox!= NULL)
+    listToBTree(l,&(*a)->esq);
+  (*a)= newABin(l->valor,NULL,NULL);
+  
+  listToBTree(l,&(*a)->dir);
+}
+}
+*/
+void arrayToBTree(ABin *a, int N, int v[]){
+
+	int p;
+
+	*a = (ABin) malloc(sizeof(struct nodo));
+
+	if (N == 0 || *a == NULL) *a = NULL;
+
+	else{
+		p = N/2;
+		(*a)->valor = v[p];
+		arrayToBTree(&((*a)->esq), p, v);
+		arrayToBTree(&((*a)->dir), N - p - 1, &v[p + 1]);
+	} 
+
+}
+
+void listToBTree (LInt l, ABin *a){
+
+	int i;
+
+	LInt tmp = l;
+
+	int v[100];
+
+	for (i = 0 ; tmp != NULL ; i++){
+		v[i] = tmp->valor;
+		tmp = tmp->prox;
+	}
+
+	arrayToBTree(a, i, v);
+}
+
+///////////////////////////////////////////////////////////////////////////////
+int deProcura (ABin a){
+
+	int r, esq, dir;
+
+	r = esq = dir = 0;
+
+	if (a == NULL) r = 1;
+
+	else{
+		if (deProcura(a->dir) && deProcura(a->esq)){
+			if (a->dir != NULL){
+				if (a->valor < (a->dir)->valor) dir = 1;
+			}
+			else dir = 1;
+		
+			if (a->esq != NULL){
+				if (a->valor > (a->esq)->valor) esq = 1;
+			}
+			else esq = 1;
+
+			r = (esq && dir);
+		}
+	}
+
+	return r;
+}
+
+/*
+  int deProcura (ABin a) {
+    
+  if(a == NULL) return 1;
+  else if(a->esq == NULL && a->dir == NULL) return 1;
+  else if(a->esq == NULL && a->valor < (a->dir)->valor){
+  if(deProcura(a->dir)) return 1;
+  }
+  else if(a->valor > (a->esq)->valor && a->dir == NULL){
+  if(deProcura(a->esq)) return 1;
+  }
+  else if (a->valor > (a->esq)->valor && a->valor < (a->dir)->valor)
+  if( deProcura(a->esq) && deProcura(a->dir)) return 1; 
+    
+  return 0;
+  }
+
+ */
+
+
+/*
+int deProcura (ABin a) {
+    
+  if(a == NULL) return 1;
+  else if(a->esq == NULL && a->dir == NULL) return 1;
+       else if(a->esq == NULL && a->valor < (a->dir)->valor)
+               if(deProcura(a->dir)) return 1;
+               else return 0;
+            else if(a->valor > (a->esq)->valor && a->dir == NULL)
+                    if(deProcura(a->esq)) return 1;
+                    else return 0;
+                 else if (a->valor > (a->esq)->valor && a->valor < (a->dir)->valor){
+                          if( deProcura(a->esq) && deProcura(a->dir)) return 1; 
+                          else return 0;
+  }
+    
+  return 0;
+}
+*/
 ///////////////////////////////////////////////////////////////////////////////
 void imprimeAB (ABin a){
   if (a==NULL)
@@ -796,7 +1037,7 @@ void imprimeAB (ABin a){
 }
 ///////////////////////////////////////////////////////////////////////////////
 int main(){
-
+/*
 int x;
   LInt a = newLInt(7,NULL);
 	LInt b = newLInt(6,a);
@@ -807,29 +1048,29 @@ int x;
 	LInt g = newLInt(1,f);
 	LInt h = newLInt(8,g);
   LInt p;
-int v[3]; 
+int v[3];*/ 
 //v[0] = 2;
 //v[1] = 3;
 //v[2] = 4;
 //v[3] = 5;
-//LInt q;
-
+LInt q;
+q = NULL;
 
  
-//  ABin i = newABin(10,NULL,NULL);
-//  ABin j = newABin(30,NULL,NULL);
-//  ABin k = newABin(20, i, j);
- // ABin l = newABin(5, NULL, k);
+ABin i = newABin(10,NULL,NULL);
+ABin j = newABin(30,NULL,NULL);
+ABin k = newABin(20, i, j);
+ABin l = newABin(5, NULL, k);
 //)  mirror(&l);
  // z = somasAcA(l);
 
-
+inorder(l,&q);
   //z = nivelL(l,2);
- //imprimeAB(l);
-  p = parteAmeio(&a);
+// imprimeAB(l);
+//  p = parteAmeio(&a);
   //printf("%d\n", i );
-   imprimeL(a);
+  imprimeL(q);
   printf("||||||||||||||||||||||||||\n");
-  imprimeL(p);
+ // imprimeL(p);
   return 0;
 }
