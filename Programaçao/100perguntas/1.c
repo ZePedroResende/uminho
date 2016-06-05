@@ -830,7 +830,7 @@ ABin cloneMirror (ABin a){
 	return r;
 }
 ///////////////////////////////////////////////////////////////////////////////
-int addOrd (ABin *a, int x){
+/*int addOrd (ABin *a, int x){
 
 	ABin n;
 
@@ -856,7 +856,25 @@ int addOrd (ABin *a, int x){
 	}
 
 	return r;
+}*/
+int addOrd (ABin *a, int x) {
+  int r = 0;
+  while( r != 1&& *a != NULL){
+    if((*a)->valor == x) r= 1;
+    else{
+      if((*a)->valor > x) a = &(*a)->esq;
+      else a = &(*a)->dir;
+    }
+  }
+  if (*a == NULL){
+		*a = (ABin) malloc(sizeof(struct nodo));
+		(*a)->valor = x;
+		(*a)->dir = NULL;
+		(*a)->esq = NULL; 
+	}
+  return r;
 }
+
 ///////////////////////////////////////////////////////////////////////////////
 int lookupAB (ABin a, int x) {
   while( a != NULL){
@@ -894,11 +912,12 @@ int maiorAB (ABin a) {
 }
 ///////////////////////////////////////////////////////////////////////////////
 void removeMaiorA (ABin *a) {
-    
+  if(*a != NULL){ 
   while((*a)->dir!= NULL)
     a = &(*a)->dir;
     
   *a = (*a)->esq;
+  }
 }
 ///////////////////////////////////////////////////////////////////////////////
 int quantosMaiores (ABin a, int x) {
