@@ -97,3 +97,12 @@ int main() {
 
 
 
+typedef struct strlist
+{
+  char *string;
+  struct strlist *prox;
+}*Strlist;
+
+unwords(Strlist s, char t[], int N){
+  
+}
