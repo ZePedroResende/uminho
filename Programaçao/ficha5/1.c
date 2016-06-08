@@ -92,3 +92,37 @@ void dumpLista(FILE *f);
 int lookup(Contacto *dest , FIle *f, char *nome);
 
 int acrescenta(FILE *f; contacto c);
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct lista{
+	int valor;
+	struct lista *prox;
+}*LInt;
+
+
+int writeLInt(FILE *f, LInt l){
+  int counter = 0;
+
+  while(l != NULL){
+    fwrite(&(l->valor),1,sizeof(int),f)
+      l  = l->prox;
+    counter++;
+  }
+
+  return counter;
+}
+
+
+int readLInt(FILE *f, LInt *l){
+  int counter = 0
+
+    l =(LInt) malloc(sizeof(LInt))
+    l->valor ;
+    fread(&(l->valor),1,sizeof(int),f)
+    l->prox = NULL;
+    l=l->prox
+}

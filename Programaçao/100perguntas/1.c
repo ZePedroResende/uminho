@@ -603,12 +603,13 @@ return new;
 
 ////////////////////////////////////////////////////////////////////////////////
 void mirror(ABin *a){
-if(*a == NULL) return;
- mirror(&(*a)->esq);
- mirror(&(*a)->dir);
- ABin temp = ((*a)->dir);
- (*a)->dir = (*a)->esq;
- (*a)->esq = temp;
+ if(*a != NULL){ 
+   mirror(&(*a)->esq);
+   mirror(&(*a)->dir);
+   ABin temp = ((*a)->dir);
+   (*a)->dir = (*a)->esq;
+   (*a)->esq = temp;
+  }
 }
 ///////////////////////////////////////////////////////////////////////////////
 void inorderAux (ABin a, LInt *l){
@@ -974,72 +975,30 @@ void listToBTree (LInt l, ABin *a){
 }
 
 ///////////////////////////////////////////////////////////////////////////////
+int maior(ABin a , int x){
+  int r = 0;     
+  if(a == NULL) r = 1;
+  else if(a->valor > x && maior(a->dir,x) && maior(a->esq,x)) r = 1;
+  return r;
+}
+
+int menor(ABin a , int x){
+  int r = 0;
+  if(a == NULL) r = 1;
+  else if(a->valor < x && menor(a->dir,x) && menor(a->esq,x)) r = 1;
+     
+  return r;
+}
+ 
+ 
 int deProcura (ABin a){
-
-	int r, esq, dir;
-
-	r = esq = dir = 0;
-
+	int r=0;
 	if (a == NULL) r = 1;
-
-	else{
-		if (deProcura(a->dir) && deProcura(a->esq)){
-			if (a->dir != NULL){
-				if (a->valor < (a->dir)->valor) dir = 1;
-			}
-			else dir = 1;
-		
-			if (a->esq != NULL){
-				if (a->valor > (a->esq)->valor) esq = 1;
-			}
-			else esq = 1;
-
-			r = (esq && dir);
-		}
-	}
-
+  else if( menor(a->esq,a->valor) && maior(a->dir,a->valor) && deProcura(a->dir) && deProcura(a->esq)) r= 1;
 	return r;
 }
 
-/*
-  int deProcura (ABin a) {
-    
-  if(a == NULL) return 1;
-  else if(a->esq == NULL && a->dir == NULL) return 1;
-  else if(a->esq == NULL && a->valor < (a->dir)->valor){
-  if(deProcura(a->dir)) return 1;
-  }
-  else if(a->valor > (a->esq)->valor && a->dir == NULL){
-  if(deProcura(a->esq)) return 1;
-  }
-  else if (a->valor > (a->esq)->valor && a->valor < (a->dir)->valor)
-  if( deProcura(a->esq) && deProcura(a->dir)) return 1; 
-    
-  return 0;
-  }
 
- */
-
-
-/*
-int deProcura (ABin a) {
-    
-  if(a == NULL) return 1;
-  else if(a->esq == NULL && a->dir == NULL) return 1;
-       else if(a->esq == NULL && a->valor < (a->dir)->valor)
-               if(deProcura(a->dir)) return 1;
-               else return 0;
-            else if(a->valor > (a->esq)->valor && a->dir == NULL)
-                    if(deProcura(a->esq)) return 1;
-                    else return 0;
-                 else if (a->valor > (a->esq)->valor && a->valor < (a->dir)->valor){
-                          if( deProcura(a->esq) && deProcura(a->dir)) return 1; 
-                          else return 0;
-  }
-    
-  return 0;
-}
-*/
 ///////////////////////////////////////////////////////////////////////////////
 void imprimeAB (ABin a){
   if (a==NULL)

@@ -103,6 +103,60 @@ typedef struct strlist
   struct strlist *prox;
 }*Strlist;
 
-unwords(Strlist s, char t[], int N){
-  
+void unwords(Strlist s, char t[], int N){
+  int i = 0;
+  int a = 0;
+  while(s != NULL){
+    i= 0;
+    while(s->string[i] != '\0'){
+      t[a] = s->string[i];
+      a++;
+      i++;
+    }
+
+    if(s->prox == NULL){
+      t[a] = '\0';
+      s = s->prox;
+    }
+    else{
+      t[a] = ' ';
+      a++;
+      s = s->prox
+    }
+  }
 }
+
+ int words(char t[], StrList *l){
+   int b = 0;
+   *l = NULL;
+   while(t[i] != '\0'){
+     while(t[i] ==' ' && t[i] != '\0') i++;
+
+     int j = 0
+     int a = i;
+
+     while(t[a] != ' ' & t[a] != '\0'){
+       a++;
+       j++;
+     }
+
+     *l = (StrList) malloc(sizeof(StrList));
+     int b = 0;
+     *l->prox = NULL;
+     l = &(*l)->prox;
+   }
+ }
+
+
+ int maxuniqueseq(int v[], in N){
+   int i = 0;
+   conta
+   int res = 0;
+   while(i<N){
+     int j = i+1;
+
+     while(j<N && v[j] != v[i])
+
+
+   }
+ }
