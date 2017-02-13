@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+struct intv {
+int b;
+int e;
+struct intv *next;
+};
+
+
+struct intv* reserva(struct intv* livres, int n, int* reservado)
+{
+    >q
+
+}
