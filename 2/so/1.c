@@ -28,10 +28,11 @@ int exe2(char *argv)
 
 int catv2(int N)
 {
-    char c;
+    char c[N];
+    
     int r= read(0,&c,N);
-    while(r!= -1){
-        int w = write(1,&c,N);
+    while(r > 0){
+        int w = write(1,&c,r);
         r = read(0,&c,N);
     }
     return 1;
