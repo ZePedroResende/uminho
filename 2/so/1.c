@@ -38,6 +38,12 @@ int catv2(int N)
     return 1;
 }
 
+
+ssize_t readln(int fildes, void *buf, size_t nbyte)
+{
+
+}
+
 int main(int argc, char **argv)
 {
    int a;
