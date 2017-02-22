@@ -8,7 +8,7 @@ int mycat()
     char c;
     int r= read(0,&c,1);
     while(r!= -1){
-         write(1,&c,1);
+        write(1,&c,1);
         r = read(0,&c,1);
     }
     return 1;
@@ -29,7 +29,7 @@ int exe2(char *argv)
 int catv2(int N)
 {
     char c[N];
-    
+
     int r= read(0,&c,N);
     while(r > 0){
         write(1,&c,r);
@@ -41,23 +41,25 @@ int catv2(int N)
 
 ssize_t readln(int fildes, void *buf, size_t nbyte)
 {
-    char* c = buf; 
-    int r= read(0,c,nbyte);
-    while((r > 0) & (*c != '\n') ){
-        write(fildes,c,r);
-        r = read(0,c,nbyte);
+    int r=0, n=0;
+    char* c = buf;
+    r = read(fildes,c + n,1);
+    
+    for (n = 1; n < nbyte && c[n] != '\n' && r> 0 ; n++) {
+        r = read(fildes, c + n,1);
     }
-
-   return r;
+    
+    return n;
 }
 
 int main(int argc, char **argv)
 {
-   int a;
-//    a = mycat(argv[1],O_WRONLY,0600);
-//   a =exe2(argv[1]);
-//  a = catv2(atoi(argv[1]));
-   char c;
-   a = readln(1,&c,1);
-   return a;
+    int a;
+    //    a = mycat(argv[1],O_WRONLY,0600);
+    //   a =exe2(argv[1]);
+    //  a = catv2(atoi(argv[1]));
+    char c[7];
+    a = readln(0,&c,7);
+    write(1,&c,a);
+    return a;
 }
