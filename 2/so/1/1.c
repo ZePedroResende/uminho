@@ -43,13 +43,37 @@ ssize_t readln(int fildes, void *buf, size_t nbyte)
 {
     int r=0, n=0;
     char* c = buf;
-    r = read(fildes,c + n,1);
+    r = read(fildes,&c[n],1);
     
-    for (n = 1; n < nbyte && c[n] != '\n' && r> 0 ; n++) {
-        r = read(fildes, c + n,1);
+    while ( n < (nbyte-1) && r> 0 && c[n] != '\n') {
+        n++;
+        r = read(fildes, &c[n],1);
     }
+   c[n+1] = 0;
+    return n+1;
+}
+
+int nl(int argc, char **argv)
+{
+   int i = 1;
+   char c[1000];
+   char line[1000];
+   
+   
+   if(argc==1){
+    int r = readln(0,c,1000);
+    while(r>0 ){ 
+        snprintf(line,1000,"%d\t",i);
+        write(1,line,strlen(line));
+        write(1,c,r); 
+        i++;
+        r = readln(0,c,1000);
+    }
+   }
+   
+   if(argc==2){
     
-    return n;
+   }
 }
 
 int main(int argc, char **argv)
@@ -58,8 +82,6 @@ int main(int argc, char **argv)
     //    a = mycat(argv[1],O_WRONLY,0600);
     //   a =exe2(argv[1]);
     //  a = catv2(atoi(argv[1]));
-    char c[7];
-    a = readln(0,&c,7);
-    write(1,&c,a);
-    return a;
+    nl(argc,&argv[1]);
+    return 0;
 }
