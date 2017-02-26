@@ -44,44 +44,58 @@ ssize_t readln(int fildes, void *buf, size_t nbyte)
     int r=0, n=0;
     char* c = buf;
     r = read(fildes,&c[n],1);
-    
-    while ( n < (nbyte-1) && r> 0 && c[n] != '\n') {
+
+    while ( n < (nbyte-1) && r> 0 && c[n] != EOF && c[n] != '\n'&& c[n] != '\0') {
         n++;
         r = read(fildes, &c[n],1);
     }
-   c[n+1] = 0;
+    c[n+1] = 0;
     return n+1;
 }
 
-int nl(int argc, char **argv)
+int nl(int argc, char *argv)
 {
-   int i = 1;
-   char c[1000];
-   char line[1000];
-   
-   
-   if(argc==1){
-    int r = readln(0,c,1000);
-    while(r>0 ){ 
-        snprintf(line,1000,"%d\t",i);
-        write(1,line,strlen(line));
-        write(1,c,r); 
-        i++;
+    int i = 1, r=0;
+    char c[1000];
+    char line[1000];
+
+
+    if(argc==1){
         r = readln(0,c,1000);
+        while(r>1 || c[r-1]== '\n'){ 
+            snprintf(line,1000,"%d\t",i);
+            write(1,line,strlen(line));
+            write(1,c,r); 
+            i++;
+            r = readln(0,c,1000);
+        }
     }
-   }
-   
-   if(argc==2){
-    
-   }
+
+    if(argc==2){
+        int ficheiro = open(argv,O_RDONLY);
+        if(ficheiro < 0) 
+            perror("FILE DOESN'T EXIST\n"), exit(-1);
+        r = readln(ficheiro,c,1000);
+        while(r>1 || c[r-1]== '\n'){ 
+            snprintf(line,1000,"%d\t",i);
+            write(1,line,strlen(line));
+            write(1,c,r); 
+            i++;
+            r = readln(ficheiro,c,1000);
+        }
+    }
+    exit(r);
 }
 
 int main(int argc, char **argv)
 {
-    int a;
+    //    int a;
+    //   char c[1000];
     //    a = mycat(argv[1],O_WRONLY,0600);
     //   a =exe2(argv[1]);
     //  a = catv2(atoi(argv[1]));
-    nl(argc,&argv[1]);
+    nl(argc,argv[1]);
+    //a =    readln(0,c,1000);
+    //    write(1,c,a);
     return 0;
 }
