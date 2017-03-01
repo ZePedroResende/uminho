@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_poo" default="compile.module.poo">
+  <dirname property="module.poo.basedir" file="${ant.file.module_poo}"/>
+  
+  <property name="module.jdk.home.poo" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.poo" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.poo" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.poo" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="poo.output.dir" value="undefined"/>
+  <property name="poo.testoutput.dir" value="undefined"/>
+  
+  <path id="poo.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="poo.module.production.classpath">
+    <path refid="${module.jdk.classpath.poo}"/>
+  </path>
+  
+  <path id="poo.runtime.production.module.classpath"/>
+  
+  <path id="poo.module.classpath">
+    <path refid="${module.jdk.classpath.poo}"/>
+  </path>
+  
+  <path id="poo.runtime.module.classpath"/>
+  
+  
+  <patternset id="excluded.from.module.poo">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.poo">
+    <patternset refid="excluded.from.module.poo"/>
+  </patternset>
+  
+  
+  <target name="compile.module.poo" depends="compile.module.poo.production,compile.module.poo.tests" description="Compile module poo"/>
+  
+  <target name="compile.module.poo.production" depends="register.custom.compilers" description="Compile module poo; production classes"/>
+  
+  <target name="compile.module.poo.tests" depends="register.custom.compilers,compile.module.poo.production" description="compile module poo; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.poo" description="cleanup module">
+    <delete dir="${poo.output.dir}"/>
+    <delete dir="${poo.testoutput.dir}"/>
+  </target>
+</project>

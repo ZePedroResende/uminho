@@ -7,7 +7,7 @@
  */
 public class ex3
 {
-    publiv static void main(String[] argv)
+    public static void main(String[] argv)
     {
         Scanner novo = new Scanner(System.In);
 
