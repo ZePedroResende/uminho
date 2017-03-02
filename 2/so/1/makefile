@@ -8,4 +8,9 @@ $(EXEC): $(OBJS)
 limpar:
 		rm $(EXEC) *.o
 
+love:
+	$(CC) $(CFLAGS) -o $(EXEC) $(OBJS)
+	rm *.o
+$		dont know how to make love
+
 install: teste
