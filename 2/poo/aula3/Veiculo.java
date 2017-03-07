@@ -91,4 +91,37 @@ public class Veiculo
     public double custoMedioKms(double custoLitro){
         return (this.consumoMedio*custoLitro)/100;
     }
+    
+    public Veiculo clone(){
+       Veiculo r = new Veiculo(matricula,kmsTotal,kmsParcial,consumoMedio,capacidade,conteudo);
+       return r;
+    }
+
+
+   public Veiculo() {
+        this.matricula = new String();
+        this.kmsTotal = 0;
+        this.kmsParcial = 0;
+        this.consumoMedio = 0;
+        this.capacidade = 0;
+        this.conteudo = 0;
+    }
+    
+    public Veiculo(String matricula, double kmsTotal, double kmsParcial, double consumoMedio, int capacidade, int conteudo) {
+        this.matricula = matricula;
+        this.kmsTotal = kmsTotal;
+        this.kmsParcial = kmsParcial;
+        this.consumoMedio = consumoMedio;
+        this.capacidade = capacidade;
+        this.conteudo = conteudo;
+    }
+   
+    public Veiculo(Veiculo v) {
+        this.matricula = v.getmatricula();
+        this.kmsTotal = v.getKmsTotal();
+        this.kmsParcial = v.getKmsParcial();
+        this.consumoMedio = v.getConsumoMedio();
+        this.capacidade = v.getCapacidade();
+        this.conteudo = v.getConteudo();
+    } 
 }
