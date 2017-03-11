@@ -5,13 +5,13 @@
 #include <stdlib.h>
 #define MAX_BUFFER 2048
 #define X 15
-#define Y 40
+#define Y 1027
 
 void geraMat(int mat[X][Y]){
     int i, j;
     srand(time(NULL));
-    for (i = 0; i < 15; i++)
-        for (j = 0; j < 40; j++)
+    for (i = 0; i < X; i++)
+        for (j = 0; j < Y; j++)
              mat[i][j] = random() % 300;
 }
 
