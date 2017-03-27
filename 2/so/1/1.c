@@ -116,14 +116,15 @@ int cat_v3(int argc , char **argv)
 
 int main(int argc, char **argv)
 {
-    //    int a;
+        int a;
     //   char c[1000];
-    //    a = mycat(argv[1],O_WRONLY,0600);
+        a = mycat();
+        //a = mycat(argv[1],O_WRONLY,0600);
     //   a =exe2(argv[1]);
     //  a = catv2(atoi(argv[1]));
     //nl(argc,argv[1]);
     //a =    readln(0,c,1000);
     //    write(1,c,a);
-    cat_v3(argc,argv);
+//k    cat_v3(argc,argv);
     return 0;
 }
