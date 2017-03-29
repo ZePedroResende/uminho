@@ -1,8 +1,8 @@
 #include <unistd.h>
+#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include <sys/wait.h>
-
 
 int main(int argc, char **argv){
   pid_t p;
@@ -10,7 +10,7 @@ int main(int argc, char **argv){
   for(i = 1; i< argc; i++){
     p =  fork();
     if(!p)
-      _exit(execlp("a.out","./a.out",NULL));
+    _exit((execlp(argv[i],argv[i],NULL)));
         }
   for(i =1; i< argc ; i++)
     wait(&status);

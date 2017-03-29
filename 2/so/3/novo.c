@@ -2,6 +2,6 @@
 
 int main()
 {
-  printf("ola");
+  printf("ola\n");
   return 0;
 }
