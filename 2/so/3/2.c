@@ -1,14 +1,14 @@
 #include <unistd.h>
 #include <sys/wait.h>
 
-int main(){
+int main()
+{
     int p, status;
     p= fork();
 
-    if(p){
+    if(p) {
         wait(&status);
         _exit(status);
-    }
-    else
+    } else
         _exit(execl("/bin/ls","ls","-l",(char *) NULL));
 }
