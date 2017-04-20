@@ -15,11 +15,11 @@ int main()
 		write(pfd[1],"cde",3);
 	}else{
 		close(pfd[1]);
-		read(pfd[0],buf,2);
-		read(pfd[0],&buf[2],3);
+		read(pfd[0],buf,5);
+		//read(pfd[0],&buf[2],3);
 		//write(1,buf,5);
 		sleep(2);
-	}
 	write(1,buf,5);
+	}
 	return 0 ;
 }
