@@ -711,8 +711,10 @@ int pruneAB (ABin *a, int l){
 
 //////////////////////////////////////////////////////////////////////////////
 int iguaisAB (ABin a, ABin b){
- if (a ==NULL && b== NULL) return 1;
-else if (a != NULL && b != NULL && a->valor == b->valor && iguaisAB(a->dir, b->dir) && iguaisAB(a->esq, b->esq)) return 1; 
+ if (a ==NULL && b== NULL)
+	 return 1;
+else if (a != NULL && b != NULL && a->valor == b->valor && iguaisAB(a->dir, b->dir) && iguaisAB(a->esq, b->esq))
+	return 1; 
   
 return 0;
 }
