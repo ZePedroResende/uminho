@@ -72,7 +72,7 @@ public class Banco{
         float total = 0;
         lockBanco.lock();
         for (Integer c : accounts) {
-            total = contas.get(c).getSaldo();
+            total += contas.get(c).getSaldo();
         }
         lockBanco.unlock();
         return (total);
