@@ -24,8 +24,8 @@ public class BoundedBuffer {
         while (poswrite == 0)
             wait();
 
-        item = buffer[poswrite];
         poswrite--;
+        item = buffer[poswrite];
 
         notifyAll();
         return item;
