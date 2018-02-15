@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="exe2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/guiao4/exe2.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
