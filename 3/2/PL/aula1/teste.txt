@@ -1,0 +1,657 @@
+>Pedro Rangel Henriques - HOME PAGE<
+>Pedro manuel Rangel santos Henriques<
+>email: <
+> prh@di.uminho.pt <
+>Departamento de Inform&aacute;tica<
+>Escola de Engenharia<
+>Universidade do Minho <
+>Campus de Gualtar - 4710 BRAGA, <
+>Portugal<
+>FAST <
+>(Foundations & Applications of Software Technologies)<
+>!<
+>Language Processing<
+>Algoritmi Research Center (CST line)<
+>ORCID:<
+> <
+> http://orcid.org/0000-0002-3208-0207<
+>Personal Information<
+>Research subjects<
+>Educational Activities (course units)<
+> Processamento de Linguagens II (LESI+LMCC, 1.semestre)<
+>[2010/11]<
+>[2009/10]<
+>[2008/09]<
+>[2007/08]<
+>[2006/07]<
+>[2005/06]<
+>[2004/05]<
+>[2003/04]<
+>Anual<
+>[2010/11]<
+>[2009/10]<
+>[2008/09]<
+>[2007/08]<
+>[2006/07]<
+>[2005/06]<
+>[2004/05]<
+>[2005/06]<
+>[2003/04]<
+> <
+> <
+> <
+>Pauta do Exame Especial (recurso) de LESI (07/08)<
+>[2014/15]<
+>[2011/12]<
+>[2010/11]<
+>[2009/10]<
+>[2008/09]<
+>[2014/15]<
+>[2011/12]<
+>[2010/11]<
+>[2009/10]<
+>[2007/08]<
+>[2006/07]<
+>[2005/06]<
+>[2004/05]<
+>[2003/04]<
+>[2010/11 ((LCC)]<
+>[2009/10(LCC)]<
+>[2006/07(LCC)]<
+>[2006/07(LEI)]<
+>[2004/05(LMCC)]<
+> <
+> <
+>[2006/07]<
+>[2005/06]<
+>[2003/04]<
+>[2002/03]<
+> <
+> <
+> <
+>[2005/06]<
+> <
+>[2011/12]<
+>[2005/06]<
+>[2007/08]<
+>[2006/07]<
+>[2003/04]<
+>[2003/04]<
+>[2004/05]<
+>[2004/05]<
+>2007/08<
+> (<
+>[2007/08]<
+>[2005/06]<
+>[2004/05]<
+>[2003/04]<
+>[2005/06]<
+>[2006/07]<
+>[2005/06]<
+>[2004/05]<
+>[2006/07]<
+>[2004/05]<
+>[2003/04]<
+>[2006/07]<
+>[2017/18]<
+>[2016/17]<
+>[2015/16]<
+>[2014/15]<
+>[2009/10]<
+>[2008/09]<
+>[2007/08]<
+>Perfil PLC: Processamento de Linguagens e de Conhecimento<
+>LEI, Enunciados dos Projetos Integrados<
+>[2015/16]<
+>[2017/18]<
+>[2015/16]<
+>[2014/15]<
+>UCE30-EL, Engenharia de Linguagens<
+>[2013/14]<
+>[2012/13]<
+>[2011/12]<
+>[2010/11]<
+>[2009/10]<
+>[2008/09]<
+>[2007/08]<
+>[2008/09]<
+>[2007/08]<
+>Temas para TESE propostos pelo gEPL<
+>[2016/17]<
+>[2015/16]<
+>[2014/15]<
+>[2013/14]<
+>[2012/13]<
+>[2009/10]<
+>[2008/09]<
+>TESES defendidas<
+>Improving Program Comprehension Tools for Domain Specific Languages<
+>Contracts and Slicing for Safety Reuse<
+>An ANTLR Back-End for Perl generation<
+>GamaBoogie: a Contract-based Slicer for Boogie Programs<
+>Comment Analysis for Program Comprehension<
+>Semantic Good Moorning: News collection, management and presentation<
+>Analyzing and Measuring Open-Source Projects<
+>Concept Location based on System Dependency Graphs<
+>Converting Ontologies into DSLs<
+>Knowledge Analytics<
+>Unfuzzying Fuzzy Parsing<
+>Detection of Plagiarism in Software in an Academic Environment<
+>Exploring Frama-C to improve Assertion-based Slicing<
+>QG - An Attribute Grammar based System to assess Grammars Quality<
+>Automatic creation of CVs extracting data from Social Networks<
+>Interactive Tagging if Photographes in Cooperative Systems<
+>Implementing a Syntax-Directed Editor for LogoLISS with incremental compilation<
+>Building the Museum of the Person Based on a combined CIDOC-CRM/ FOAF/ DBpedia Ontology<
+>Programmer Profiling through Code Analysis<
+>Question and Answer Systems: A Closed-Domain Question and Answer System for the Python Language Domain<
+>Analysis and Visualization  of Dynamic Social Networks<
+>Syntax-Directed Editor Generator<
+>Visualization of Ontology Evolution using OntoDiffGraph<
+>[2011/12]<
+>[2016/17]<
+>[2008/09]<
+>Ph. D. Supervision<
+>Documents Structural Processing and their Semantics<
+>An Heterogeneous Architecture for Knowledge Extraction from Databases<
+>Multiple-source Dynamic Dictionaries<
+>Geographical Information: Meta-Information, Representation and Visualizatiom<
+>Systematization of Program Visualization and Algorithm Animation<
+>An Architectural Model for the Development of Compilers: application to "Dolphin" Framework<
+>Topic Maps, from Syntax to Semantics<
+>Automatization of the Code Generation for different Industrial Robots<
+>Data Quality Problems in Databases: Detection and Correction<
+>Program Inspection to interconnect the Behavioral and Operational Views for Program Comprehension<
+>Verification, Slicing and Visualization of Programs with Contracts<
+>Formal Description and Automatic Generation of Learning Spaces based on Ontologies<
+>Personalized information access in an XML document collection associated with semantic descriptions<
+>Projects<
+> <
+>Language.Processing@di.um.pt<
+> <
+>Language.Processing@di.um.pt<
+> <
+>LISS compiler<
+> <
+>GQE<
+> <
+>VisualLISA -- Attribute Grammars made easier<
+> <
+>SDEGenerator<
+> <
+>OntoDiffGraph<
+> <
+>OWL2GRA<
+> <
+>DariusSDG<
+> <
+>GamaSlicer<
+> <
+>GamaPolarSlicer<
+> <
+>GamaBoogie<
+> <
+>XTDL Laboratory Site<
+> <
+>Alma2<
+> <
+>Alma<
+> <
+>WebAppViewer (WAV)<
+> <
+>METAMORPHOSIS<
+> <
+>Conclave<
+> <
+>GreenSSCM<
+> <
+>Quixote<
+> <
+>AsCoP<
+> <
+>CROSS Project<
+> <
+>Matisse Project<
+> <
+>PCVIA Project<
+> <
+>DSLPC<
+> <
+>Voda Project<
+> LEPAForM <
+> <
+>SIEP<
+>Fasti Ecclesiae Portugaliae<
+> <
+>SEED<
+>FDase<
+> <
+>SGPE<
+>: <
+> <
+>CaVa/OntoME<
+> <
+>ADAI2017<
+> <
+>Genio<
+> <
+>Genio-Armazena<
+> <
+>SIME<
+> <
+>npMP<
+>Museu da Pessoa<
+> <
+>OntXQuery<
+> <
+>PICO<
+> <
+>SIGaQREN<
+> <
+>ALFA LerNET<
+>Publications<
+>look on <
+>my CV<
+>CCTC - Member profiles - PRH - myPublications<
+>Talks:<
+>Program / Organizing Committees<
+> Member of the Scientific Committee and organizer of MIUP-TIUP (00,..,08)-- National Imperative Programming Contests<
+> General chair and organizer of <
+>SLATe'2018<
+> Program chair of WAPL'2017 -- 6th. Workshop on <
+>Advances in Programming Languages<
+> General chair and organizer of <
+>ICPC'2010<
+> Program chair and organizer of CoRTA'2010 -- 4th. Int. Workshop on <
+>Compiler and Related Technologies and Applications<
+> Member of the Scientific Committee and organizer of CoRTA'2009 -- 3rd Int. Workshop on <
+>Compiler and Related Technologies and Applications<
+> Program co-chair and organizer of CoRTA'2008 -- 2nd Int. Workshop on <
+>Compiler and Related Technologies and Applications<
+> Program co-chair and organizer of CoRTA'2007 -- 1st Int. Workshop on <
+>Compiler and Related Technologies and Applications<
+> Program co-chair and organizer of CTNET'2006 -- 2nd Int. Workshop on <
+>Compiler related Technologies for the .NET plataform<
+> Program co-chair and organizer of SIA2D'2004 -- 1st Int. Workshop on <
+> Program co-chair and organizer of SIA'1999 -- 1st Workshop on <
+>Archaeologic Information Systems: GIS applied to Archeology<
+> Program chair and organizer of WDavid'1996 -- Workshop  <
+>David: Algebraic  Document Processing<
+> Program chair and organizer of WoLP'1993 -- Workshop  on <
+>Language Processing: OO-approaches and Parallelism<
+> Member of the Scientific Committee of XATA -- National Conference on <
+>XML and Associated Technologies and Tools<
+> Member of the Scientific Committee of CAPSI -- Annual Conference of the <
+>Portuguese Association for Information Systems<
+>Man-Machine Interaction<
+> Co-Organizer of  <
+> Co-Organizer of  <
+>SLATe'2018<
+> Co-Organizer of <
+>ECAI'2010<
+> Co-Organizer of <
+>ETAPS'2007<
+>Important / Interesting Links<
+>Programming Contests<
+>dpUM:<
+>[arquivo de enunciados]<
+>[2007]<
+>[2006]<
+>[2005]<
+>[2004]<
+>[2009]<
+>[2008]<
+>[2007]<
+>[2006]<
+>[2005]<
+>[2004]<
+>[2006]<
+>Conferences and Other Scientific Events<
+>EasyChair Smart CFP<
+>Upcoming Software Engineering Conference Map<
+>Conference Calendar<
+>WikiCFP, A Wiki for Calls For Papers<
+>SAC'2018 (3-7Abr):<
+>SAC-PL:<
+>PAAMS'2018 (20-22Jun):<
+>DeMaDIE (20-22Jun):<
+>SLATe'2018 (21-22Jun)<
+> 7th International Symposium on Languages, Applications and Technology<
+>ICAART'2017 (Feb):<
+>SAC'2017 (3-7Abr):<
+>SAC-PL:<
+>SLATe'2017 (26-27Jun)<
+> 6th International Symposium on Languages, Applications and Technology<
+>WAPL'2017 (4-7Set)<
+> 6th. Workshop on Advances in Programming Languages<
+>ICAART'2016 (24-26Feb):<
+> 8th. Int. Conf. on Agents and Artificial Intelligence<
+>WorldCISTI'2016 (22-24Mar)<
+>SHR:<
+>  1st Workshop on Semantics for Humanities Resources<
+>SAC'2016 (4-8Abr):<
+>SAC-PL:<
+>ICPC'2016 (co-located with ICSE, 16-17Mai)<
+>PAAMS'2016 (01-03Jun):<
+>DeMaDIE:<
+>  Workshop on Decision Making in Dynamic Information Environment<
+>SLATe'2016 (20-21Jun)<
+> 5th International Symposium on Languages, Applications and Technology<
+>CMEA'2016 (04-06Jul)<
+>DH'2016 (12-16Jul)<
+>HistoInformatics'2014 (10Nov):<
+>MDASD'2016 (co-located with FedCSIS, 07-10Set)<
+> 4th Workshop on Model Driven Approaches in System Development<
+>SCLIT'2016 (19-25Set)<
+>WorldCISTI'2015 (1-3Abr)<
+>ICSE'2015 (16-24May):<
+>RAISE'2015 (17May):<
+> 4th. Workshop on Realizing Artificial Intelligence Synergies in Software Engineering<
+>KES/IDT'2015 (17-19Jun):<
+>IABIRP'2015 :<
+>CISTI'2015 (17-20Jun)<
+>SLATe'2015 (18-19Jun):<
+> 4th International Symposium on Languages, Applications and Technology<
+>ICSOFT-EA'2015 (20-22Jul):<
+>GTTSE'2015 (23-29Ago):<
+>EPIA'2015 (08-11Set)<
+>SDIA'2015:<
+> 5th. Doctoral Symposium on Artificial Intelligence<
+>WAPL'2015 (13-16Set)<
+>SCLIT'2015 (23-29Set)<
+>ICSME'2015 (29Set-01Oct)<
+> 31st IEEE International Conference on Software Maintenance and Evolution<
+>HDP'2015 (8-9Out)<
+>Informatics'2015 (18-20Nov)<
+>BICT'2015 (3-5Dec)<
+>ICAART'2014 (6-8Mar):<
+> 6th. Int. Conf. on Agents and Artificial Intelligence<
+>SAC'2014 (24-28Mar):<
+>SAC-PL:<
+>SAC-DE:<
+>CSEdu'2014 (01-03Apr):<
+>SeGaH'2014 (14-16May):<
+>ICSE'2014 (31May-07Jun):<
+>RAISE'2014 (03Jun):<
+>ICPC'2014 (co-located with ICSE, 02-03Jun)<
+>SLATe'2014 (19-20Jun):<
+> 3rd International Symposium on Languages, Applications and Technology<
+>IDEAS'2014 (07-09Jul):<
+> 18th International Database Engineering & Applications Symposium<
+>KDO'2014 (co-located with WIC, 11Aug):<
+> 2nd.  Workshop on  Knowledge Discovery in Ontologies<
+>ICSOFT-EA'2014 (29-31Aug):<
+> 9th International Conference on Software Engineering and Applications<
+>MDASD (co-located with FedCSIS, 07-10Set)<
+> 3rd Workshop on Model Driven Approaches in System Development<
+>ICSME'2014 (28Set-03Oct)<
+> 30th IEEE International Conference on Software Maintenance and Evolution<
+>CAPSI'2014 (03-04Oct)<
+>SOTICS'2014 (12-16Oct)<
+>VideoJogos'2014 (06-07Nov)<
+>SIIE'2014 (12-14Nov):<
+>EPCG'2014 (13-14Nov):<
+>CoNaIISI'2014 (13-14Nov)<
+>i'13 (05-07Nov):<
+>HistoInformatics'2014 (10Nov):<
+>SDDI'2004:<
+>XATA'2005:<
+>JOIN'2005:<
+>GTTSE'2005:<
+>CHALLENGES'2005<
+>Data Gadgtes'2005:<
+>Bringing up Emerging Solutions for DataWarehousing Systems (held in conjunction with <
+>JISBD'2005<
+>TMRA'2005:<
+>CAPSI'2005:<
+>SIIE'2005:<
+>EPIA'2005:<
+>XATA'2006:<
+>SDDI'2006:<
+>CTNET'2006:<
+>LDTA'2006:<
+> Sixth Workshop on Language Descriptions, Tools and Applications  (a satellite event of <
+>ETAPS'2006<
+>JOIN'2006:<
+>SAC'2006:<
+> The 21st Annual ACM Symposium on Applied Computing -- <
+>Programming Languages (PL) Technical Track<
+>ICKEDS'2006:<
+>CISTI'2006:<
+>ITICSE'2006:<
+>ICPC'2006:<
+>IWPC:<
+>SCAM'2006:<
+>SIIE'2006:<
+>CAPSI'2006:<
+>XATA'2007:<
+>ETAPS'2007:<
+>LDTA'2007:<
+> Seventh Workshop on Language Descriptions, Tools and Applications  (a satellite event of <
+>ETAPS'2007<
+>SBLP'2007:<
+>ADEH'2007:<
+>CISTI'2007:<
+>VISSOFT'2007:<
+>ICPC'2007:<
+>CoRTA'2007:<
+>SCAM'2007:<
+>ICSM'2007:<
+>WAPL'2007:<
+>XATA'2008:<
+>SAC'2008:<
+>SAC-PL, Technical Track on Programming Languages<
+>SAC-DE, Technical Track on Document Engineering<
+>LDTA'2008:<
+> 8th Workshop on Language Descriptions, Tools and Applications  (a satellite event of <
+>ETAPS'2008<
+>ICSE'2008:<
+>ICPC'2008:<
+>CISTI'2008:<
+>CoRTA'2008:<
+>WikiSym 2008:<
+>SIGDOC 2008:<
+>CLEI'2008:<
+>CSE'2008:<
+>Models'2008:<
+>CACIC'2008:<
+>Iberamia'2008:<
+>WCRE'2008:<
+>CAPSI'2008:<
+>ICAART'2009 (19-24Jan):<
+>ETAPS'2009 (22-29 Mar):<
+>LDTA'2009 (satellite event of ETAPS):<
+>OpenCert'2009 (satellite event of ETAPS):<
+>CSMR'2009 (24-27Mar):<
+>WWW'2009 (20-24Abr):<
+>ICEIS'2009 (6-10Mai):<
+>ICSE'2009 (16-24Mai):<
+>ICPC'2009 (co-located with ICSE):<
+> 17th IEEE International Conference on Program Comprehension (<
+>main site<
+>Doctoral Consortium (co-located with ICSE):<
+>PLDI'2009 (15-20Jun):<
+>CISTI'2009 (17-20Jun):<
+>HCI'2009 (19-24Jul):<
+>Interact'2009 (24-28Ago):<
+>INForum'2009 (10-11Set):<
+>CoRTA'2009 (10-11Set):<
+>XATA'2009 (10-11Set):<
+>ICSM'2009 (20-26Set):<
+>SCAM'2009 (co-located with ICSM):<
+>VISSOFT'2009 (co-located with ICSM):<
+>VL/HCC'2009 (20-24Set):<
+>EPIA'2009 (12-15Out):<
+>WAPL'2009 (12-14Out):<
+>CAPSI'2009 (28-30Out):<
+>ICAART'2010 (22-24Jan):<
+>ETAPS'2010 (20-28Mar):<
+>LDTA'2010 (satellite event of ETAPS/27-28Mar):<
+>SAC'2010 (22-26Mar):<
+>XATA'2010 (19-20Mai):<
+>SERA'2010 (24-26Mai):<
+>PASTE'2010 (5-6Jun):<
+>CISTI'2010 (16-19Jun):<
+>IAwDQ'2010 (16-18Jun):<
+>  1st Ibero-American Workshop on Data Quality<
+>ICPC'2010 (30Jun-02Jul):<
+> 18th IEEE International Conference on Program Comprehension<
+> (<
+>main site<
+>ECAI'2010 (16-20Ago):<
+> 19th European Conference on Artificial Intelligence<
+>ECSA'2010 (23-26Ago):<
+>INForum'2010 (09-10Set):<
+>CoRTA'2010 (09-10Set):<
+> Compilers, Related Technologies and Applications<
+>ICSM'2010 (12-18Set):<
+>SCAM'2010 (12-13Set):<
+>SEFM'2010 (13-18Set):<
+>FLACOS'2010 (17-18Set):<
+>CSE'2010 (20-22Set):<
+>ADBIS'2010 (20-24Set):<
+>MDASD'2010 (20-24Set):<
+> Model Driven Approaches in System Development<
+>ASE'2010 (20-24Set):<
+>VL/HCC'2010 (21-25Set):<
+>ATVA'2010 (21-24Set):<
+>CBSOFT'2010 / SBLP 2010 (27Set-01Oct):<
+>SLE'2010 (10-13Out):<
+>GPCE'2010 (10-13Out):<
+>ISoLA'2010 (18-20Out):<
+>CAPSI'2010 (20-22Out):<
+>SoftVis'2010 (25-26Out):<
+>BIONETICS'2010 (1-3Dez):<
+>SAC'2011 (21-25Mar):<
+>SAC-PL:<
+>ETAPS'2011 (26Mar-03Apr):<
+>LDTA'2011 (satellite event of ETAPS/26-27Mar):<
+>GT-VMT'2011 (satellite event of ETAPS/2-3Abr):<
+>MW'2011 (6-9Apr)<
+>ICSE'2011 (21-28May):<
+>WeTSOM'2011 (24May):<
+>  2nd International Workshop on Emerging Trends in Software Metrics<
+>CISTI'2011 (15-18Jun):<
+>IAwDQ'2011 (16-18Jun):<
+>  2nd Ibero-American Workshop on Data Quality<
+>CSSE'2011 (15-16Jun):<
+>ICPC'2011 (22-24Jun):<
+> 19th IEEE International Conference on Program Comprehension<
+> (<
+>main site<
+>SLE'2011 (03-06Jul):<
+>GGTTSE'2011 (04-09Jul):<
+>CBSOFT'2011 / SBLP 2011 (26-30Set):<
+> The Brazilian Conference on Software: Theory and Practice (XIV Brazilian Symposium on Programming Languages (<
+>SBLP<
+>ESEC/FSE'2011 (5-9Set):<
+>PASTE'2011 (5-6Sep):<
+>fedCSIS'2011 (19-21Sep):<
+>WAPL'2011 (19Sep):<
+>SCLIT'2011 (19-25Sep):<
+>ICSM'2011 (25Sep-01Oct):<
+>SCAM'2011 (25-26Sep):<
+>EPIA'2011 (10-13Out):<
+>CLA'2011 (Oct):<
+>IDA'2011 (29-31Oct):<
+>SeGaH'2011 (09-11Nov):<
+>ETAPS'2012 (24Mar-01Apr):<
+>LDTA'2012 (satellite event of ETAPS/31Mar-01Apr):<
+>ICST'2012 (17-21Apr):<
+>ICSE'2012 (2-9Jun):<
+>RAISE'2012 (5Jun):<
+> Workshop on Realizing Artificial Intelligence Synergies in Software Engineering<
+>MSR'2012 (co-located with ICSE, 2-3Jun):<
+>ICPC'2012 (11-13Jun):<
+>SLATe'2012 (21-22Jun):<
+> International Symposium on Languages, Applications and Technology<
+>ICEIS'2012 (co-located with ENASE 2012, 28Jun-01Jul):<
+>COMPSAC'2012 (16-20Jul):<
+>ASE'2012 (03-07Sep):<
+>CAPSI'2012 (07Sep):<
+>MCIS'2012 (8-10Sep):<
+>FedCSIS'2012 (09-12Sep):<
+>MDASD'2012:<
+>BCI'2012 (16-20Sep):<
+>SCLIT'2012 (19-25Sep):<
+> 2nd Symposium on Computer Languages, Implementation and Tools, organized within ICNAAM'2012 (International Conference of Numerical Analysis and Applied Mathematics)  <
+>ETAPS'2012 (24Mar-01Apr):<
+>LDTA'2012 (satellite event of ETAPS/31Mar-01Apr):<
+>ICST'2012 (17-21Apr):<
+>ICSE'2012 (2-9Jun):<
+>RAISE'2012 (5Jun):<
+> Workshop on Realizing Artificial Intelligence Synergies in Software Engineering<
+>MSR'2012 (co-located with ICSE, 2-3Jun):<
+>ICPC'2012 (11-13Jun):<
+>SLATe'2012 (21-22Jun):<
+> International Symposium on Languages, Applications and Technology<
+>ICEIS'2012 (co-located with ENASE 2012, 28Jun-01Jul):<
+>COMPSAC'2012 (16-20Jul):<
+>ASE'2012 (03-07Sep):<
+>CAPSI'2012 (07Sep):<
+>MCIS'2012 (8-10Sep):<
+>FedCSIS'2012 (09-12Sep):<
+>MDASD'2012:<
+>BCI'2012 (16-20Sep):<
+>SCLIT'2012 (19-25Sep):<
+>CSE'2012 (03-05Oct):<
+>SEW'2012 (12-13Oct):<
+>FTSCS'2012 (12Nov):<
+>ID'2013 (21Jan)<
+>PEPM'2013 (21-22Jan)<
+>POPL'2013 (23-25Jan)<
+>ICAART'2013 (15-18Feb):<
+>LAFLang:<
+>SAC'2013 (18-22Mar):<
+>SAC-PL:<
+>SAC-DE:<
+>ICCSEE'2013(22-23Mar)<
+>WorldCIST'2013(27-30Mar)<
+>ICSE'2013 (18-26May):<
+>RAISE'2013 (25-26May):<
+> 2nd. Workshop on Realizing Artificial Intelligence Synergies in Software Engineering<
+>ICPC'2013(co-located with ICSE, 20-21May)<
+>WWV'2013 (6 Jun):<
+>PLDI'2013 (16-21Jun):<
+>SLATe'2013 (20-21Jun):<
+> 2nd International Symposium on Languages, Applications and Technology<
+>WAPL'2013 (08-11Set)<
+>EPIA'2013 (09-13Set)<
+>SDIA'2013:<
+> 4th. Doctoral Symposium on Artificial Intelligence<
+>Challenges:<
+> Special Track<
+>ICSM'2013 (22-28Set)<
+>SEFM'2013 (25-27Set)<
+>CAPSI'2013 (04-05Out):<
+>i'13 (05-07Nov):<
+>SIIE'2013 (13-15Nov):<
+>KDO'2013 (17Nov):<
+>HistoInformatics'2013 (25Nov):<
+>Institutional Links<
+>O(DI)2<
+>MAPi,t/PDInf<
+>MEI/MI/MBioI/MRSC<
+>SIEEUM<
+>Blackboard<
+> <
+> MAP-I<
+>APPIA<
+>MCTES<
+>FCT<
+>FCT<
+>FCTSIG<
+>MEC<
+>Other related Links<
+>Computer Languages History<
+>The Language List<
+>dia1<
+>dia2<
+>dia3<
+>primos1<
+>primos2<
+>natal<
+>neve<
+>  EDLINE- Editora Distribuidora de Livros Nacionais e Estrangeiros <
+>Books<
+>Leisure interests<
