@@ -7,27 +7,6 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-#include <vector>
-#include <iostream>
-using namespace std;
-
-class Hello{
-  vector<int> v;
-  public:
-  Hello(){
-    v.resize(15);
-    v.assign;
-    cout << v.size();
-  }
-
-  int get_first(){
-    return v[0];
-  }
-
-};
-
-Hello a = new Hello();
-
 
 float size = 1;
 
