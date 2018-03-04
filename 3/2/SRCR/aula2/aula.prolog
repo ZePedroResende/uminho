@@ -76,3 +76,68 @@ grau( D,A,1 ) :-
 grau( D,A,N ) :-
   filho( D,B), grau(B,A,G),
   N is G+1.
+
+
+%------------------------------------------------------------------------------------------
+% Extensao do predicado
+
+soma(X,Y,R) :-
+   R is X+Y.
+
+
+soma3(X,Y,R,Z) :-
+   Z is X+Y+R.
+
+% ele expande a lista e começa da direita para a esquerda dai o [],0
+% [1,2,3]
+% soma([2,3],soma([3],soma([],soma([],0)+3)+2)+1)
+soma([],0).
+soma([H|T],R):-
+  soma(T,S),
+  R is H + S.
+
+% operacao aritmetica(adicao,subtracao,multiplicacao,divisao)
+operacao(X,-,Y,Z) :-
+   Z is X+Y.
+operacao(X,+,Y,Z) :-
+   Z is X+Y.
+operacao(X,*,Y,Z) :-
+   Z is X*Y.
+operacao(X,/,Y,Z) :-
+   Y \= 0,
+   Z is div(X,Y).
+
+%
+maior(X,Y,X) :-
+  X>Y.
+maior(X,Y,Y) :-
+  X<Y.
+
+maior3(X,Y,Z,X) :-
+  maior(X,Y,X),maior(X,Z,X).
+maior3(X,Y,Z,Y) :-
+  maior(X,Y,Y),maior(Y,Z,Y).
+maior3(X,Y,Z,Z) :-
+  maior(X,Z,Z),maior(Y,Z,Z).
+
+
+opLista([],+,0).
+opLista([H|T],+,R):-
+  opLista(T,+,S),
+  R is H + S.
+
+opLista([],-,0).
+opLista([H|T],-,R):-
+  opLista(T,-,S),
+  R is H - S.
+
+opLista([],*,1).
+opLista([H|T],*,R):-
+  opLista(T,*,S),
+  R is H * S.
+
+opLista([],/,1).
+opLista([H|T],/,R):-
+  opLista(T,/,S),
+  R is div(H,S).
+
