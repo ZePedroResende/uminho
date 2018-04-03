@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/class2.dir/main.cpp.o  -o class2 -lGL -lGLU -lglut -lXmu -lXi 
