@@ -48,7 +48,7 @@ int main()
 					running=0;
 				} else {
 					if((p = fork())== 0) {
-						execvp(arg[1],arg);
+						execvp(arg[0],arg);
 					} else {
 						if(strcmp(arg[i-2],"&")) {
 							wait(NULL);
