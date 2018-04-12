@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 #ifdef __APPLE__
 #include <GLUT/glut.h>
 #else
@@ -12,13 +11,7 @@
 
 float alfa = 0.0f, beta = 0.0f, radius = 5.0f;
 float camX, camY, camZ;
-
-
-
-
-
 GLuint vbo;
-
 
 void prepraretri(){
 	float buf[] = {1,0,0,0,1,0,-1,0,0};
@@ -28,7 +21,22 @@ void prepraretri(){
 	glBufferData(GL_ARRAY_BUFFER, 9*sizeof(float), buf, GL_STATIC_DRAW);
 }
 
+void axis_system(){
+	glHint(GL_LINE_SMOOTH_HINT, GL_NICEST);
+	glBegin(GL_LINES);
+		glColor3f(1.0,0.0,0.0);
+		glVertex3f(0,0,0);
+		glVertex3f(10,0,0);
 
+		glColor3f(0.0,1.0,0.0);
+		glVertex3f(0,0,0);
+		glVertex3f(0,10,0);
+
+		glColor3f(0.0,1.0,1.0);
+		glVertex3f(0,0,0);
+		glVertex3f(0,0,3);
+	glEnd();
+}
 
 void spherical2Cartesian() {
 
@@ -42,7 +50,7 @@ void changeSize(int w, int h) {
 
 	// Prevent a divide by zero, when window is too short
 	// (you cant make a window with zero width).
-  if(h == 0)
+	if(h == 0)
 		h = 1;
 
 	// compute window's aspect ratio
@@ -81,7 +89,8 @@ void cylinder0(float radius, float height, int sides) {
 
 	glColor3f(1,0,0);
 	glBegin(GL_TRIANGLE_FAN);
-glVertex3f(0,height*0.5,0);
+
+		glVertex3f(0,height*0.5,0);
 		for (i=0; i <= sides; i++) {
 			glVertex3f(cos(i * step * M_PI/180.0)*radius,height*0.5,-sin(i * step *M_PI/180.0)*radius);
 		}
@@ -152,22 +161,6 @@ void cylinder(float radius, float height, int sides) {
 	glEnd();
 }
 
-void axis_system(){
-	glHint(GL_LINE_SMOOTH_HINT, GL_NICEST);
-	glBegin(GL_LINES);
-		glColor3f(1.0,0.0,0.0);
-		glVertex3f(0,0,0);
-		glVertex3f(10,0,0);
-
-		glColor3f(0.0,1.0,0.0);
-		glVertex3f(0,0,0);
-		glVertex3f(0,10,0);
-
-		glColor3f(0.0,0.0,1.0);
-		glVertex3f(0,0,0);
-		glVertex3f(0,0,3);
-	glEnd();
-}
 
 void renderScene(void) {
 
@@ -190,6 +183,7 @@ void renderScene(void) {
 	// End of frame
 	glutSwapBuffers();
 }
+
 
 void processKeys(unsigned char c, int xx, int yy) {
 

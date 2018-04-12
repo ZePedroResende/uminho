@@ -1,1 +1,1 @@
-/usr/bin/c++    -rdynamic CMakeFiles/class4.dir/main.cpp.o  -o class4 -lGLEW -lGL -lGLU -lglut -lXmu -lXi 
+/usr/bin/c++    -rdynamic CMakeFiles/class4.dir/main.cpp.o  -o class4 -lGLEW -lGL -lGLU -lglut -lXi 

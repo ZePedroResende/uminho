@@ -54,45 +54,45 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/resende/uminho/3/2/CG/aula4
+CMAKE_SOURCE_DIR = /home/resende/uminho/3/2/CG/aula5
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/resende/uminho/3/2/CG/aula4/build
+CMAKE_BINARY_DIR = /home/resende/uminho/3/2/CG/aula5/build
 
 #=============================================================================
-# Target rules for target CMakeFiles/class4.dir
+# Target rules for target CMakeFiles/class6.dir
 
 # All Build rule for target.
-CMakeFiles/class4.dir/all:
-	$(MAKE) -f CMakeFiles/class4.dir/build.make CMakeFiles/class4.dir/depend
-	$(MAKE) -f CMakeFiles/class4.dir/build.make CMakeFiles/class4.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/resende/uminho/3/2/CG/aula4/build/CMakeFiles --progress-num=1,2 "Built target class4"
-.PHONY : CMakeFiles/class4.dir/all
+CMakeFiles/class6.dir/all:
+	$(MAKE) -f CMakeFiles/class6.dir/build.make CMakeFiles/class6.dir/depend
+	$(MAKE) -f CMakeFiles/class6.dir/build.make CMakeFiles/class6.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/resende/uminho/3/2/CG/aula5/build/CMakeFiles --progress-num=1,2 "Built target class6"
+.PHONY : CMakeFiles/class6.dir/all
 
 # Include target in all.
-all: CMakeFiles/class4.dir/all
+all: CMakeFiles/class6.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/class4.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/resende/uminho/3/2/CG/aula4/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/class4.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/resende/uminho/3/2/CG/aula4/build/CMakeFiles 0
-.PHONY : CMakeFiles/class4.dir/rule
+CMakeFiles/class6.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/resende/uminho/3/2/CG/aula5/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/class6.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/resende/uminho/3/2/CG/aula5/build/CMakeFiles 0
+.PHONY : CMakeFiles/class6.dir/rule
 
 # Convenience name for target.
-class4: CMakeFiles/class4.dir/rule
+class6: CMakeFiles/class6.dir/rule
 
-.PHONY : class4
-
-# clean rule for target.
-CMakeFiles/class4.dir/clean:
-	$(MAKE) -f CMakeFiles/class4.dir/build.make CMakeFiles/class4.dir/clean
-.PHONY : CMakeFiles/class4.dir/clean
+.PHONY : class6
 
 # clean rule for target.
-clean: CMakeFiles/class4.dir/clean
+CMakeFiles/class6.dir/clean:
+	$(MAKE) -f CMakeFiles/class6.dir/build.make CMakeFiles/class6.dir/clean
+.PHONY : CMakeFiles/class6.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/class6.dir/clean
 
 .PHONY : clean
 

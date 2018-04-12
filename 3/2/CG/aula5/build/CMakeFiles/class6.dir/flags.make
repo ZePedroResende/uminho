@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/home/resende/uminho/3/2/CG/aula5/§{IL_INCLUDE_DIR} 
 

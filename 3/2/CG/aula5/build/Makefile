@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/resende/uminho/3/2/CG/aula4
+CMAKE_SOURCE_DIR = /home/resende/uminho/3/2/CG/aula5
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/resende/uminho/3/2/CG/aula4/build
+CMAKE_BINARY_DIR = /home/resende/uminho/3/2/CG/aula5/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/resende/uminho/3/2/CG/aula4/build/CMakeFiles /home/resende/uminho/3/2/CG/aula4/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/resende/uminho/3/2/CG/aula5/build/CMakeFiles /home/resende/uminho/3/2/CG/aula5/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/resende/uminho/3/2/CG/aula4/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/resende/uminho/3/2/CG/aula5/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named class4
+# Target rules for targets named class6
 
 # Build rule for target.
-class4: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 class4
-.PHONY : class4
+class6: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 class6
+.PHONY : class6
 
 # fast build rule for target.
-class4/fast:
-	$(MAKE) -f CMakeFiles/class4.dir/build.make CMakeFiles/class4.dir/build
-.PHONY : class4/fast
+class6/fast:
+	$(MAKE) -f CMakeFiles/class6.dir/build.make CMakeFiles/class6.dir/build
+.PHONY : class6/fast
 
 main.o: main.cpp.o
 
@@ -129,7 +129,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/class4.dir/build.make CMakeFiles/class4.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/class6.dir/build.make CMakeFiles/class6.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -138,7 +138,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/class4.dir/build.make CMakeFiles/class4.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/class6.dir/build.make CMakeFiles/class6.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -147,7 +147,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/class4.dir/build.make CMakeFiles/class4.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/class6.dir/build.make CMakeFiles/class6.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -157,7 +157,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... class4"
+	@echo "... class6"
 	@echo "... edit_cache"
 	@echo "... main.o"
 	@echo "... main.i"
